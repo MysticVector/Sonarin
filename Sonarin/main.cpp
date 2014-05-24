@@ -2,25 +2,23 @@
 #include <Game.h>
 
 const int FPS = 60;
-const int DELAY_TIME = 1000.0f / FPS;
+const int DELAY_TIME = 1000 / FPS;
 
 int main(int argc, char **argv)
 {
-	Game* game = new Game();
-
 	Uint32 frameStart, frameTime;
 
 	std::cout << "game init attempt...\n";
-	if (game->init("Sonarin", 100, 100, 800, 600, false))
+	if (TheGame::Instance()->init("Sonarin", 100, 100, 800, 600, false))
 	{
 		std::cout << "game init success!\n";
-		while (game->running())
+		while (TheGame::Instance()->running())
 		{
 			frameStart = SDL_GetTicks();
 
-			game->handleEvents();
-			game->update();
-			game->render();
+			TheGame::Instance()->handleEvents();
+			TheGame::Instance()->update();
+			TheGame::Instance()->render();
 
 			frameTime = SDL_GetTicks() - frameStart;
 
@@ -37,7 +35,7 @@ int main(int argc, char **argv)
 	}
 
 	std::cout << "game closing...\n";
-	game->clean();
+	TheGame::Instance()->clean();
 
 	return 0;
 }
