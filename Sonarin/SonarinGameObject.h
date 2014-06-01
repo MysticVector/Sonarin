@@ -1,9 +1,9 @@
 #ifndef __SONARIN_GAME_OBJECT__
 #define __SONARIN_GAME_OBJECT__
 
-#include <AbstractGameObject.h>
+#include <GameObject.h>
 
-class SonarinGameObject : public AbstractGameObject
+class SonarinGameObject : public GameObject
 {
 public:
 	virtual ~SonarinGameObject() {}

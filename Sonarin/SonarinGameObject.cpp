@@ -4,7 +4,7 @@
 #include <TextureManager.h>
 
 
-SonarinGameObject::SonarinGameObject() : AbstractGameObject(),
+SonarinGameObject::SonarinGameObject() : GameObject(),
 m_moveSpeed(0)
 {
 }
