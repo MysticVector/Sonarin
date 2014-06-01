@@ -1,30 +1,33 @@
 #include <iostream>
-#include <Game.h>
+#include <SDLWrapper.h>
+#include <Timer.h>
 
-const int FPS = 60;
-const int DELAY_TIME = 1000 / FPS;
+#include "SonarinGame.h"
+
+const int FRAMES_PER_SECOND = 60;
+const int TIME_PER_FRAME = 1000 / FRAMES_PER_SECOND;
 
 int main(int argc, char **argv)
 {
-	Uint32 frameStart, frameTime;
+	Timer fpsSync;
 
 	std::cout << "game init attempt...\n";
-	if (TheGame::Instance()->init("Sonarin", 100, 100, 800, 600, false))
+	if (TheSonarinGame::Instance()->init("Sonarin", 100, 100, 800, 600, false))
 	{
 		std::cout << "game init success!\n";
-		while (TheGame::Instance()->running())
+		while (TheSonarinGame::Instance()->running())
 		{
-			frameStart = SDL_GetTicks();
+			fpsSync.start();
 
-			TheGame::Instance()->handleEvents();
-			TheGame::Instance()->update();
-			TheGame::Instance()->render();
+			TheSonarinGame::Instance()->handleEvents();
+			TheSonarinGame::Instance()->update();
+			TheSonarinGame::Instance()->render();
 
-			frameTime = SDL_GetTicks() - frameStart;
-
-			if (frameTime < DELAY_TIME)
+			// We test here if the loop iteration took less than the time per frame (which is 1/MAX_FPS)
+			if (TIME_PER_FRAME > fpsSync.getTime())
 			{
-				SDL_Delay((int)(DELAY_TIME - frameTime));
+				// On attend jusqu'à la fin du temps reservé à l'image actuelle
+				TheSDLWrapper::Instance()->delay(TIME_PER_FRAME - fpsSync.getTime());
 			}
 		}
 	}
@@ -35,7 +38,7 @@ int main(int argc, char **argv)
 	}
 
 	std::cout << "game closing...\n";
-	TheGame::Instance()->clean();
+	TheSonarinGame::Instance()->clean();
 
 	return 0;
 }
