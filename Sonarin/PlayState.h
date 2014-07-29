@@ -7,6 +7,11 @@
 
 class SonarinGameObject;
 
+/*
+===============================================================================
+	The in-game screen where all the action will be displayed
+===============================================================================
+*/
 class PlayState : public GameState
 {
 public:

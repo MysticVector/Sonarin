@@ -76,7 +76,7 @@
   <ItemGroup>
     <ClCompile Include="SonarinGameObject.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Sona.cpp" />
     <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="SonarinGame.cpp" />
   </ItemGroup>
@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SonarinGameObject.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Sona.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="SonarinGame.h" />
   </ItemGroup>

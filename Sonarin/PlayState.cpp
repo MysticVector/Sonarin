@@ -7,7 +7,7 @@
 #include <LoaderParams.h>
 #include <TextureManager.h>
 
-#include "Player.h"
+#include "Sona.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -32,10 +32,18 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
-	Player* p = (Player*)TheGameObjectFactory::Instance()->create("Player");
+	Sona* p = (Sona*)TheGameObjectFactory::Instance()->create("Sona");
 
-	TheTextureManager::Instance()->load("Assets\\player.png", "player");
-	p->load(std::unique_ptr<LoaderParams>(new LoaderParams(100, 100, 64, 64, "player", 1)));
+	TheTextureManager::Instance()->load("Assets\\player.png", "sona");
+	p->load(std::unique_ptr<LoaderParams>(new LoaderParams(100, 450, 64, 64, "sona")));
+
+	p->addAnim(0, 1, 100, false);		// Standing animation
+	p->addAnim(1, 8, 80, true);			// Running animation
+	p->addAnim(2, 8, 100, true);		// Walking animation
+	p->addAnim(3, 5, 100, false);		// Jumping animation
+	p->addAnim(4, 1, 100, false);		// Falling animation
+
+	p->setCurrentAnim(0);
 
 	if (p != NULL)
 	{

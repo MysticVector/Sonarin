@@ -17,23 +17,24 @@ int main(int argc, char **argv)
 		std::cout << "game init success!\n";
 		while (TheSonarinGame::Instance()->running())
 		{
+			// Start frame timer
 			fpsSync.start();
 
 			TheSonarinGame::Instance()->handleEvents();
 			TheSonarinGame::Instance()->update();
 			TheSonarinGame::Instance()->render();
 
-			// We test here if the loop iteration took less than the time per frame (which is 1/MAX_FPS)
+			// We test here if the loop iteration took less than the time per frame (which is 1second/MAX_FPS)
 			if (TIME_PER_FRAME > fpsSync.getTime())
 			{
-				// On attend jusqu'à la fin du temps reservé à l'image actuelle
+				// We wait until the time per frame elapses
 				TheSDLWrapper::Instance()->delay(TIME_PER_FRAME - fpsSync.getTime());
 			}
 		}
 	}
 	else
 	{
-		std::cout << "game init failure - " << SDL_GetError() << "\n";
+		std::cout << "game init failure - " << TheSDLWrapper::Instance()->getLastError() << "\n";
 		return -1;
 	}
 

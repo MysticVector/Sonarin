@@ -4,7 +4,7 @@
 #include <GameObjectFactory.h>
 #include <GameStateMachine.h>
 
-#include "Player.h"
+#include "Sona.h"
 #include "PlayState.h"
 
 SonarinGame* SonarinGame::s_instance = NULL;
@@ -35,7 +35,7 @@ bool SonarinGame::init(const char* title, int xpos, int ypos, int width, int hei
 	Game::init(title, xpos, ypos, width, height, fullscreen);
 
 	// register the types for the game
-	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+	TheGameObjectFactory::Instance()->registerType("Sona", new SonaCreator());
 
 	// start the first state
 	TheGameStateMachine::Instance()->changeState(new PlayState());

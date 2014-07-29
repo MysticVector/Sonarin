@@ -3,17 +3,19 @@
 
 #include <GameObject.h>
 
+/*
+===============================================================================
+	Represents Sonarin's generic game objects
+===============================================================================
+*/
 class SonarinGameObject : public GameObject
 {
 public:
-	virtual ~SonarinGameObject() {}
-
 	virtual void load(std::unique_ptr<LoaderParams> const &params);
 
 	virtual void draw();
 	virtual void update();
 
-	virtual void clean() {}
 	virtual void collision() {}
 
 	virtual std::string type() const { return "SonarinGameObject"; }
@@ -27,7 +29,12 @@ protected:
 
 	bool m_moveLeft;
 	bool m_moveRight;
+
 	bool m_running;
+
+	bool m_canJump;
+	bool m_jumping;
+	int m_jumpHeight;
 };
 
 #endif /* defined(__SONARIN_GAME_OBJECT__) */
