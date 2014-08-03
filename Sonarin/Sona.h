@@ -55,6 +55,8 @@ private:
 	void handleMovement(Vector2D velocity);
 
 	bool m_pressedJump;
+	int m_minJumpHeight;
+	int m_maxJumpHeight;
 };
 
 /*

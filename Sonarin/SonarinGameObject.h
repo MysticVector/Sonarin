@@ -34,7 +34,6 @@ protected:
 
 	bool m_canJump;
 	bool m_jumping;
-	int m_jumpHeight;
 };
 
 #endif /* defined(__SONARIN_GAME_OBJECT__) */

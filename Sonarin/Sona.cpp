@@ -9,7 +9,8 @@
 
 Sona::Sona() : SonarinGameObject(), m_pressedJump(false) {
 	m_running = false;
-	m_jumpHeight = 130;
+	m_minJumpHeight = 90;
+	m_maxJumpHeight = 130;
 }
 
 void Sona::load(std::unique_ptr<LoaderParams> const &params) {
@@ -48,14 +49,16 @@ void Sona::update() {
 		m_velocity.setX(0);
 	}
 
-	if (m_position.getY() < SonarinGame::Instance()->getWindowHeight() - m_jumpHeight) {
+	// Give the ability to make a small jump or a bigger one depending on how much the jump button is pressed
+	if (m_position.getY() < SonarinGame::Instance()->getWindowHeight() - m_maxJumpHeight || 
+		(m_pressedJump == false && m_position.getY() < SonarinGame::Instance()->getWindowHeight() - m_minJumpHeight)) {
 		m_jumping = false;
 	}
 
 	if (!m_jumping) {
-		m_velocity.setY(3);
+		m_velocity.setY(4);
 	} else {
-		m_velocity.setY(-3);
+		m_velocity.setY(-4);
 	}
 
 	handleMovement(m_velocity);
@@ -81,7 +84,7 @@ void Sona::handleAnimation() {
 				m_currentAnim = m_animList[0];
 				m_currentFrame = 0;
 			}
-		} else {							// There is some movement
+		} else {
 
 			if (m_running) {				// Running
 				if (m_currentAnim->getAnimID() != 1) {
@@ -142,7 +145,6 @@ void Sona::handleMovement(Vector2D velocity) {
 		// allow the player to jump again
 		m_canJump = true;
 
-		// jumping is now false
 		m_jumping = false;
 	}
 }
@@ -181,7 +183,7 @@ void Sona::handleInput() {
 		}
 	}
 
-	if (!TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE) && m_canJump) {
+	if (!TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
 		m_pressedJump = false;
 	}
 }
