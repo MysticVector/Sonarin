@@ -7,6 +7,7 @@
 #include <LoaderParams.h>
 #include <TextureManager.h>
 
+#include "Metronome.h"
 #include "Sona.h"
 
 const std::string PlayState::s_playID = "PLAY";
@@ -32,9 +33,10 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
+	// Loading the player
 	Sona* p = (Sona*)TheGameObjectFactory::Instance()->create("Sona");
 
-	TheTextureManager::Instance()->load("Assets\\player.png", "sona");
+	TheTextureManager::Instance()->load("Assets\\sona.png", "sona");
 	p->load(std::unique_ptr<LoaderParams>(new LoaderParams(100, 450, 64, 64, "sona")));
 
 	p->addAnim(0, 1, 100, false);		// Standing animation
@@ -45,12 +47,24 @@ bool PlayState::onEnter()
 
 	p->setCurrentAnim(0);
 
-	if (p != NULL)
-	{
+	if (p != NULL) {
 		m_gameObjects.push_back(p);
-
-		m_loadingComplete = true;
 	}
+
+	// Loading the metronome
+	Metronome* m = (Metronome*)TheGameObjectFactory::Instance()->create("Metronome");
+
+	TheTextureManager::Instance()->load("Assets\\metronome.png", "metronome");
+	m->load(std::unique_ptr<LoaderParams>(new LoaderParams(650, 0, 150, 200, "metronome")));
+
+	m->addAnim(0, 14, 100, true);
+	m->setCurrentAnim(0);
+
+	if (m != NULL) {
+		m_gameObjects.push_back(m);
+	}
+
+	m_loadingComplete = true;
 
 	std::cout << "entering PlayState\n";
 	return true;

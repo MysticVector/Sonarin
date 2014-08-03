@@ -73,4 +73,4 @@ class SonaCreator : public BaseCreator
 };
 
 
-#endif /* defined(__PLAYER__) */
+#endif /* defined(__SONA__) */

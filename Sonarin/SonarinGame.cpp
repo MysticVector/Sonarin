@@ -4,6 +4,7 @@
 #include <GameObjectFactory.h>
 #include <GameStateMachine.h>
 
+#include "Metronome.h"
 #include "Sona.h"
 #include "PlayState.h"
 
@@ -36,6 +37,7 @@ bool SonarinGame::init(const char* title, int xpos, int ypos, int width, int hei
 
 	// register the types for the game
 	TheGameObjectFactory::Instance()->registerType("Sona", new SonaCreator());
+	TheGameObjectFactory::Instance()->registerType("Metronome", new MetronomeCreator());
 
 	// start the first state
 	TheGameStateMachine::Instance()->changeState(new PlayState());

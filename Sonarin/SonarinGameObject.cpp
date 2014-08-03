@@ -30,17 +30,12 @@ void SonarinGameObject::update()
 	// Apply velocity to current position
 	m_position += m_velocity;
 
-
 	// Updating the animation
-	m_currentAnim = m_animList[0];
-
-	m_animTimer.setInterval(m_currentAnim->getAnimSpeed());
-	m_currentRow = m_currentAnim->getAnimRow();
+	GameObject::setCurrentAnim(0);
 
 	if (m_animTimer.check()) {
-		if (m_currentFrame < m_currentAnim->getNumFrames()) {
-			++m_currentFrame;
-		} else if (m_currentAnim->isLooped()) {
+		++m_currentFrame;
+		if (m_currentFrame >= m_currentAnim->getNumFrames()) {
 			m_currentFrame = 0;
 		}
 	}
