@@ -1,0 +1,2 @@
+Frame resolution (W x H): 121x200
+Screen position (X, Y) : 650, 0

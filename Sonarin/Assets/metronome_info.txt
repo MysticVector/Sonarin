@@ -1,4 +1,0 @@
-Frame resolution (W x H): 150x200
-
-List of animations:
-- Movement (14)

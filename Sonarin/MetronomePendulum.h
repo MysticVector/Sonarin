@@ -1,5 +1,5 @@
-#ifndef __METRONOME__
-#define __METRONOME__
+#ifndef __METRONOME_PENDULUM__
+#define __METRONOME_PENDULUM__
 
 #include <iostream>
 #include <vector>
@@ -10,30 +10,35 @@
 
 /*
 ===============================================================================
-Represents the metronome that shows the timing with which the play can sync his actions
+Represents the metronome pendulum that keeps swinging
 ===============================================================================
 */
-class Metronome : public SonarinGameObject {
+class MetronomePendulum : public SonarinGameObject {
 public:
-	Metronome();
-	virtual ~Metronome() { }
+	MetronomePendulum();
+	virtual ~MetronomePendulum() { }
 
 	virtual void load(std::unique_ptr<LoaderParams> const &params);
 
-	virtual std::string type() const { return "Metronome"; }
+	virtual void update();
 
+	virtual std::string type() const { return "MetronomePendulum"; }
+private:
+	bool directionForward;
+	double angularVelocity;
+	double angularAcceleration;
 };
 
 /*
 ===============================================================================
-Creator class for Metronome
+Creator class for MetronomePendulum
 ===============================================================================
 */
-class MetronomeCreator : public BaseCreator {
+class MetronomePendulumCreator : public BaseCreator {
 	SonarinGameObject* createGameObject() const {
-		return new Metronome();
+		return new MetronomePendulum();
 	}
 };
 
 
-#endif /* defined(__METRONOME__) */
+#endif /* defined(__METRONOME_PENDULUM__) */

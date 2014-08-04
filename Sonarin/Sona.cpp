@@ -23,10 +23,10 @@ void Sona::load(std::unique_ptr<LoaderParams> const &params) {
 void Sona::draw() {
 	if (m_flipped) {
 		TheTextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(),
-			m_width, m_height, m_currentRow, m_currentFrame, m_angle, m_alpha, SDL_FLIP_HORIZONTAL);
+			m_width, m_height, m_currentRow, m_currentFrame, m_angle, m_center, m_alpha, SDL_FLIP_HORIZONTAL);
 	} else {
 		TheTextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(),
-			m_width, m_height, m_currentRow, m_currentFrame, m_angle, m_alpha);
+			m_width, m_height, m_currentRow, m_currentFrame, m_angle, m_center, m_alpha);
 	}
 }
 

@@ -16,13 +16,17 @@ void SonarinGameObject::load(std::unique_ptr<LoaderParams> const &params)
 	// get drawing variables
 	m_width = params->getWidth();
 	m_height = params->getHeight();
+
+	m_center.setX((float)params->getCenterX());
+	m_center.setY((float)params->getCenterY());
+
 	m_textureID = params->getTextureID();
 }
 
 void SonarinGameObject::draw()
 {
-	TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(),
-		m_width, m_height, m_currentRow, m_currentFrame, m_angle, m_alpha);
+	TheTextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(),
+		m_width, m_height, m_currentRow, m_currentFrame, m_angle, m_center, m_alpha);
 }
 
 void SonarinGameObject::update()
@@ -33,10 +37,12 @@ void SonarinGameObject::update()
 	// Updating the animation
 	GameObject::setCurrentAnim(0);
 
-	if (m_animTimer.check()) {
-		++m_currentFrame;
-		if (m_currentFrame >= m_currentAnim->getNumFrames()) {
-			m_currentFrame = 0;
+	if (m_currentAnim != NULL) {
+		if (m_animTimer.check()) {
+			++m_currentFrame;
+			if (m_currentFrame >= m_currentAnim->getNumFrames()) {
+				m_currentFrame = 0;
+			}
 		}
 	}
 }

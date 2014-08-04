@@ -1,0 +1,3 @@
+Frame resolution (W x H): 18x148
+Screen position (X, Y) : 701, 26
+Rotation center (X, Y) : 9x139

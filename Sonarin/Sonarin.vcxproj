@@ -75,6 +75,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Metronome.cpp" />
+    <ClCompile Include="MetronomePendulum.cpp" />
     <ClCompile Include="SonarinGameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Sona.cpp" />
@@ -89,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Metronome.h" />
+    <ClInclude Include="MetronomePendulum.h" />
     <ClInclude Include="SonarinGameObject.h" />
     <ClInclude Include="Sona.h" />
     <ClInclude Include="PlayState.h" />

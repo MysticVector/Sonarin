@@ -8,6 +8,7 @@
 #include <TextureManager.h>
 
 #include "Metronome.h"
+#include "MetronomePendulum.h"
 #include "Sona.h"
 
 const std::string PlayState::s_playID = "PLAY";
@@ -37,7 +38,7 @@ bool PlayState::onEnter()
 	Sona* p = (Sona*)TheGameObjectFactory::Instance()->create("Sona");
 
 	TheTextureManager::Instance()->load("Assets\\sona.png", "sona");
-	p->load(std::unique_ptr<LoaderParams>(new LoaderParams(100, 450, 64, 64, "sona")));
+	p->load(std::unique_ptr<LoaderParams>(new LoaderParams(100, 450, 64, 64, 32, 32, "sona")));
 
 	p->addAnim(0, 1, 100, false);		// Standing animation
 	p->addAnim(1, 8, 80, true);			// Running animation
@@ -50,18 +51,25 @@ bool PlayState::onEnter()
 	if (p != NULL) {
 		m_gameObjects.push_back(p);
 	}
-
-	// Loading the metronome
+	
+	// Loading the metronome body
 	Metronome* m = (Metronome*)TheGameObjectFactory::Instance()->create("Metronome");
 
-	TheTextureManager::Instance()->load("Assets\\metronome.png", "metronome");
-	m->load(std::unique_ptr<LoaderParams>(new LoaderParams(650, 0, 150, 200, "metronome")));
-
-	m->addAnim(0, 14, 100, true);
-	m->setCurrentAnim(0);
+	TheTextureManager::Instance()->load("Assets\\metronome_body.png", "metronome");
+	m->load(std::unique_ptr<LoaderParams>(new LoaderParams(650, 0, 121, 200, 75, 100, "metronome")));
 
 	if (m != NULL) {
 		m_gameObjects.push_back(m);
+	}
+
+	// Loading the metronome pendulum
+	MetronomePendulum* mp = (MetronomePendulum*)TheGameObjectFactory::Instance()->create("MetronomePendulum");
+
+	TheTextureManager::Instance()->load("Assets\\metronome_pendulum.png", "metronome_pendulum");
+	mp->load(std::unique_ptr<LoaderParams>(new LoaderParams(701, 26, 18, 148, 9, 139, "metronome_pendulum")));
+
+	if (mp != NULL) {
+		m_gameObjects.push_back(mp);
 	}
 
 	m_loadingComplete = true;
