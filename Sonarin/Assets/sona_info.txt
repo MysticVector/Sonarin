@@ -1,7 +1,0 @@
-Frame resolution (W x H): 64x64
-
-List of animations:
-- Stand (1)
-- Run (8)
-- Walk (8)
-- Jump (5 frames) + Fall (1 frame)
