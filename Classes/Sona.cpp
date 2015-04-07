@@ -14,8 +14,8 @@ Sona::~Sona()
 }
 
 Sona::Sona() 
-	: c_gravity(0.0, -450.0), c_jumpForce(310), c_jumpCutOff(100),
-	c_moveSpeed(800), c_minMovement(-120.0, -450.0), c_maxMovement(120.0, 250.0)
+	: c_gravity(0.0, -900.0), c_jumpForce(610), c_jumpCutOff(200),
+	c_moveSpeed(2000), c_minMovement(-400.0, -900.0), c_maxMovement(400.0, 610.0)
 {
 	_screenSize = CCDirector::getInstance()->getWinSize();
 
@@ -32,7 +32,7 @@ Sona::Sona()
 Sona* Sona::create()
 {
 	Sona* player = new Sona();
-	if (player && player->initWithSpriteFrameName("sona_idle1.png")) {
+	if (player && player->initWithSpriteFrameName("frame1.png")) {
 		player->autorelease();
 		player->initPlayer();
 		return player;
@@ -63,13 +63,24 @@ void Sona::initPlayer()
 	
 	// Initializing the idle animation
 	animation = Animation::create();
+	for (int i = 1; i <= 8; i++) {
+		sprintf(szName, "frame%i.png", i);
+		frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(szName);
+		animation->addSpriteFrame(frame);
+	}
+	animation->setDelayPerUnit(1.0f / 5);
+	animation->setRestoreOriginalFrame(false);
+	animation->setLoops(1);
+	_idleAnimation = RepeatForever::create(Sequence::createWithTwoActions(DelayTime::create(1.f), Animate::create(animation)));
+	_idleAnimation->retain();
+	/*animation = Animation::create();
 	frame = SpriteFrameCache::getInstance()->getSpriteFrameByName("sona_idle1.png");
 	animation->addSpriteFrame(frame);
 	animation->setDelayPerUnit(1.0f);
 	animation->setRestoreOriginalFrame(false);
 	animation->setLoops(0);
 	_idleAnimation = Animate::create(animation);
-	_idleAnimation->retain();
+	_idleAnimation->retain();*/
 
 	// Initializing the run animation
 	animation = Animation::create();
@@ -91,17 +102,13 @@ void Sona::update(float dt)
 {
 	// Calculate sona's falling velocity
 	_velocity += c_gravity * dt;
-	if (abs(_velocity.y) > 10)
-		log("0");
-
+	
 	// Calculate sona's jump velocity
 	if (!_pressingJump && _velocity.y > c_jumpCutOff)
 	{
 		// if we stop jumping before reaching max jump height
 		_velocity = Point(_velocity.x, c_jumpCutOff);
 	}
-	if (abs(_velocity.y) > 10)
-		log("1");
 
 	// Calculate sona's movement velocity
 	float movement = 0.0;
@@ -125,14 +132,9 @@ void Sona::update(float dt)
 	// Appply min and max limits to the velocity
 	_velocity = _velocity.getClampPoint(c_minMovement, c_maxMovement);
 
-	if (abs(_velocity.y) > 10)
-		log("2");
-	
 	// Apply final velocity to the next desired position
 	_nextPosition = getPosition() + _velocity * dt;
-	if (abs(_velocity.y) > 10)
-		log("(%.2f, %.2f) (%.2f, %.2f)", _velocity.x, _velocity.y, _position.x, _position.y);
-
+	
 	if (_showDebug)
 		drawDebug();
 }
@@ -204,7 +206,7 @@ void Sona::setState(SonaState state)
 		runAction(_idleAnimation);
 		break;
 	case kSonaRunning:
-		runAction(_runAnimation);
+		//runAction(_runAnimation);
 		break;
 	default:
 		break;

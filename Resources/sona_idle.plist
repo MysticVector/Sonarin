@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>frame1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,621},{131,207}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{84,49},{131,207}}</string>
+				<key>sourceSize</key>
+				<string>{256,256}</string>
+			</dict>
+
+			<key>frame2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{132,411},{131,206}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{84,50},{131,206}}</string>
+				<key>sourceSize</key>
+				<string>{256,256}</string>
+			</dict>
+
+			<key>frame3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{132,205},{131,205}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{84,51},{131,205}}</string>
+				<key>sourceSize</key>
+				<string>{256,256}</string>
+			</dict>
+
+			<key>frame4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{132,0},{131,204}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{84,52},{131,204}}</string>
+				<key>sourceSize</key>
+				<string>{256,256}</string>
+			</dict>
+
+			<key>frame5.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{132,618},{131,204}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{84,52},{131,204}}</string>
+				<key>sourceSize</key>
+				<string>{256,256}</string>
+			</dict>
+
+			<key>frame6.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,415},{131,205}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{84,51},{131,205}}</string>
+				<key>sourceSize</key>
+				<string>{256,256}</string>
+			</dict>
+
+			<key>frame7.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,208},{131,206}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{84,50},{131,206}}</string>
+				<key>sourceSize</key>
+				<string>{256,256}</string>
+			</dict>
+
+			<key>frame8.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{131,207}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false/>
+				<key>sourceColorRect</key>
+				<string>{{84,49},{131,207}}</string>
+				<key>sourceSize</key>
+				<string>{256,256}</string>
+			</dict>
+
+		</dict>
+
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>size</key>
+			<string>{512,1024}</string>
+			<key>textureFileName</key>
+			<string>sona_idle.png</string>
+			</dict>
+		</dict>
+</plist>

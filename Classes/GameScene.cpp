@@ -25,7 +25,7 @@ bool GameScene::init()
 {
 	//////////////////////////////
 	// 1. super init first
-	if (!LayerColor::initWithColor(Color4B(100, 100, 250, 255)))
+	if (!LayerColor::initWithColor(Color4B(150, 220, 255, 255)))
 	{
 		return false;
 	}
@@ -33,6 +33,9 @@ bool GameScene::init()
 	_visibleSize = Director::getInstance()->getVisibleSize();
 	_origin = Director::getInstance()->getVisibleOrigin();
 	
+	_showDebug = false;
+	_debugNode = DrawNode::create();
+
 	createGameScreen();
 
 	auto eventListener = EventListenerKeyboard::create();
@@ -60,18 +63,22 @@ void GameScene::createGameScreen()
 	_map = TMXTiledMap::create("level1.tmx");
 	addChild(_map);
 
-	_walls = _map->layerNamed("walls");
+	_immovableLayer = _map->layerNamed("Immovable");
 
 	// Load the player sprite definition file
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sona.plist", "sona.png");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sona_idle.plist", "sona_idle.png");
 
 	// Create the player object
 	_sona = Sona::create();
-	_sona->setScale(0.5f);
-	_sona->setPosition(Point(60, _map->getTileSize().height * 3));
-	//_sona->setShowDebug(true);
-	//_map->addChild(_sona->getDebugNode());
+	_sona->setScale(0.60f);
+	_sona->setPosition(Point(_map->getTileSize().width * 4, _map->getTileSize().height * 4));
 	_map->addChild(_sona, 15);
+
+	/*setShowDebug(true);
+	_map->addChild(_debugNode, 20);
+
+	_sona->setShowDebug(true);
+	_map->addChild(_sona->getDebugNode(), 21);*/
 }
 
 void GameScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
@@ -261,7 +268,10 @@ Vector<Dictionary*>* GameScene::getSurroundingTilesAtPosition(Point pos, TMXLaye
 
 void GameScene::checkForAndResolveCollisions()
 {
-	Vector<Dictionary*>* tiles = getSurroundingTilesAtPosition(_sona->getPosition(), _walls);
+	Vector<Dictionary*>* tiles = getSurroundingTilesAtPosition(_sona->getPosition(), _immovableLayer);
+
+	if (_showDebug)
+		drawDebug(tiles);
 
 	_sona->setOnGround(false);
 
@@ -302,9 +312,7 @@ void GameScene::checkForAndResolveCollisions()
 				switch (tileIndx)
 				{
 				case 0:
-					// tile is directly below Sona (Ahhh~~ what a view :3)
-					if (_sona->getVelocity().y > 10)
-						log("3");
+					// tile is directly below Sona
 					_sona->setNextPosition(Point(_sona->getNextPosition().x,
 						_sona->getNextPosition().y + intersection.size.height));
 					_sona->setVelocity(Point(_sona->getVelocity().x, 0));
@@ -329,8 +337,6 @@ void GameScene::checkForAndResolveCollisions()
 				default:
 					if (intersection.size.width > intersection.size.height)
 					{
-						if (_sona->getVelocity().y > 10)
-							log("3");
 						// tile is diagonal but resolving collision vertically
 						//_sona->setVelocity(Point(_sona->getVelocity().x, 0));
 						
@@ -392,6 +398,22 @@ void GameScene::setViewportCenter(Point position)
 	Point viewPoint = centerOfView - actualPosition;
 
 	_map->setPosition(viewPoint);
+}
+
+
+void GameScene::drawDebug(Vector<Dictionary*>* tiles)
+{
+	_debugNode->clear();
+
+	for (Dictionary* d : *tiles)
+	{
+		Rect tileRect = Rect(((Float*)d->objectForKey("tileRectX"))->getValue(),
+				((Float*)d->objectForKey("tileRectY"))->getValue(),
+				_map->getTileSize().width,
+				_map->getTileSize().height);
+
+		_debugNode->drawRect(tileRect.origin, tileRect.origin + tileRect.size, Color4F::BLUE);
+	}
 }
 
 //void GameScene::menuCloseCallback(Ref* pSender)

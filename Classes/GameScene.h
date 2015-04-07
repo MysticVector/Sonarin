@@ -10,11 +10,14 @@ private:
 	cocos2d::Size _visibleSize;
 	cocos2d::Point _origin;
 
+	CC_SYNTHESIZE(bool, _showDebug, ShowDebug);
+	cocos2d::DrawNode* _debugNode;
+
 	Sona* _sona;
 	cocos2d::SpriteBatchNode * _gameBatchNode;
 
 	cocos2d::TMXTiledMap *_map;
-	cocos2d::TMXLayer *_walls;
+	cocos2d::TMXLayer *_immovableLayer;
 
 	static std::map<cocos2d::EventKeyboard::KeyCode, std::chrono::high_resolution_clock::time_point> keys;
 
@@ -28,6 +31,8 @@ private:
 	cocos2d::Rect RectIntersection(const cocos2d::Rect & r1, const cocos2d::Rect & r2) const;
 
 	void setViewportCenter(cocos2d::Point position);
+
+	void drawDebug(cocos2d::Vector<cocos2d::Dictionary*>* tiles);
 
 public:
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer

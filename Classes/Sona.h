@@ -85,10 +85,14 @@ public:
 	inline cocos2d::Rect getCollisionBoundingBox() 
 	{
 		// Return a smaller bounding box
-		_collisionBoundingBox = cocos2d::Rect(getBoundingBox().origin.x + 10,
+		/*_collisionBoundingBox = cocos2d::Rect(getBoundingBox().origin.x + 10,
 			getBoundingBox().origin.y + 1,
 			getBoundingBox().size.width - 20,
-			getBoundingBox().size.height - 2);
+			getBoundingBox().size.height - 2);*/
+		_collisionBoundingBox = cocos2d::Rect(getBoundingBox().origin.x + 50,
+			getBoundingBox().origin.y + 16,
+			getBoundingBox().size.width - 90,
+			getBoundingBox().size.height - 32);
 
 		_collisionBoundingBox.origin.add(_nextPosition - _position);
 		return _collisionBoundingBox;
