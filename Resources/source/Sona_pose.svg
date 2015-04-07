@@ -2,7 +2,6 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -12,141 +11,12 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="744.09448819"
    height="1052.3622047"
-   id="svg2"
+   id="svg3861"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Sona.svg"
-   inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\Sona.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   sodipodi:docname="New document 2">
   <defs
-     id="defs4">
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="971.28673 : 609.32213 : 1"
-       inkscape:vp_y="-109.09609 : -994.03121 : 0"
-       inkscape:vp_z="231.63359 : 690.49993 : 1"
-       inkscape:persp3d-origin="620.59492 : 824.25785 : 1"
-       id="perspective4184" />
-    <linearGradient
-       id="linearGradient5355"
-       osb:paint="solid">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop5357" />
-    </linearGradient>
-    <filter
-       inkscape:label="Cross-smooth"
-       inkscape:menu="Blurs"
-       inkscape:menu-tooltip="Blur inner borders and intersections"
-       color-interpolation-filters="sRGB"
-       id="filter3118">
-      <feGaussianBlur
-         stdDeviation="3"
-         id="feGaussianBlur3120" />
-      <feColorMatrix
-         result="fbSourceGraphic"
-         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -2.5 "
-         id="feColorMatrix3122" />
-    </filter>
-    <filter
-       inkscape:label="Cross-smooth"
-       inkscape:menu="Blurs"
-       inkscape:menu-tooltip="Blur inner borders and intersections"
-       color-interpolation-filters="sRGB"
-       id="filter3124">
-      <feGaussianBlur
-         stdDeviation="3"
-         id="feGaussianBlur3126" />
-      <feColorMatrix
-         result="fbSourceGraphic"
-         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -2.5 "
-         id="feColorMatrix3128" />
-    </filter>
-    <filter
-       inkscape:label="Cross-smooth"
-       inkscape:menu="Blurs"
-       inkscape:menu-tooltip="Blur inner borders and intersections"
-       color-interpolation-filters="sRGB"
-       id="filter3130">
-      <feGaussianBlur
-         stdDeviation="3"
-         id="feGaussianBlur3132" />
-      <feColorMatrix
-         result="fbSourceGraphic"
-         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -2.5 "
-         id="feColorMatrix3134" />
-    </filter>
-    <filter
-       inkscape:label="Cross-smooth"
-       inkscape:menu="Blurs"
-       inkscape:menu-tooltip="Blur inner borders and intersections"
-       color-interpolation-filters="sRGB"
-       id="filter3136">
-      <feGaussianBlur
-         stdDeviation="3"
-         id="feGaussianBlur3138" />
-      <feColorMatrix
-         result="fbSourceGraphic"
-         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -2.5 "
-         id="feColorMatrix3140" />
-    </filter>
-    <filter
-       inkscape:label="Cross-smooth"
-       inkscape:menu="Blurs"
-       inkscape:menu-tooltip="Blur inner borders and intersections"
-       color-interpolation-filters="sRGB"
-       id="filter3142">
-      <feGaussianBlur
-         stdDeviation="3"
-         id="feGaussianBlur3144" />
-      <feColorMatrix
-         result="fbSourceGraphic"
-         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -2.5 "
-         id="feColorMatrix3146" />
-    </filter>
-    <filter
-       inkscape:label="Clean edges"
-       inkscape:menu="ABCs"
-       inkscape:menu-tooltip="Removes or decreases glows and jaggeries around objects edges after applying some filters"
-       color-interpolation-filters="sRGB"
-       id="filter3153"
-       height="1"
-       width="1"
-       y="0"
-       x="0">
-      <feGaussianBlur
-         stdDeviation="3"
-         id="feGaussianBlur3155" />
-      <feColorMatrix
-         result="fbSourceGraphic"
-         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -2.5 "
-         id="feColorMatrix3157" />
-      <feColorMatrix
-         result="fbSourceGraphicAlpha"
-         in="fbSourceGraphic"
-         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
-         id="feColorMatrix4020" />
-      <feGaussianBlur
-         id="feGaussianBlur4022"
-         result="result6"
-         stdDeviation="0.4"
-         in="fbSourceGraphic" />
-      <feComposite
-         id="feComposite4024"
-         in2="result6"
-         operator="in"
-         in="fbSourceGraphic"
-         result="result7" />
-      <feComposite
-         id="feComposite4026"
-         in2="result7"
-         operator="in"
-         result="result8"
-         in="result7" />
-    </filter>
-  </defs>
+     id="defs3863" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -154,21 +24,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="399.88151"
-     inkscape:cy="766.3896"
+     inkscape:zoom="0.7"
+     inkscape:cx="479.22469"
+     inkscape:cy="415.62595"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="683"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     showguides="true"
-     inkscape:guide-bbox="true" />
+     inkscape:window-maximized="1" />
   <metadata
-     id="metadata7">
+     id="metadata3866">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -183,696 +51,800 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline"
+       id="frame1"
+       width="1024"
+       height="1024"
+       x="-154.85715"
+       y="11.790771"
+       inkscape:label="#rect3079" />
     <path
-       sodipodi:nodetypes="cccccccccccc"
-       inkscape:connector-curvature="0"
-       id="path3883"
-       d="m 253.3753,129.17626 64.46429,-5.0893 -1.33927,8.57151 -22.2656,15.62709 -14.59521,17.37922 -14.70074,18.41776 -26.76206,20.12433 -28.27431,11.44639 -46.43781,27.18375 36.00847,-52.41506 12.68516,-36.00453 z"
-       style="fill:#009cf0;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-ponytail.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#f7ff80;fill-opacity:1;stroke:none"
-       d="m 184.85207,212.71931 -2.03832,6.43674 18.56922,-26.24087 -14.5972,30.51841 24.98807,-21.40697 -13.15489,15.94462 9.59542,-2.03765 -43.36222,25.68366 z"
-       id="rect3150"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-ponytail.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 428.28569,754.43359 c 0,50.69185 -1.72225,111.78572 -14.14286,111.78572 -7.44963,0 -8.52993,-26.25972 -12.27113,-56.82847 -4.70255,-38.42385 -6.39375,-44.09402 -7.30029,-73.81439 -1.06663,-34.9686 5.72225,-53.92857 18.14285,-61.78571 14.11856,-8.93126 15.57143,29.951 15.57143,80.64285 z"
+       style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+       d="m 463.56175,909.06296 c -0.9918,54.94093 -4.0542,121.12194 -17.5157,120.87884 -8.0741,-0.145 -8.7311,-28.6277 -12.1879,-61.83191 -4.3449,-41.73652 -6.0667,-47.91507 -6.4679,-80.14446 -0.4716,-37.92068 7.2573,-58.3371 20.8727,-66.60985 15.4769,-9.40365 16.2906,32.76631 15.2988,87.70738 z"
        id="path3052"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ssssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-leg.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       inkscape:transform-center-y="91.078474"
+       inkscape:transform-center-x="1.9466957" />
     <path
+       sodipodi:nodetypes="sssss"
+       inkscape:connector-curvature="0"
+       id="path3080"
+       d="m 504.29825,1030.4288 c 0.048,5.773 -16.0872,4.0796 -35.971,4.2405 -41.5634,0.3365 -36.0036,0.257 -36.0878,-10.161 -0.1185,-15.0638 24.7868,-9.0113 38.1214,-6.4257 11.763,2.2807 33.8813,5.4122 33.9374,12.3462 z"
+       style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       inkscape:transform-center-x="-20.939787"
+       inkscape:transform-center-y="4.4341181" />
+    <g
+       style="display:inline"
+       id="g4477"
+       transform="matrix(0.96050542,-0.2782613,0.2782613,0.96050542,4515.8323,-1240.773)"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       inkscape:transform-center-y="77.331917"
+       inkscape:transform-center-x="-19.782758">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-thigh.png"
+         sodipodi:nodetypes="sssss"
+         inkscape:connector-curvature="0"
+         id="path3049"
+         d="m -4463.3651,767.5959 c -6.6899,101.87637 1.8155,102.20578 -23.6157,102.20578 -25.4312,0 -23.6158,-45.75908 -23.6158,-102.20578 0,-71.93241 -8.7919,-102.49664 23.6158,-102.20577 34.7189,0.3116 28.3303,30.41133 23.6157,102.20577 z"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.34799302;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\leg-join.png"
+         transform="matrix(1.4853171,0,0,1.2836609,-5285.0987,525.38897)"
+         d="m 548.5714,262.18359 c 0,4.63525 -4.2373,8.39286 -9.46428,8.39286 -5.22698,0 -9.46429,-3.75761 -9.46429,-8.39286 0,-4.63524 4.23731,-8.39285 9.46429,-8.39285 5.22698,0 9.46428,3.75761 9.46428,8.39285 z"
+         sodipodi:ry="8.3928576"
+         sodipodi:rx="9.4642859"
+         sodipodi:cy="262.18359"
+         sodipodi:cx="539.10712"
+         id="path4045-9"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:none;display:inline"
+         sodipodi:type="arc" />
+    </g>
+    <path
+       inkscape:transform-center-x="22.964258"
+       inkscape:transform-center-y="87.949115"
+       inkscape:export-ydpi="27.535856"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
        sodipodi:nodetypes="ssssss"
        inkscape:connector-curvature="0"
-       id="path3057"
-       d="m 350.28569,754.43359 c 0,50.69185 -1.72225,111.78572 -14.14286,111.78572 -7.44963,0 -8.52993,-26.25972 -12.27113,-56.82847 -4.70255,-38.42385 -6.39375,-44.09402 -7.30029,-73.81439 -1.06663,-34.9686 5.72225,-53.92857 18.14285,-61.78571 14.11856,-8.93126 15.57143,29.951 15.57143,80.64285 z"
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-leg.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       id="path4485"
+       d="m 314.02905,917.53469 c -16.1445,52.5244 -37.387,115.27851 -50.2566,111.32281 -7.7191,-2.3727 -0.4747,-29.92591 5.3842,-62.79111 7.365,-41.31075 7.4186,-47.72454 15.9449,-78.80828 10.0319,-36.57269 23.1045,-54.05601 38.4767,-58.24148 17.4736,-4.75757 6.5955,35.99331 -9.5492,88.51806 z"
+       style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+    <g
+       style="display:inline"
+       transform="matrix(0.9997387,-0.02285932,0.02285932,0.9997387,4783.4858,-122.11104)"
+       id="g4487"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       inkscape:transform-center-y="81.979577"
+       inkscape:transform-center-x="-0.41521301">
+      <path
+         style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.34799302;stroke-opacity:1;display:inline"
+         d="m -4463.3651,767.5959 c -6.6899,101.87637 1.8155,102.20578 -23.6157,102.20578 -25.4312,0 -23.6158,-45.75908 -23.6158,-102.20578 0,-71.93241 -8.7919,-102.49664 23.6158,-102.20577 34.7189,0.3116 28.3303,30.41133 23.6157,102.20577 z"
+         id="path4489"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssss"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-thigh.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         sodipodi:type="arc"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:none;display:inline"
+         id="path4491"
+         sodipodi:cx="539.10712"
+         sodipodi:cy="262.18359"
+         sodipodi:rx="9.4642859"
+         sodipodi:ry="8.3928576"
+         d="m 548.5714,262.18359 c 0,4.63525 -4.2373,8.39286 -9.46428,8.39286 -5.22698,0 -9.46429,-3.75761 -9.46429,-8.39286 0,-4.63524 4.23731,-8.39285 9.46429,-8.39285 5.22698,0 9.46428,3.75761 9.46428,8.39285 z"
+         transform="matrix(1.4853171,0,0,1.2836609,-5285.0987,525.38897)"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\leg-join.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+    </g>
     <path
-       transform="matrix(1.4878048,0,0,1.0393701,-205.4878,-23.974889)"
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 428.57142,598.07648 c -4.14808,90.4219 1.12567,90.71428 -14.64286,90.71428 -15.76853,0 -14.64286,-40.61417 -14.64286,-90.71428 0,-63.84471 -5.45144,-90.97245 14.64286,-90.71429 21.52735,0.27657 17.5661,26.99203 14.64286,90.71429 z"
-       id="path3049"
+       style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+       d="m 325.86105,1030.4179 c 0.049,5.7729 -16.0857,4.0851 -35.9697,4.2527 -41.563,0.3506 -36.0031,0.2684 -36.0912,-10.1491 -0.1273,-15.0637 24.784,-9.0196 38.1193,-6.4383 11.7637,2.2765 33.8831,5.4007 33.9416,12.3347 z"
+       id="path3059"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="sssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-thigh.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       inkscape:transform-center-x="-21.659106"
+       inkscape:transform-center-y="5.4822851" />
     <path
-       sodipodi:nodetypes="sssss"
-       inkscape:connector-curvature="0"
-       id="path3082"
-       d="m 354.14282,597.64792 c -6.17154,93.98182 1.67477,94.28571 -21.78572,94.28571 -23.4605,0 -21.78572,-42.21315 -21.78572,-94.28571 0,-66.35828 -8.11068,-94.55404 21.78572,-94.28572 32.02849,0.28746 26.13493,28.05471 21.78572,94.28572 z"
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-thigh.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:type="arc"
-       style="fill:#e9afaf;fill-opacity:1;stroke:none"
-       id="path4045-9"
-       sodipodi:cx="539.10712"
-       sodipodi:cy="262.18359"
-       sodipodi:rx="9.4642859"
-       sodipodi:ry="8.3928576"
-       d="m 548.5714,262.18359 a 9.4642859,8.3928576 0 1 1 -18.92857,0 9.4642859,8.3928576 0 1 1 18.92857,0 z"
-       transform="matrix(1.2668327,0,0,1.1841883,-270.01473,377.80722)"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\leg-join.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       transform="matrix(1.2668327,0,0,1.1841883,-348.01473,377.80722)"
-       d="m 548.5714,262.18359 a 9.4642859,8.3928576 0 1 1 -18.92857,0 9.4642859,8.3928576 0 1 1 18.92857,0 z"
-       sodipodi:ry="8.3928576"
-       sodipodi:rx="9.4642859"
-       sodipodi:cy="262.18359"
-       sodipodi:cx="539.10712"
-       id="path4096"
-       style="fill:#e9afaf;fill-opacity:1;stroke:none"
-       sodipodi:type="arc" />
-    <path
-       sodipodi:nodetypes="cccccccccccc"
-       inkscape:connector-curvature="0"
-       id="path4043"
-       d="m 310.54366,116.34381 12.14948,-1.86631 1.90517,23.33954 4.23215,7.18228 7.05025,7.09023 -8.54811,12.15487 -7.84926,4.83853 -9.39155,-3.01086 -5.71352,-7.59722 5.38763,-9.96666 1.69751,-12.31071 z"
-       style="fill:#aa4400;fill-opacity:1;stroke:#f8aa2a;stroke-width:1.42918098;stroke-opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 387.9595,247.01807 c 0,4.6026 0.0429,10.33375 -8.35406,10.33375 -8.7541,0 -8.35407,-5.73115 -8.35407,-10.33375 0,-4.60261 -0.22146,-10.33376 8.35407,-10.33376 8.39696,0 8.35406,5.73115 8.35406,10.33376 z"
-       id="path3040"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="sssss"
-       inkscape:connector-curvature="0"
-       id="path3043"
-       d="m 194.0672,261.68288 c -0.31071,11.11392 31.88438,14.64721 71.21575,14.64721 39.33137,0 70.9464,1.51895 71.21575,-14.64721 0.2527,-15.1668 -31.88438,-12.64721 -71.21575,-12.64721 -39.33137,0 -70.84827,-0.49755 -71.21575,12.64721 z"
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-arm.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 553.94613,261.68288 c 0.31071,11.11392 -31.88438,14.64721 -71.21575,14.64721 -39.33137,0 -70.9464,1.51895 -71.21575,-14.64721 -0.2527,-15.1668 31.88438,-12.64721 71.21575,-12.64721 39.33137,0 70.84827,-0.49755 71.21575,12.64721 z"
+       style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+       d="m 450.60275,519.81252 c -11.483,3.66032 -24.8292,-28.81308 -36.6377,-69.78038 -11.8084,-40.96745 -22.8822,-73.44146 -6.1247,-78.57561 15.7219,-4.8167 22.7461,29.41357 34.5546,70.38102 11.8083,40.96722 21.7889,73.64569 8.2078,77.97497 z"
        id="path3014"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="sssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-arm.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:transform-center-x="-60.714286" />
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       inkscape:transform-center-x="-17.143342"
+       inkscape:transform-center-y="64.638779" />
+    <g
+       style="display:inline"
+       id="g4430"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       transform="translate(4884.3558,-27.75162)">
+      <path
+         inkscape:transform-center-y="12.602217"
+         inkscape:transform-center-x="7.8261504"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\upper-body.png"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect3048"
+         d="m -4581.4419,398.04364 18.1282,-0.35355 33.5877,-3.88909 18.3934,0.25259 16.789,2.4052 19.5342,1.58485 0,31.26181 -101.8239,1.64251 z"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\upper-body.png"
+         sodipodi:nodetypes="ccsaasccsssscccssc"
+         inkscape:connector-curvature="0"
+         id="rect3042"
+         d="m -4585.8466,397.35221 19.5098,-0.0592 c 0,0 8.9692,10.03513 14.3325,14.02426 5.3854,4.00556 13.0943,5.42474 20.0229,6.59992 7.4698,1.26698 15.2315,1.51238 22.726,0.4006 6.4288,-0.95368 13.6925,-1.67604 18.555,-5.98812 4.9294,-4.3714 12.225,-14.72496 12.225,-14.72496 l 3.2053,0.0438 c 0,0 3.4021,12.96343 6.9325,17.23657 2.7341,3.30926 10.1921,13.11282 11.8291,20.63631 1.1184,5.13973 0.5491,8.98879 -1.0002,15.13332 -1.484,5.88533 -8.0138,16.95923 -9.935,26.05274 -1.6988,8.04079 -3.7591,24.44464 -3.7591,24.44464 l -4.6999,48.40014 -106.5783,0.38714 c 0,0 3.1766,-34.6305 3.3657,-52.19681 0.1358,-12.61567 -1.8566,-28.0151 -2.6281,-44.74469 -1.2687,-27.50874 -4.1032,-55.64566 -4.1032,-55.64566 z"
+         style="fill:#009cf0;fill-opacity:1;stroke:#000000;stroke-width:1.03970695;stroke-opacity:1;display:inline" />
+    </g>
     <path
-       style="fill:#3cd4fc;fill-opacity:1;stroke:#000000;stroke-width:0.97132361;stroke-opacity:1"
-       d="m 322.84648,390.21589 97.61889,0.71426 93.32593,246.14288 -308.3741,89.04526 z"
+       style="fill:#009cf0;fill-opacity:1;stroke:#000000;stroke-width:1.05291545;stroke-opacity:1;display:inline"
+       d="m 301.98305,521.51818 106.3492,0.0671 97.8976,251.0712 c 0,0 -11.4545,19.75843 -20.8967,22.46265 -46.3035,13.26114 -181.5718,46.3244 -275.4797,72.48345 -10.0213,2.79154 -23.9766,12.60415 -23.9766,12.60415 z"
        id="rect3040"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\lower-body.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       sodipodi:nodetypes="cccsscc"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856" />
+    <g
+       style="display:inline"
+       id="g4320"
+       transform="matrix(1.3466919,0.33446405,-0.33446405,1.3466919,6606.2035,1217.0176)"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="cccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4139"
+         d="m -4289.3448,549.37213 42.9583,5.18789 -7.5707,10.99175 -10.6513,16.25901 -45.7481,37.38141 -44.0763,30.43739 -140.8316,53.83472 -24.7812,-7.47008 -18.1671,-12.45981 -2.1338,-8.71033 22.1104,-12.93266 131.6461,-45.57879 78.8416,-49.6312 z"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4144"
+         d="m -4291.8419,560.29945 24.0029,11.61429 -22.9022,18.14875 -77.9999,50.59022 -119.1189,42.60341 -19.278,-17.90806 124.9231,-44.21487 77.5053,-49.29087 z"
+         style="fill:#502d16;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#a05a2c;fill-opacity:1;stroke:#000000;stroke-width:0.75880045;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+         d="m -4291.022,556.29885 25.3791,11.95785 0.9321,4.37639 -3.6756,2.32257 -25.3004,-13.25399 -0.7676,-3.64271 z"
+         id="path4163"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect4165"
+         d="m -4379.201,622.43578 91.9962,-59.64936 0.7074,0.34169 -92.3649,59.69482 z"
+         style="fill:#37abc8;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#37abc8;fill-opacity:1;stroke:none;display:inline"
+         d="m -4374.3067,626.73562 93.1576,-60.32685 0.7074,0.34168 -93.5263,60.37232 z"
+         id="path4168"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path4170"
+         d="m -4369.0722,632.29082 95.6741,-62.64971 0.7073,0.34168 -96.0427,62.6952 z"
+         style="fill:#37abc8;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4147"
+         d="m -4384.4095,617.83883 21.4314,18.10484 -0.2294,4.46864 -4.1506,1.29488 -21.0208,-19.33674 0.1989,-3.71738 z"
+         style="fill:#a05a2c;fill-opacity:1;stroke:#000000;stroke-width:0.75880045;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#37abc8;fill-opacity:1;stroke:none;display:inline"
+         d="m -4502.6996,667.34438 119.3713,-42.40302 0.7073,0.34169 -119.7399,42.44847 z"
+         id="path4172"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path4174"
+         d="m -4498.2475,671.79653 119.3713,-42.40302 0.7074,0.34168 -119.74,42.44848 z"
+         style="fill:#37abc8;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#37abc8;fill-opacity:1;stroke:none;display:inline"
+         d="m -4492.2468,677.79723 119.3713,-42.40301 0.7074,0.3417 -119.74,42.44846 z"
+         id="path4176"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#a05a2c;fill-opacity:1;stroke:#000000;stroke-width:0.75880045;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+         d="m -4507.0502,661.36531 21.4314,18.10484 -0.2294,4.46865 -4.1506,1.29488 -21.0208,-19.33673 0.1989,-3.71739 z"
+         id="path4161"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect4181"
+         d="m -4388.1819,618.67168 21.0247,18.69311 0.011,0.16975 -21.0557,-18.71099 z"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline"
+         d="m -4367.1794,637.4012 4.2082,-1.4398 -0.011,0.12641 -4.1784,1.42581 z"
+         id="path4211"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path4224"
+         d="m -4367.36,641.64901 0.1758,-4.17159 0.083,0.005 -0.1546,4.20496 z"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect4181-8"
+         d="m -4294.3082,558.05976 25.1017,12.5835 0.011,0.16974 -25.1328,-12.60139 z"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline"
+         d="m -4269.2245,570.67407 3.4987,-2.38439 0.024,0.0836 -3.5031,2.41314 z"
+         id="path4211-9"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path4224-3"
+         d="m -4268.4051,574.79441 -0.8646,-4.07483 0.083,0.005 0.8859,4.10817 z"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline"
+         d="m -4510.7099,662.18192 20.8674,18.41485 0.011,0.16972 -20.8984,-18.4327 z"
+         id="path4288"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path4290"
+         d="m -4489.8647,680.60896 4.2203,-1.12523 -0.011,0.12625 -4.1904,1.11126 z"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline"
+         d="m -4490.009,685.15925 0.1274,-4.48616 0.083,0.005 -0.1062,4.51951 z"
+         id="path4292"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4294"
+         d="m -4538.1859,683.48354 -2.0393,-8.26267 26.5892,18.3917 20.007,3.17267 81.9923,-26.77237 55.7286,-19.80339 44.8974,-30.68484 46.2868,-38.22655 18.0935,-26.07042 -2.9522,13.82078 -0.2821,18.68404 -5.3781,15.11354 -8.4666,11.92727 -15.5942,5.09121 -13.9166,8.40541 -12.8717,14.51792 -8.4665,14.329 -7.3302,24.66242 -1.9237,20.12074 -8.1843,-3.05769 -2.4198,7.24252 -19.8379,-9.19859 -15.1608,-4.95276 -24.1497,-4.28234 -22.0415,1.23345 -14.9209,2.01457 -13.3508,6.66198 -20.2205,11.74438 -24.6325,3.96618 -19.0705,-8.21691 -12.2613,-9.11009 z"
+         style="fill:#aa8800;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4299"
+         d="m -4258.092,543.28598 -8.2009,-13.97113 3.1773,-33.62652 -10.0852,-9.48634 -21.5618,-3.74019 -23.4989,-8.79094 -15.792,-10.1949 2.886,-0.0233 13.9205,8.12548 22.9138,8.42036 22.2321,4.17579 11.6264,8.95276 -2.7124,34.71615 7.6329,12.51842 9.2308,14.40281 -3.077,4.61722 z"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-miterlimit:4;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4321"
+         d="m -4320.8313,502.02667 -7.6636,-4.85928 21.5138,10.52428 23.4757,6.27126 -5.2961,0.19791 -19.2309,-4.41456 z"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-miterlimit:4;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect4324"
+         d="m -4313.4251,530.39262 30.0036,6.48465 -10.4529,-0.29037 -19.4539,-6.19428 z"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-miterlimit:4;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
+         sodipodi:nodetypes="cccccccccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4118"
+         d="m -4335.2024,463.82371 16.0849,9.62982 23.8625,8.86651 21.762,3.66773 10.4155,9.60052 -3.5186,33.44338 8.302,14.08774 8.2919,16.0022 -40.7911,-8.3011 0.1136,-5.03809 -16.0722,-4.25168 -6.3203,-10.95583 18.9525,6.0948 0.071,-6.51606 -13.4809,-2.94722 -10.9446,-6.24163 -10.0445,-23.8398 20.3557,12.61464 18.8149,4.28349 -0.079,-5.54319 -6.1182,-5.77074 -21.2763,-5.8655 -12.8354,-11.45779 z"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+    </g>
     <path
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 323.21598,251.19769 98.18487,0 0,28.83929 -93.9334,1.51523 z"
-       id="rect3048"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\upper-body.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#3cd4fc;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 321.61153,250.55984 47.44883,24.12915 29.78364,-2.11617 43.04859,67.05713 -12.51283,51.33573 -106.87505,0.35714 3.39283,-48.51774 z"
-       id="rect3042"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\upper-body.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       transform="matrix(0.91994678,0,0,1,25.570234,0)" />
-    <path
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;opacity:1;stroke-opacity:1"
-       d="m 439.94347,158.42512 c -0.88677,19.48935 -7.20864,45.15037 -17.50009,60.41312 -10.76649,15.96717 -25.00865,25.77986 -45.65291,25.77986 -18.47864,0 -34.11474,-13.4159 -45.2762,-22.69127 -14.96045,-12.43246 -25.9738,-28.28682 -25.9738,-49.40694 0,-39.81877 31.89971,-72.0982 71.25,-72.0982 39.35028,0 63.88797,41.84944 63.153,58.00343 z"
-       id="path3885"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#ea8484;fill-opacity:1;stroke:none"
-       d="m 392.97058,226.01275 c 0,1.02861 -1.82732,2.02274 -9.57462,2.02274 -7.74735,0 -9.1922,-0.96268 -9.1922,-1.99125 0,-1.02861 4.30758,-0.67312 9.40424,-0.67312 4.35048,-0.17765 9.28026,-0.26695 9.36258,0.64163 z"
-       id="path5421"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csscc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#a72700;fill-opacity:0.32211537;stroke:none"
-       d="m 389.73422,208.6495 c 0,0.6441 -0.94416,0.56649 -3.40352,0.56649 -2.45941,0 -3.77839,0.30257 -3.77839,-0.34153 0,-0.64414 3.11833,-4.01527 5.57774,-4.01527 2.45936,0 1.60417,3.14621 1.60417,3.79036 z"
-       id="path5426"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="sssssssssss"
-       inkscape:connector-curvature="0"
-       id="path5451"
-       d="m 401.06192,174.31902 c 0.4275,5.12307 0.71986,10.47057 1.12756,10.78711 2.02198,1.57002 7.02216,3.11196 9.26041,3.11196 3.01287,0 6.82978,-1.13145 9.44608,-3.41482 0.13253,-0.1159 0.75544,-7.43432 1.08424,-11.50388 0.33725,-4.17587 0.968,-9.63799 0.71825,-9.91929 -1.06785,-1.20284 -2.84345,-2.55127 -4.89336,-3.43558 -2.23844,-0.96562 -4.77508,-1.41393 -6.35521,-1.41393 -2.22106,0 -4.62722,0.5985 -6.878,1.84376 -1.6056,0.88825 -3.09529,2.21611 -4.54993,3.38794 -0.17243,0.1387 0.57304,4.96137 1.03996,10.55673 z"
-       style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       transform="matrix(4.1045652,0,0,6.4316382,-241.09609,-5041.9868)"
-       d="m 160.86679,810.80945 a 1.9571706,1.4275426 0 1 1 -3.91434,0 1.9571706,1.4275426 0 1 1 3.91434,0 z"
-       sodipodi:ry="1.4275426"
-       sodipodi:rx="1.9571706"
-       sodipodi:cy="810.80945"
-       sodipodi:cx="158.90962"
-       id="path5444"
-       style="fill:#803300;fill-opacity:1;stroke:none;opacity:1"
-       sodipodi:type="arc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       transform="matrix(4.75,0,0,6.1354168,-347.83301,-4801.8537)"
-       d="m 159.73038,810.27283 a 0.44194174,0.37880722 0 1 1 -0.88388,0 0.44194174,0.37880722 0 1 1 0.88388,0 z"
-       sodipodi:ry="0.37880722"
-       sodipodi:rx="0.44194174"
-       sodipodi:cy="810.27283"
-       sodipodi:cx="159.28844"
-       id="path5446"
-       style="fill:#ffccaa;fill-opacity:1;stroke:none"
-       sodipodi:type="arc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 84.067194,261.68288 c 0.32098,7.55484 17.884386,10.64721 57.215756,10.64721 39.33137,0 70.9464,5.51895 71.21575,-10.64721 0.2527,-15.1668 -31.88438,-8.64721 -71.21575,-8.64721 -39.33137,0 -57.517436,1.54662 -57.215756,8.64721 z"
-       id="path3045"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-forearm.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="sssss"
-       inkscape:connector-curvature="0"
-       id="path3035"
-       d="m 663.94613,261.68288 c -0.32098,7.55484 -17.88438,10.64721 -57.21575,10.64721 -39.33137,0 -70.9464,5.51895 -71.21575,-10.64721 -0.2527,-15.1668 31.88438,-8.64721 71.21575,-8.64721 39.33137,0 57.51743,1.54662 57.21575,8.64721 z"
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-forearm.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:transform-center-x="-54.408267" />
-    <path
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 695.62001,264.16763 c -0.25253,10.84553 -15.66447,12.5321 -24.75907,12.11261 -4.23012,-0.19511 -2.93804,4.91969 -5.50489,4.76684 -8.21436,-0.48918 -9.84899,-12.25787 -9.84899,-18.39468 0,-6.13681 6.67084,-11.11168 14.89975,-11.11168 8.2289,0 25.35606,6.49176 25.2132,12.62691 z"
+       style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+       d="m 599.81215,572.66689 c -4.6162,10.8159 -20.8086,6.31506 -29.7947,2.23485 -4.1796,-1.89767 -4.9363,3.77073 -7.4585,2.58447 -8.0722,-3.79622 -4.9843,-16.30032 -2.5162,-22.47783 2.4683,-6.17745 11.1843,-8.50234 19.4677,-5.19265 8.2836,3.30958 22.913,16.73294 20.3017,22.85116 z"
        id="path3037"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ssssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-hand.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:none"
-       d="m 369.76609,174.31902 c -0.4275,5.12307 -0.71986,10.47057 -1.12755,10.78711 -2.02198,1.57002 -7.02216,3.11196 -9.26041,3.11196 -3.01288,0 -6.82979,-1.13145 -9.44609,-3.41482 -0.13252,-0.1159 -0.75544,-7.43432 -1.08423,-11.50388 -0.33725,-4.17587 -0.96801,-9.63799 -0.71825,-9.91929 1.06785,-1.20284 2.84344,-2.55127 4.89335,-3.43558 2.23844,-0.96562 4.77508,-1.41393 6.35522,-1.41393 2.22105,0 4.62721,0.5985 6.878,1.84376 1.60559,0.88825 3.09529,2.21611 4.54993,3.38794 0.17242,0.1387 -0.57304,4.96137 -1.03997,10.55673 z"
-       id="path5448"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssssssssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:type="arc"
-       style="fill:#803300;fill-opacity:1;stroke:none"
-       id="path5374"
-       sodipodi:cx="158.90962"
-       sodipodi:cy="810.80945"
-       sodipodi:rx="1.9571706"
-       sodipodi:ry="1.4275426"
-       d="m 160.86679,810.80945 a 1.9571706,1.4275426 0 1 1 -3.91434,0 1.9571706,1.4275426 0 1 1 3.91434,0 z"
-       transform="matrix(4.1045652,0,0,6.4316382,-292.59609,-5041.9868)"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:type="arc"
-       style="fill:#ffccaa;fill-opacity:1;stroke:none"
-       id="path5376"
-       sodipodi:cx="159.28844"
-       sodipodi:cy="810.27283"
-       sodipodi:rx="0.44194174"
-       sodipodi:ry="0.37880722"
-       d="m 159.73038,810.27283 a 0.44194174,0.37880722 0 1 1 -0.88388,0 0.44194174,0.37880722 0 1 1 0.88388,0 z"
-       transform="matrix(4.75,0,0,6.1354168,-399.33301,-4801.8537)"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#009cf0;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 349.64759,102.54225 32.31458,-5.058276 21.1385,5.446986 18.22105,8.51754 14.83003,20.52946 10.09207,29.22409 -17.26475,-23.77816 7.40698,21.19068 -9.91778,-7.37873 9.58124,20.23128 -13.83857,-9.19511 -12.93712,-11.02168 -11.92518,-14.71694 -5.91349,19.88299 -13.34187,18.56018 0.39484,-13.63858 -22.35791,35.5146 -1.52153,-19.43116 -12.56089,22.73086 0.81389,-24.9477 -14.92339,20.92537 -1.16314,-15.76489 -5.40945,14.88158 2.13833,20.35717 -8.24302,-7.04921 -9.24583,-14.02566 -4.29148,-19.04023 11.07044,-51.25986 19.29095,-14.181 z"
-       id="rect3887"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#aa4400;fill-opacity:1;stroke:#f8aa2a;stroke-width:1.42918098;stroke-opacity:1"
-       d="m 312.97048,132.68803 13.81155,-0.35714 -7.90052,25.38091 0.37235,10.71956 3.91106,11.16904 -10.32302,7.03821 -8.8318,2.64982 -8.29692,-5.33175 -3.56021,-8.81402 7.78464,-8.43715 3.35178,-5.60589 z"
-       id="rect4028"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       inkscape:transform-center-x="-11.30232"
+       inkscape:transform-center-y="6.7111696" />
+    <g
+       style="display:inline"
+       id="g4384"
+       transform="matrix(0.99244736,0.12267132,-0.12267132,0.99244736,4940.8396,519.26035)"
+       inkscape:transform-center-x="-56.39476"
+       inkscape:transform-center-y="20.734668"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856">
+      <path
+         inkscape:transform-center-y="12.881766"
+         inkscape:transform-center-x="-57.263341"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-forearm.png"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+         d="m -4334.1221,574.02534 c -2.3691,7.84703 -21.6442,6.37039 -62.9463,-4.20829 -41.3018,-10.57883 -75.9853,-13.28667 -71.9202,-30.33521 3.8141,-15.99467 35.8078,-0.50475 77.1098,10.07398 41.302,10.57879 59.9833,17.09433 57.7567,24.46952 z"
+         id="path3035"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssss" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\hand-join.png"
+         sodipodi:type="arc"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:none;display:inline"
+         id="path4060"
+         sodipodi:cx="539.10712"
+         sodipodi:cy="262.18359"
+         sodipodi:rx="9.4642859"
+         sodipodi:ry="8.3928576"
+         d="m 548.5714,262.18359 c 0,4.63525 -4.2373,8.39286 -9.46428,8.39286 -5.22698,0 -9.46429,-3.75761 -9.46429,-8.39286 0,-4.63524 4.23731,-8.39285 9.46429,-8.39285 5.22698,0 9.46428,3.75761 9.46428,8.39285 z"
+         transform="matrix(0.75143899,0.19246745,-0.19478659,0.76049335,-4693.3772,270.15555)" />
+    </g>
     <path
        sodipodi:type="arc"
-       style="fill:#e9afaf;fill-opacity:1;stroke:none"
+       style="fill:#ffd2d6;fill-opacity:1;stroke:none;display:inline"
        id="path4045"
        sodipodi:cx="539.10712"
        sodipodi:cy="262.18359"
        sodipodi:rx="9.4642859"
        sodipodi:ry="8.3928576"
        d="m 548.5714,262.18359 a 9.4642859,8.3928576 0 1 1 -18.92857,0 9.4642859,8.3928576 0 1 1 18.92857,0 z"
-       transform="matrix(1,0,0,1.0788745,1.7321433,-21.178357)"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\forearm-join.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       transform="matrix(0.78666093,0.74580311,-0.80462786,0.84870831,234.21105,-117.57224)"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856" />
+    <g
+       style="display:inline"
+       id="g4414"
+       transform="translate(4896.3558,-25.75162)"
+       inkscape:transform-center-x="35.25"
+       inkscape:transform-center-y="93.875"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856">
+      <path
+         inkscape:transform-center-y="95.41823"
+         inkscape:transform-center-x="33.82845"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-ponytail.png"
+         style="fill:#3cd4fc;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+         d="m -4643.9767,303.61874 c 13.8999,-18.78146 53.6887,-45.06745 53.6887,-45.06745 l 4.2133,8.40761 c 0,0 -7.7732,18.19134 -9.814,27.80624 -1.7027,8.02171 -1.3964,16.34224 -1.9418,24.5245 -0.5663,8.4961 0.1458,17.13055 -1.3811,25.50748 -2.1696,11.90288 -5.836,23.64108 -10.9516,34.6054 -4.6602,9.98824 -12.5211,18.19516 -17.7484,27.89866 -9.2211,17.11733 -23.8727,53.22015 -23.8727,53.22015 0,0 2.2025,-46.20046 -1.213,-68.92313 -2.0503,-13.64026 -12.3012,-25.99157 -11.4673,-39.75983 1.0558,-17.43195 10.0989,-34.182 20.4879,-48.21963 z"
+         id="path3883"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sccssssscsss" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-ponytail.png"
+         sodipodi:nodetypes="ccscccsscscscscsc"
+         inkscape:connector-curvature="0"
+         id="rect3150"
+         d="m -4650.6009,420.44273 2.5783,9.47516 c 0,0 1.7487,-4.90808 1.9367,-8.97333 0.4229,-9.145 -1.5352,-30.99984 -1.5352,-30.99984 l 4.7094,25.25706 -0.504,13.5162 c 0,0 2.3745,-4.35983 2.8487,-6.75802 0.7004,-3.54212 -1.1692,-7.90429 -1.3739,-12.5064 -0.2234,-5.02033 1.1819,-10.14145 1.1819,-10.14145 0,0 0.9421,8.10939 2.1124,11.99793 0.5384,1.78886 2.236,5.139 2.236,5.139 0,0 1.4682,-5.04425 2.9385,-7.16662 2.0615,-2.97586 7.9595,-7.38886 7.9595,-7.38886 0,0 -5.1467,9.42611 -7.4572,14.27048 -6.631,13.9031 -18.3577,42.40745 -18.3577,42.40745 0,0 0.6409,-17.06041 0.7306,-25.59795 0.044,-4.17714 0,-12.53081 0,-12.53081 z"
+         style="fill:#f7ff80;fill-opacity:1;stroke:none;display:inline" />
+    </g>
+    <g
+       style="display:inline"
+       id="g4446"
+       inkscape:transform-center-x="13.5"
+       inkscape:transform-center-y="-81.5"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856"
+       transform="translate(4884.3558,-27.75162)">
+      <path
+         inkscape:transform-center-y="-6.2593478"
+         inkscape:transform-center-x="-0.082332036"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:nodetypes="sssss"
+         inkscape:connector-curvature="0"
+         id="path3040"
+         d="m -4511.2598,393.51293 c 0,4.9892 0.047,11.20178 -9.0558,11.20178 -9.4895,0 -9.0559,-6.21258 -9.0559,-11.20178 0,-4.98924 -0.24,-11.20181 9.0559,-11.20181 9.1023,0 9.0558,6.21257 9.0558,11.20181 z"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:transform-center-y="-0.045943532"
+         inkscape:transform-center-x="-0.090682888"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\neck-join.png"
+         sodipodi:type="arc"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:none;display:inline"
+         id="path4058-7"
+         sodipodi:cx="539.10712"
+         sodipodi:cy="262.18359"
+         sodipodi:rx="9.4642859"
+         sodipodi:ry="8.3928576"
+         d="m 548.5714,262.18359 c 0,4.63525 -4.2373,8.39286 -9.46428,8.39286 -5.22698,0 -9.46429,-3.75761 -9.46429,-8.39286 0,-4.63524 4.23731,-8.39285 9.46429,-8.39285 5.22698,0 9.46428,3.75761 9.46428,8.39285 z"
+         transform="matrix(0.98832953,0,0,0.74000984,-5053.1243,205.70788)" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         style="fill:#aa4400;fill-opacity:1;stroke:#f8aa2a;stroke-width:1.54923308;stroke-opacity:1;display:inline"
+         d="m -4584.1787,257.36194 13.1701,-2.02309 2.0652,25.30008 4.5876,7.78559 7.6425,7.68583 -9.2661,13.17588 -8.5087,5.24497 -10.1804,-3.26377 -6.1935,-8.2354 5.8402,-10.80385 1.8401,-13.34483 z"
+         id="path4043"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:nodetypes="sscccssss"
+         inkscape:connector-curvature="0"
+         id="path3885"
+         d="m -4467.268,283.44257 c 2.8974,6.79931 1.6693,31.64948 -0.038,39.90026 -3.178,15.358 -8.3821,31.46393 -15.6392,42.22669 -9.0248,13.16086 -24.1359,25.91894 -36.6094,26.09184 -14.4411,-0.81701 -39.0518,-19.62286 -47.4366,-29.59972 -7.8058,-9.79388 -10.2103,-12.66965 -13.107,-17.9357 -10.9138,-19.84072 -11.2803,-18.74459 -9.4172,-33.07189 5.6437,-43.40066 18.7426,-65.2017 61.3983,-65.2017 42.6558,0 51.8958,16.5793 60.8491,37.59022 z"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:nodetypes="csscccc"
+         inkscape:connector-curvature="0"
+         id="path5421"
+         d="m -4505.8186,371.71189 c -1.1246,1.11502 -3.6406,3.03548 -13.7141,3.03548 -10.0737,0 -11.531,-2.34181 -12.5339,-3.07946 -0.4685,-0.3446 -0.9763,-1.02987 -0.9763,-1.02987 0,0 8.4641,1.22118 13.7858,1.22118 4.5111,-0.15356 14.343,-1.35523 14.343,-1.35523 0,0 -0.4348,0.69524 -0.9045,1.2079 z"
+         style="fill:#ed9f9f;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:nodetypes="sssss"
+         inkscape:connector-curvature="0"
+         id="path5426"
+         d="m -4514.336,353.42136 c 0,0.69821 -1.0235,0.61409 -3.6895,0.61409 -2.666,0 -4.0957,0.32798 -4.0957,-0.37022 0,-0.69825 3.3802,-4.35257 6.0462,-4.35257 2.666,0 1.739,3.4105 1.739,4.10875 z"
+         style="fill:#d7968a;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline"
+         d="m -4502.0568,316.2071 c 0.4634,5.5534 0.7803,11.35011 1.2223,11.69324 2.1918,1.7019 7.612,3.37337 10.0383,3.37337 3.2659,0 7.4034,-1.22649 10.2395,-3.70168 0.1436,-0.1256 0.8189,-8.0588 1.1753,-12.47021 0.3656,-4.52664 1.0493,-10.44759 0.7786,-10.75251 -1.1575,-1.30389 -3.0823,-2.76559 -5.3044,-3.72417 -2.4265,-1.04674 -5.1762,-1.53271 -6.889,-1.53271 -2.4077,0 -5.016,0.64878 -7.4558,1.99864 -1.7405,0.96287 -3.3553,2.40226 -4.9321,3.67254 -0.1869,0.15036 0.6211,5.37811 1.1273,11.44349 z"
+         id="path5451"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssssssssss" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:type="arc"
+         style="fill:#803300;fill-opacity:1;stroke:none;display:inline"
+         id="path5444"
+         sodipodi:cx="158.90962"
+         sodipodi:cy="810.80945"
+         sodipodi:rx="1.9571706"
+         sodipodi:ry="1.4275426"
+         d="m 160.86679,810.80945 c 0,0.78841 -0.87625,1.42754 -1.95717,1.42754 -1.08091,0 -1.95717,-0.63913 -1.95717,-1.42754 0,-0.78841 0.87626,-1.42754 1.95717,-1.42754 1.08092,0 1.95717,0.63913 1.95717,1.42754 z"
+         transform="matrix(4.4493513,0,0,6.9719,-5198.1565,-5338.2717)" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:type="arc"
+         style="fill:#ffccaa;fill-opacity:1;stroke:none;display:inline"
+         id="path5446"
+         sodipodi:cx="159.28844"
+         sodipodi:cy="810.27283"
+         sodipodi:rx="0.44194174"
+         sodipodi:ry="0.37880722"
+         d="m 159.73038,810.27283 c 0,0.20921 -0.19787,0.3788 -0.44194,0.3788 -0.24408,0 -0.44194,-0.16959 -0.44194,-0.3788 0,-0.20921 0.19786,-0.37881 0.44194,-0.37881 0.24407,0 0.44194,0.1696 0.44194,0.37881 z"
+         transform="matrix(5.1490031,0,0,6.6507958,-5313.8594,-5077.9674)" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:nodetypes="sssssssssss"
+         inkscape:connector-curvature="0"
+         id="path5448"
+         d="m -4535.9815,316.2071 c -0.4634,5.5534 -0.7803,11.35011 -1.2223,11.69324 -2.1918,1.7019 -7.612,3.37337 -10.0383,3.37337 -3.2659,0 -7.4035,-1.22649 -10.2395,-3.70168 -0.1437,-0.1256 -0.8189,-8.0588 -1.1753,-12.47021 -0.3656,-4.52664 -1.0494,-10.44759 -0.7786,-10.75251 1.1575,-1.30389 3.0823,-2.76559 5.3044,-3.72417 2.4264,-1.04674 5.1762,-1.53271 6.889,-1.53271 2.4076,0 5.0159,0.64878 7.4558,1.99864 1.7405,0.96287 3.3553,2.40226 4.9321,3.67254 0.1869,0.15036 -0.6212,5.37811 -1.1273,11.44349 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         transform="matrix(4.4493513,0,0,6.9719,-5253.9826,-5338.2717)"
+         d="m 160.86679,810.80945 c 0,0.78841 -0.87625,1.42754 -1.95717,1.42754 -1.08091,0 -1.95717,-0.63913 -1.95717,-1.42754 0,-0.78841 0.87626,-1.42754 1.95717,-1.42754 1.08092,0 1.95717,0.63913 1.95717,1.42754 z"
+         sodipodi:ry="1.4275426"
+         sodipodi:rx="1.9571706"
+         sodipodi:cy="810.80945"
+         sodipodi:cx="158.90962"
+         id="path5374"
+         style="fill:#803300;fill-opacity:1;stroke:none;display:inline"
+         sodipodi:type="arc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         transform="matrix(5.1490031,0,0,6.6507958,-5369.6854,-5077.9674)"
+         d="m 159.73038,810.27283 c 0,0.20921 -0.19787,0.3788 -0.44194,0.3788 -0.24408,0 -0.44194,-0.16959 -0.44194,-0.3788 0,-0.20921 0.19786,-0.37881 0.44194,-0.37881 0.24407,0 0.44194,0.1696 0.44194,0.37881 z"
+         sodipodi:ry="0.37880722"
+         sodipodi:rx="0.44194174"
+         sodipodi:cy="810.27283"
+         sodipodi:cx="159.28844"
+         id="path5376"
+         style="fill:#ffccaa;fill-opacity:1;stroke:none;display:inline"
+         sodipodi:type="arc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:nodetypes="aaaaascscscscscsscscscscscscscscscsccccaaa"
+         inkscape:connector-curvature="0"
+         id="rect3887"
+         d="m -4554.79,243.15103 c 9.7033,-3.75146 20.1258,-6.51654 30.529,-6.48318 9.7813,0.0314 19.7027,2.3596 28.6642,6.27955 6.3303,2.76903 12.0506,7.03839 17.0016,11.85802 4.4543,4.33618 8.451,9.36888 11.0758,15.00394 2.539,5.45093 3.7593,11.35783 4.2167,17.54007 0.5195,7.02024 2.1494,21.29832 2.1494,21.29832 0,0 -2.1933,-9.97282 -3.5966,-15.74279 -0.6758,-2.77906 -3.2414,-9.94437 -3.2414,-9.94437 0,0 2.5162,7.50638 2.7833,11.27683 0.3089,4.36129 -2.3551,12.84293 -2.3551,12.84293 0,0 -1.5012,-7.69727 -3.5313,-10.94535 -2.1414,-3.42624 -7.7499,-8.80883 -7.7499,-8.80883 0,0 2.798,9.73725 4.8832,13.56161 1.6364,3.00128 13.1597,13.14206 13.1597,13.14206 0,0 -11.5662,-4.52993 -16.3598,-8.14427 -4.9035,-3.6971 -13.753,-11.58233 -18.0416,-15.97784 -4.7797,-4.89893 -8.3788,-15.16027 -8.3788,-15.16027 0,0 -1.5952,10.36856 -10.6602,22.30318 -8.1107,10.67831 -17.2126,18.36924 -17.2126,18.36924 0,0 1.8207,-10.02416 1.5347,-15.06307 -0.145,-2.55453 -1.637,-7.49933 -1.637,-7.49933 0,0 -2.2422,17.32438 -4.44,21.75324 -2.1514,4.33539 -10.9572,14.26973 -10.9572,14.26973 0,0 3.9031,-13.78568 3.163,-18.4248 -0.4074,-2.55383 -1.8071,-9.00256 -1.8071,-9.00256 0,0 -3.4475,13.17491 -6.0551,17.1991 -2.6382,4.07138 -9.6823,11.33027 -9.6823,11.33027 0,0 4.6261,-10.42416 4.9601,-15.99691 0.2167,-3.61697 -1.9565,-10.69287 -1.9565,-10.69287 0,0 -3.8995,9.06208 -6.7658,13.02816 -2.6325,3.64262 -10.4719,11.77628 -10.4719,11.77628 0,0 2.7658,-8.79595 2.396,-12.14703 -0.2751,-2.49334 -2.5961,-7.06345 -2.5961,-7.06345 0,0 -5.1676,10.45271 -5.8639,16.13164 -0.9001,7.34123 5.2448,25.35272 5.2448,25.35272 l -8.8622,-11.17688 -7.328,-17.17869 -4.9323,-21.56641 c 0,0 6.938,-24.04173 13.5433,-34.47167 3.1427,-4.96249 7.477,-9.17838 12.0726,-12.83669 5.166,-4.1123 10.9467,-7.6086 17.1053,-9.98963 z"
+         style="fill:#3cd4fc;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\head.png"
+         sodipodi:nodetypes="cccccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4028"
+         d="m -4585.548,273.07908 14.9717,-0.38714 -8.5641,27.51293 0.4036,11.62001 4.2396,12.10725 -11.1902,7.62941 -9.5736,2.87241 -8.9939,-5.77961 -3.8593,-9.5544 8.4386,-9.14588 3.6333,-6.0768 z"
+         style="fill:#aa4400;fill-opacity:1;stroke:#f8aa2a;stroke-width:1.54923308;stroke-opacity:1;display:inline" />
+    </g>
+    <g
+       style="display:inline"
+       id="g4410"
+       transform="translate(4895.3558,-31.00162)"
+       inkscape:transform-center-x="36.875"
+       inkscape:transform-center-y="91.625"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856">
+      <g
+         id="g4426">
+        <path
+           style="fill:#3cd4fc;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+           d="m -4642.1313,311.92542 c 14.0094,-13.35824 48.5349,-31.88585 48.5349,-31.88585 l 1.8797,11.72726 c 0,0 -3.9624,3.853 -5.4032,7.19177 -3.322,7.69797 0.1983,16.87621 -1.3493,25.11631 -1.2704,6.76409 -4.1558,13.12501 -6.4486,19.61422 -2.1842,6.18181 -6.1834,11.88652 -6.9589,18.39684 -1.1373,9.54822 4.7003,19.07321 3.5829,28.62378 -0.7005,5.9869 -3.3017,11.72675 -6.3273,16.94014 -3.7912,6.53266 -9.7575,11.53386 -14.4973,17.41467 -13.5711,16.83823 -39.9069,51.1541 -39.9069,51.1541 0,0 9.9014,-45.79271 9.4591,-69.00539 -0.2439,-12.80227 -6.4993,-25.02797 -6.6629,-37.83152 -0.1319,-10.326 0.6776,-21.0822 4.5923,-30.63827 4.1903,-10.22874 11.5056,-19.18998 19.5055,-26.81806 z"
+           id="rect3106"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sccssssssscssss"
+           inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-ponytail.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90"
+           inkscape:transform-center-x="35.737033"
+           inkscape:transform-center-y="91.353277" />
+        <path
+           sodipodi:nodetypes="ccsaccscsscsccsc"
+           inkscape:connector-curvature="0"
+           id="path3996"
+           d="m -4659.567,417.27449 0.6219,25.02531 c 0,0 0.1898,-3.39976 1.9113,-8.53368 0.6104,-1.82022 2.0169,-4.15626 2.4127,-6.40224 1.3771,-7.81452 -0.2745,-23.80319 -0.2745,-23.80319 l 5.7348,28.44829 c 0,0 3.3263,-14.86299 5.0092,-16.828 3.003,-3.50659 16.8439,-9.58289 16.8439,-9.58289 0,0 -7.1888,7.05783 -10.9707,12.08674 -1.9305,2.56698 -3.3906,5.61797 -4.2914,8.70093 -0.9793,3.35186 -3.4515,9.4455 -3.4515,9.4455 0,0 3.7784,-5.55316 6.3643,-7.61736 3.6918,-2.94701 12.6181,-6.45059 12.6181,-6.45059 l -41.2096,52.56047 c 0,0 4.5069,-22.89599 6.1791,-34.4382 1.0873,-7.50469 2.5024,-22.61109 2.5024,-22.61109 z"
+           style="fill:#f7ff80;fill-opacity:1;stroke:none;display:inline"
+           inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-ponytail.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+      </g>
+    </g>
     <path
-       transform="matrix(0.66645907,0,0,0.67448948,297.37955,85.491425)"
-       d="m 548.5714,262.18359 a 9.4642859,8.3928576 0 1 1 -18.92857,0 9.4642859,8.3928576 0 1 1 18.92857,0 z"
-       sodipodi:ry="8.3928576"
-       sodipodi:rx="9.4642859"
-       sodipodi:cy="262.18359"
-       sodipodi:cx="539.10712"
-       id="path4060"
-       style="fill:#e9afaf;fill-opacity:1;stroke:none"
-       sodipodi:type="arc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\hand-join.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-hand.png"
+       inkscape:export-ydpi="27.535856"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
        sodipodi:nodetypes="ssssss"
        inkscape:connector-curvature="0"
        id="path4074"
-       d="m 50.86571,264.16763 c 0.25253,10.84553 15.66447,12.5321 24.75907,12.11261 4.23012,-0.19511 2.93804,4.91969 5.50489,4.76684 8.21436,-0.48918 9.84899,-12.25787 9.84899,-18.39468 0,-6.13681 -6.67084,-11.11168 -14.89975,-11.11168 -8.2289,0 -25.35606,6.49176 -25.2132,12.62691 z"
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       inkscape:transform-center-x="16.607143"
-       inkscape:transform-center-y="3.5714286" />
-    <path
-       sodipodi:type="arc"
-       style="fill:#e9afaf;fill-opacity:1;stroke:none"
-       id="path4076"
-       sodipodi:cx="539.10712"
-       sodipodi:cy="262.18359"
-       sodipodi:rx="9.4642859"
-       sodipodi:ry="8.3928576"
-       d="m 548.5714,262.18359 a 9.4642859,8.3928576 0 1 1 -18.92857,0 9.4642859,8.3928576 0 1 1 18.92857,0 z"
-       transform="matrix(-0.66645907,0,0,0.62752976,449.1062,97.788173)" />
-    <path
-       style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 389.64285,867.07648 c 0,5.3256 -14.87055,3.64285 -33.21429,3.64285 -38.34375,0 -33.21429,-0.0315 -33.21429,-9.64285 0,-13.89704 22.93283,-8.12761 35.21429,-5.64286 10.83393,2.19189 31.21429,5.24582 31.21429,11.64286 z"
-       id="path3059"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssss"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-foot.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="sssss"
-       inkscape:connector-curvature="0"
-       id="path3080"
-       d="m 467.64285,867.07648 c 0,5.3256 -14.87055,3.64285 -33.21429,3.64285 -38.34375,0 -33.21429,-0.0315 -33.21429,-9.64285 0,-13.89704 22.93283,-8.12761 35.21429,-5.64286 10.83393,2.19189 31.21429,5.24582 31.21429,11.64286 z"
-       style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\left-foot.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#009cf0;fill-opacity:1;stroke:#000000;stroke-opacity:1;"
-       d="m 261.58964,147.46197 53.39286,-4.37501 -1.62947,10.69205 -9.58364,3.07161 -12.19084,19.74295 -13.88892,13.03412 -13.76431,11.82281 -9.74663,24.76265 -12.60907,10.92228 -19.43502,7.69643 -54.91994,23.79086 38.15133,-51.70077 11.32104,-33.58001 17.25695,-22.78166 z"
-       id="rect3106"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-ponytail.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccccccc"
-       inkscape:connector-curvature="0"
-       id="path3996"
-       d="m 203.10682,221.06086 -12.20788,25.49657 9.69077,-11.43073 23.51664,-17.07208 -20.41709,28.02723 8.51969,-3.35634 13.06844,0.35188 -56.59643,24.35409 z"
-       style="fill:#f7ff80;fill-opacity:1;stroke:none"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-ponytail.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       transform="matrix(1,0,0,1.0788745,-332.26786,-21.178357)"
-       d="m 548.5714,262.18359 a 9.4642859,8.3928576 0 1 1 -18.92857,0 9.4642859,8.3928576 0 1 1 18.92857,0 z"
-       sodipodi:ry="8.3928576"
-       sodipodi:rx="9.4642859"
-       sodipodi:cy="262.18359"
-       sodipodi:cx="539.10712"
-       id="path4058"
-       style="fill:#e9afaf;fill-opacity:1;stroke:none"
-       sodipodi:type="arc" />
-    <path
-       transform="matrix(0.82036198,0,0,0.65123107,-62.661179,80.887955)"
-       d="m 548.5714,262.18359 a 9.4642859,8.3928576 0 1 1 -18.92857,0 9.4642859,8.3928576 0 1 1 18.92857,0 z"
-       sodipodi:ry="8.3928576"
-       sodipodi:rx="9.4642859"
-       sodipodi:cy="262.18359"
-       sodipodi:cx="539.10712"
-       id="path4058-7"
-       style="fill:#e9afaf;fill-opacity:1;stroke:none"
-       sodipodi:type="arc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\neck-join.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 572.83934,385.85306 39.62936,4.78588 -6.98403,10.13998 -9.82587,14.99908 -42.20301,34.48468 -40.66081,28.07875 -129.91841,49.663 -22.8608,-6.89121 -16.75931,-11.49429 -1.96849,-8.03534 20.397,-11.9305 121.44469,-42.04683 72.73209,-45.78521 z"
-       id="rect4139"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#502d16;fill-opacity:1;stroke:#000000;stroke-opacity:1;opacity:1"
-       d="m 570.53573,395.93362 22.14286,10.71427 -21.12745,16.74239 -71.95559,46.66991 -109.88822,39.30202 -17.78418,-16.52034 115.24267,-40.78861 71.4993,-45.47125 z"
-       id="rect4144"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccccc"
-       inkscape:connector-curvature="0"
-       id="path4163"
-       d="m 571.29207,392.24303 23.41247,11.03122 0.85982,4.03725 -3.39073,2.1426 -23.33989,-12.22692 -0.70813,-3.36043 z"
-       style="fill:#a05a2c;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.69999999999999996;stroke-miterlimit:4;stroke-dasharray:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#37abc8;fill-opacity:1;stroke:none;opacity:1"
-       d="m 489.94619,453.25492 84.86729,-55.02705 0.65254,0.31521 -85.20734,55.06899 z"
-       id="rect4165"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path4168"
-       d="m 494.46123,457.22156 85.93872,-55.65205 0.65254,0.31521 -86.27877,55.69399 z"
-       style="fill:#37abc8;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#37abc8;fill-opacity:1;stroke:none;opacity:1"
-       d="m 499.2901,462.34629 88.26015,-57.79491 0.65254,0.31521 -88.6002,57.83685 z"
-       id="path4170"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#a05a2c;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.69999999999999996;stroke-miterlimit:4;stroke-dasharray:none;opacity:1"
-       d="m 485.1413,449.01419 19.77066,16.70187 -0.21167,4.12236 -3.82895,1.19454 -19.39184,-17.8383 0.18348,-3.42932 z"
-       id="rect4147"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path4172"
-       d="m 376.01762,494.68349 110.1211,-39.11715 0.65254,0.31521 -110.46115,39.15909 z"
-       style="fill:#37abc8;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#37abc8;fill-opacity:1;stroke:none;opacity:1"
-       d="m 380.12476,498.79063 110.1211,-39.11715 0.65254,0.31521 -110.46115,39.15909 z"
-       id="path4174"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path4176"
-       d="m 385.66047,504.32634 110.1211,-39.11715 0.65254,0.31521 -110.46115,39.15909 z"
-       style="fill:#37abc8;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccccc"
-       inkscape:connector-curvature="0"
-       id="path4161"
-       d="m 372.00421,489.16775 19.77066,16.70187 -0.21167,4.12236 -3.82895,1.19454 -19.39184,-17.8383 0.18348,-3.42932 z"
-       style="fill:#a05a2c;fill-opacity:1;stroke:#000000;stroke-width:0.69999999999999996;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 359.30085,457.40263 -7.79172,-12.79937 -32.81162,-17.74734 -13.69178,-10.91148 6.249,1.23936 9.91287,7.89395 34.89136,18.00637 9.61561,14.57958 0.31648,39.14738 5.68417,20.19056 -5.55584,2.27284 -6.17172,-22.45277 z"
-       id="rect4178"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl-right-wing.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       d="m 481.66125,449.78251 19.39544,17.24456 0.0103,0.15658 -19.42408,-17.26104 z"
-       id="rect4181"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path4211"
-       d="m 501.03624,467.06065 3.88205,-1.32823 -0.01,0.11656 -3.85453,1.31531 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       d="m 500.86959,470.9793 0.16224,-3.84834 0.0766,0.004 -0.14261,3.87911 z"
-       id="path4224"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       d="m 568.26051,393.86748 23.1566,11.6084 0.0103,0.15658 -23.18524,-11.62488 z"
-       id="rect4181-8"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path4211-9"
-       d="m 591.4005,405.50428 3.22758,-2.1996 0.0216,0.0771 -3.23163,2.22614 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       d="m 592.15635,409.30534 -0.79759,-3.75906 0.0766,0.004 0.81722,3.78983 z"
-       id="path4224-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path4288"
-       d="m 368.62812,489.92107 19.25035,16.98786 0.0103,0.15658 -19.27899,-17.00434 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       d="m 387.85802,506.92019 3.89321,-1.03805 -0.01,0.11656 -3.86569,1.02513 z"
-       id="path4290"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path4292"
-       d="m 387.72485,511.11786 0.1176,-4.13852 0.0766,0.004 -0.098,4.16929 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#aa8800;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 343.28125,509.57201 -1.88125,-7.62238 24.5287,16.96649 18.45669,2.92682 75.63854,-24.69774 51.41014,-18.26881 41.41823,-28.30702 42.70003,-35.26432 16.69141,-24.05019 -2.7235,12.74979 -0.26017,17.23618 -4.96135,13.94237 -7.81051,11.00302 -14.38582,4.69667 -12.83814,7.75408 -11.87428,13.3929 -7.81045,13.21862 -6.7621,22.75131 -1.77472,18.56155 -7.55005,-2.82075 -2.23231,6.68129 -18.30059,-8.48578 -13.986,-4.56896 -22.27827,-3.95049 -20.33348,1.13786 -13.76463,1.85846 -12.31624,6.14573 -18.65362,10.8343 -22.72373,3.65883 -17.5927,-7.58017 L 360,521.06754 z"
-       id="rect4294"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1"
-       d="m 601.67026,380.23855 -7.56535,-12.8885 2.93111,-31.02075 -9.30376,-8.75123 -19.89087,-3.45036 -21.67802,-8.10972 -14.56821,-9.40489 2.66237,-0.0215 12.84174,7.49583 21.13816,7.76786 20.50938,3.85219 10.72541,8.25901 -2.50222,32.02594 7.04148,11.54835 8.51541,13.28672 -2.83854,4.25943 z"
-       id="rect4299"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 309.90128,447.49636 18.0195,12.03254 16.97096,5.33065 -2.45001,0.98281 -15.70602,-4.77908 -16.61887,-13.52994 z"
-       id="rect4302"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl-right-wing.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1"
-       d="m 321.12392,478.18608 22.77199,10.87577 -5.49479,-0.11223 -17.42514,-10.73287 z"
-       id="rect4318"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl-right-wing.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:nodetypes="cccccccccccccccccccccccc"
-       inkscape:connector-curvature="0"
-       id="path4142"
-       d="m 305.56882,416.59641 12.56564,10.14627 18.73038,9.94721 13.7622,7.42412 8.59818,13.1497 0.28963,24.53837 0.33501,14.00622 5.97543,22.95882 -24.46574,-16.99092 -0.27392,-6.54172 -8.76584,-3.92221 -11.63886,-13.13732 17.23128,10.42075 0.0656,-7.77889 -9.40579,-4.73915 -9.0863,-5.75796 -10.27631,-23.25511 17.5156,13.90997 15.5891,4.96169 -0.0727,-5.11363 -5.64408,-5.32356 -17.60719,-6.16859 -10.83062,-13.8529 z"
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl-right-wing.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1"
-       d="m 543.79278,342.17648 -7.06976,-4.48274 19.84664,9.70875 21.65656,5.78529 -4.88567,0.18257 -17.74075,-4.07247 z"
-       id="rect4321"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1"
-       d="m 550.625,368.3443 27.67858,5.98215 -9.64286,-0.26786 -17.94643,-5.71429 z"
-       id="rect4324"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       d="m 530.53526,306.93392 14.83848,8.88358 22.01338,8.17944 20.07565,3.38351 9.60834,8.85655 -3.24591,30.85182 7.65862,12.99607 7.64942,14.76216 -37.63022,-7.65784 0.10489,-4.64768 -14.82676,-3.92221 -5.83048,-10.10686 17.48382,5.62252 0.0656,-6.01112 -12.43625,-2.71884 -10.09645,-5.75796 -9.26616,-21.99242 18.77829,11.63712 17.35687,3.95154 -0.0727,-5.11363 -5.64408,-5.32356 -19.6275,-5.41098 -11.84077,-10.5699 z"
-       id="rect4118"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       style="fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-width:1.00916946;stroke-opacity:1"
-       id="rect4337"
-       width="28.552217"
-       height="21.517857"
-       x="392.16199"
-       y="251.20802"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\upper-body-corner.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       style="fill:#e9afaf;fill-opacity:1;stroke:none"
-       id="rect4339"
-       width="2.8571429"
-       height="20.395132"
-       x="390.63391"
-       y="251.69917"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\upper-body-corner.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#3cd4fc;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1"
-       d="m 421.10735,250.80613 26.15103,30.9314 -15.87724,60.20186 -38.384,0.17441 -0.36346,-69.52625 z"
-       id="rect4327"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\upper-body-corner.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#3cd4fc;fill-opacity:1;stroke:none"
-       d="m 392.78317,272.99258 2.63765,-1.90225 49.43409,8.61558 1.78572,1.85269 -0.24277,1.02052 -15.57421,60.36105 -41.9056,1.15266 -0.041,-70.73774 z"
-       id="rect4330"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc"
-       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\upper-body-corner.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       d="m 452.74245,613.04379 c 6.8134,-9.58475 -5.4804,-21.04382 -13.6526,-26.57683 -3.801,-2.57363 0.6381,-6.17877 -1.6907,-7.71044 -7.4527,-4.90175 -16.504,4.26123 -20.4835,9.59201 -3.9794,5.33077 -1.4108,13.97797 5.7373,19.31404 7.148,5.33606 26.2353,10.80319 30.0895,5.38122 z"
+       style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+       inkscape:transform-center-x="-12.419527"
+       inkscape:transform-center-y="3.6161494" />
+    <g
+       style="display:inline"
+       id="g4372"
+       inkscape:transform-center-x="-48.946834"
+       inkscape:transform-center-y="36.187659"
+       transform="matrix(-0.80134214,-0.59820631,0.59820631,-0.80134214,-3710.8765,-1980.8549)"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856">
+      <path
+         inkscape:transform-center-y="1.2374369"
+         inkscape:transform-center-x="60.811183"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-forearm.png"
+         sodipodi:nodetypes="sssss"
+         inkscape:connector-curvature="0"
+         id="path3045"
+         d="m -4853.6793,409.40958 c 0.3479,8.18946 19.3867,11.54159 62.0219,11.54159 42.6352,0 76.906,5.98254 77.1979,-11.54159 0.274,-16.44081 -34.5627,-9.37359 -77.1979,-9.37359 -42.6352,0 -62.3489,1.67656 -62.0219,9.37359 z"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+      <path
+         transform="matrix(-0.79715523,0,0,0.74869661,-4417.8449,213.46932)"
+         d="m 548.5714,262.18359 c 0,4.63525 -4.2373,8.39286 -9.46428,8.39286 -5.22698,0 -9.46429,-3.75761 -9.46429,-8.39286 0,-4.63524 4.23731,-8.39285 9.46429,-8.39285 5.22698,0 9.46428,3.75761 9.46428,8.39285 z"
+         sodipodi:ry="8.3928576"
+         sodipodi:rx="9.4642859"
+         sodipodi:cy="262.18359"
+         sodipodi:cx="539.10712"
+         id="path4076"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:none;display:inline"
+         sodipodi:type="arc" />
+    </g>
+    <g
+       style="display:inline"
+       id="g4422"
+       transform="matrix(0.97630393,0.21640389,-0.21640389,0.97630393,4867.2201,971.01129)"
+       inkscape:transform-center-x="-7.3379663"
+       inkscape:transform-center-y="68.04404"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856">
+      <path
+         inkscape:transform-center-y="65.305461"
+         inkscape:transform-center-x="-21.855279"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\right-arm.png"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+         d="m -4537.0565,547.4298 c 11.5316,-3.50411 4.0876,-37.81494 -9.4434,-78.246 -13.5311,-40.43106 -22.8461,-73.45259 -39.557,-68.16789 -15.6778,4.95806 -2.0317,37.12687 11.4994,77.55793 13.5311,40.43106 23.8623,73.00041 37.501,68.85596 z"
+         id="path3043"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssss" />
+      <path
+         sodipodi:type="arc"
+         style="fill:#ffd2d6;fill-opacity:1;stroke:none;display:inline"
+         id="path4058"
+         sodipodi:cx="539.10712"
+         sodipodi:cy="262.18359"
+         sodipodi:rx="9.4642859"
+         sodipodi:ry="8.3928576"
+         d="m 548.5714,262.18359 c 0,4.63525 -4.2373,8.39286 -9.46428,8.39286 -5.22698,0 -9.46429,-3.75761 -9.46429,-8.39286 0,-4.63524 4.23731,-8.39285 9.46429,-8.39285 5.22698,0 9.46428,3.75761 9.46428,8.39285 z"
+         transform="matrix(-0.32343558,-0.96643058,1.0226835,-0.34226176,-4633.1179,1149.9092)" />
+    </g>
+    <g
+       style="display:inline"
+       id="g4314"
+       transform="matrix(1.3466919,0.33446405,-0.33446405,1.3466919,6606.2035,1217.2051)"
+       inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\sona.png"
+       inkscape:export-xdpi="27.535856"
+       inkscape:export-ydpi="27.535856">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl-right-wing.png"
+         sodipodi:nodetypes="ccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4178"
+         d="m -4520.8206,626.9319 -8.4463,-13.87453 -35.5678,-19.23813 -14.8419,-11.82804 6.7739,1.34347 10.7456,8.55704 37.8223,19.51892 10.4233,15.80428 0.343,42.43578 6.1617,21.88658 -6.0225,2.46375 -6.6902,-24.33881 z"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl-right-wing.png"
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="rect4302"
+         d="m -4574.3698,616.1935 19.5332,13.04329 18.3965,5.77843 -2.6558,1.06535 -17.0254,-5.18052 -18.0148,-14.66647 z"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl-right-wing.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="rect4318"
+         d="m -4562.2045,649.46118 24.6849,11.78934 -5.9564,-0.12168 -18.8888,-11.63444 z"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-miterlimit:4;stroke-opacity:1;display:inline" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="D:\Char\Desktop\Sonarin Project\Prototyping\4\Sona\etwahl-right-wing.png"
+         style="fill:#d4aa00;fill-opacity:1;stroke:#000000;stroke-width:1.08400059;stroke-opacity:1;display:inline"
+         d="m -4579.0662,582.69794 13.6212,10.99854 20.3037,10.7828 14.9183,8.04775 9.3204,14.25428 0.3139,26.59961 0.3632,15.18275 6.4774,24.88738 -26.5209,-18.41817 -0.297,-7.09122 -9.5021,-4.25168 -12.6166,-14.24087 18.6788,11.2961 0.071,-8.43233 -10.1959,-5.13723 -9.8496,-6.24164 -11.1395,-25.20854 18.9869,15.07841 16.8986,5.37846 -0.079,-5.54317 -6.1182,-5.77075 -19.0862,-6.68674 -11.7404,-15.01656 z"
+         id="path4142"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccccccccccccccc" />
+    </g>
   </g>
 </svg>
