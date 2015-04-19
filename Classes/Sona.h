@@ -89,12 +89,17 @@ public:
 			getBoundingBox().origin.y + 1,
 			getBoundingBox().size.width - 20,
 			getBoundingBox().size.height - 2);*/
-		_collisionBoundingBox = cocos2d::Rect(getBoundingBox().origin.x + 50,
-			getBoundingBox().origin.y + 16,
-			getBoundingBox().size.width - 90,
-			getBoundingBox().size.height - 32);
+		
+		_collisionBoundingBox = cocos2d::Rect(getBoundingBox().origin.x,
+			getBoundingBox().origin.y,
+			getBoundingBox().size.width,
+			getBoundingBox().size.height);
+		//_collisionBoundingBox.origin.add(_nextPosition - _position);
+		
+		//_collisionBoundingBox.origin += cocos2d::Vec2(50, 16);
+		//_collisionBoundingBox.size.width += 90;
+		//_collisionBoundingBox.size.height += 32;
 
-		_collisionBoundingBox.origin.add(_nextPosition - _position);
 		return _collisionBoundingBox;
 	}
 };

@@ -74,11 +74,11 @@ void GameScene::createGameScreen()
 	_sona->setPosition(Point(_map->getTileSize().width * 4, _map->getTileSize().height * 4));
 	_map->addChild(_sona, 15);
 
-	/*setShowDebug(true);
+	setShowDebug(true);
 	_map->addChild(_debugNode, 20);
 
 	_sona->setShowDebug(true);
-	_map->addChild(_sona->getDebugNode(), 21);*/
+	_map->addChild(_sona->getDebugNode(), 21);
 }
 
 void GameScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)

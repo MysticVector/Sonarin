@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="50" height="15" tilewidth="64" tileheight="64">
  <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="64">
-  <image source="tiles.png" width="256" height="64"/>
+  <image source="tiles.png" width="256" height="192"/>
  </tileset>
+ <layer name="Decoration" width="50" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF1ACcA+0AKgCQH7gG2hHDAAyHtAACo2mBtoCe6YQaduEyg57phBp24TKDGmYTG84wuyiJFy4c+gciPmhh52j5MwqwgeGSLijxBwB57ADe
+  </data>
+ </layer>
  <layer name="Immovable" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMAqGL2AEYiY8eKgAFgKYGgBbWDFTyWwYoIc/iDGbULrAhWHhQcgf5JhNrB3E+JUYTKl+Su0Y9Qfp/gAAfAQCrw==
+   eJxjYBgFo2D4AFYgZsOC2QfSUaNgQAEsTdAqDSCnudF0hgo4aKyeHgBbmUIonkH+4KHAzoEMB0YgZkLDzCToB/kb5n5c/sBmBzKmBmDBgUlxBzaMHBa47IBhUs3GhgnZQQkm1h+DHY80fwAA+ikDTg==
   </data>
  </layer>
 </map>
