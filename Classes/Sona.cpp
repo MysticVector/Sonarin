@@ -1,224 +1,61 @@
 #include "Sona.h"
-#include "SimpleAudioEngine.h"
-#include "cocostudio\CocoStudio.h"
-
-using namespace CocosDenshion;
-using namespace cocostudio;
 
 USING_NS_CC;
 
 Sona::~Sona()
 {
-	CC_SAFE_RELEASE(_idleAnimation);
-	CC_SAFE_RELEASE(_runAnimation);
 }
 
 Sona::Sona() 
-	: c_gravity(0.0, -900.0), c_jumpForce(610), c_jumpCutOff(200),
-	c_moveSpeed(2000), c_minMovement(-400.0, -900.0), c_maxMovement(400.0, 610.0)
 {
-	_screenSize = CCDirector::getInstance()->getWinSize();
-
-	_velocity = Point(0, 0);
-
-	_movingRight = false;
-	_movingLeft = false;
-	_pressingJump = false;
-
-	_direction = kSonaRight;
-	_state = kSonaIdle;
 }
 
 Sona* Sona::create()
 {
-	Sona* player = new Sona();
-	if (player && player->initWithSpriteFrameName("frame1.png")) {
+	Sona *player = new Sona();
+	if (player && player->init("sona.png"))
+	{
 		player->autorelease();
-		player->initPlayer();
 		return player;
 	}
-	CC_SAFE_DELETE(player);
-	return NULL;
+	else
+	{
+		delete player;
+		player = NULL;
+		return NULL;
+	}
 }
 
-void Sona::initPlayer()
+bool Sona::init(std::string file)
 {
-	// TESTS
-	//ArmatureDataManager::getInstance()->addArmatureFileInfo("Sona/Sona.ExportJson");
-	//Armature* sonaArmature = Armature::create("Sona");
-	//
-	//getTexture()->generateMipmap();
-	//Texture2D::TexParams texParams = { GL_LINEAR_MIPMAP_LINEAR, 
-	//	GL_LINEAR, GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE };
-	//getTexture()->setTexParameters(texParams);
-	//
-	//addChild(sonaArmature);
-	//sonaArmature->getAnimation()->playWithIndex(0);
-	////sonaArmature->setScale(0.3f);
-	//getTexture()->setAliasTexParameters();
-
-	Animation* animation;
-	SpriteFrame * frame;
-	char szName[20] = { 0 };
-	
-	// Initializing the idle animation
-	animation = Animation::create();
-	for (int i = 1; i <= 8; i++) {
-		sprintf(szName, "frame%i.png", i);
-		frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(szName);
-		animation->addSpriteFrame(frame);
+	if (!GameObject::initWithFile(file))
+	{
+		return false;
 	}
-	animation->setDelayPerUnit(1.0f / 5);
-	animation->setRestoreOriginalFrame(false);
-	animation->setLoops(1);
-	_idleAnimation = RepeatForever::create(Sequence::createWithTwoActions(DelayTime::create(1.f), Animate::create(animation)));
-	_idleAnimation->retain();
-	/*animation = Animation::create();
-	frame = SpriteFrameCache::getInstance()->getSpriteFrameByName("sona_idle1.png");
-	animation->addSpriteFrame(frame);
-	animation->setDelayPerUnit(1.0f);
-	animation->setRestoreOriginalFrame(false);
-	animation->setLoops(0);
-	_idleAnimation = Animate::create(animation);
-	_idleAnimation->retain();*/
 
-	// Initializing the run animation
-	animation = Animation::create();
-	for (int i = 1; i <= 8; i++) {
-		sprintf(szName, "sona_run%i.png", i);
-		frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(szName);
-		animation->addSpriteFrame(frame);
-	}
-	animation->setDelayPerUnit(1.0 / 15);
-	animation->setRestoreOriginalFrame(true);
-	animation->setLoops(-1);
-	_runAnimation = RepeatForever::create(Animate::create(animation));
-	_runAnimation->retain();
+	addChild(_debugNode, 10);
 
-	this->runAction(_idleAnimation);
+	PhysicsBody *body = PhysicsBody::createBox(Size(getBoundingBox().size),
+		PhysicsMaterial(1.f, 0.0f, 0.0f), Vec2(-9, 0));
+	body->setDynamic(true);
+	body->setContactTestBitmask(0xFFFFFFFF);
+	body->setRotationEnable(false);
+	setPhysicsBody(body);
+
+	return true;
 }
 
 void Sona::update(float dt)
 {
-	// Calculate sona's falling velocity
-	_velocity += c_gravity * dt;
-	
-	// Calculate sona's jump velocity
-	if (!_pressingJump && _velocity.y > c_jumpCutOff)
-	{
-		// if we stop jumping before reaching max jump height
-		_velocity = Point(_velocity.x, c_jumpCutOff);
-	}
-
-	// Calculate sona's movement velocity
-	float movement = 0.0;
-
-	if (_movingRight)
-	{
-		movement += c_moveSpeed;
-	}
-	else if (_movingLeft)
-	{
-		movement -= c_moveSpeed;
-	}
-	else
-	{
-		// Applying a damping force to sona when she stops moving
-		_velocity = Point(_velocity.x * 0.75, _velocity.y);
-	}
-	
-	_velocity.x += movement * dt;
-
-	// Appply min and max limits to the velocity
-	_velocity = _velocity.getClampPoint(c_minMovement, c_maxMovement);
-
-	// Apply final velocity to the next desired position
-	_nextPosition = getPosition() + _velocity * dt;
-	
-	if (_showDebug)
-		drawDebug();
 }
 
-void Sona::reset()
+Rect Sona::getBoundingBox() const
 {
-	_velocity = Point(0, 0);
-
-	_state = kSonaIdle;
-
-	_position = _nextPosition;
+	return Rect(Node::getBoundingBox().origin.x + 15, Node::getBoundingBox().origin.y + 4,
+		Node::getBoundingBox().size.width - 48, Node::getBoundingBox().size.height - 4);
 }
 
-void Sona::startMoveRight()
+void Sona::move(Vec2 velocity)
 {
-	setState(kSonaRunning);
-	_movingRight = true;
-}
-
-void Sona::stopMoveRight()
-{
-	setState(kSonaIdle);
-	_movingRight = false;
-}
-
-void Sona::startMoveLeft()
-{
-	setState(kSonaRunning);
-	_movingLeft = true;
-}
-
-void Sona::stopMoveLeft()
-{
-	setState(kSonaIdle);
-	_movingLeft = false;
-}
-
-void Sona::startJump()
-{
-	_pressingJump = true;
-
-	if (_onGround)
-	{
-		_velocity.y += c_jumpForce;
-	}
-}
-
-void Sona::stopJump()
-{
-	_pressingJump = false;
-}
-
-void Sona::setDirection(char direction)
-{
-	// If we're not setting both directions at once (buttons mashed together)
-	// set the new direction
-	if (direction != (kSonaRight | kSonaLeft))
-		setScaleX(abs(getScaleX()) * (direction == kSonaRight ? 1 : -1));
-	
-	_direction = direction;
-}
-
-void Sona::setState(SonaState state)
-{
-	stopAllActions();
-	switch (state)
-	{
-	case kSonaIdle:
-		runAction(_idleAnimation);
-		break;
-	case kSonaRunning:
-		//runAction(_runAnimation);
-		break;
-	default:
-		break;
-	}
-
-	_state = state;
-}
-
-void Sona::drawDebug()
-{
-	_debugNode->clear();
-
-	Rect bb = getCollisionBoundingBox();
-	_debugNode->drawRect(bb.origin, bb.origin + bb.size, Color4F::WHITE);
+	getPhysicsBody()->applyForce(velocity);
 }
