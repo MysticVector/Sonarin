@@ -3,14 +3,54 @@
  <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="64">
   <image source="tiles.png" width="256" height="192"/>
  </tileset>
- <layer name="Decoration" width="50" height="15">
+ <layer name="Background" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgF1ACcA+0AKgCQH7gG2hHDAAyHtAACo2mBtoCe6YQaduEyg57phBp24TKDGmYTG84wuyiJFy4c+gciPmhh52j5MwqwgeGSLijxBwB57ADe
+   eJxjYBgF1ACcA+0AKgCQH7gG2hFQMBzCEwQGS3iOgsEH6JnGqWEXLjPomcapYRcuM6hhNrHhDLOLknjhwqF/IOKDFnaOlp2jABsYLumCEn8AAIfgAN4=
   </data>
  </layer>
- <layer name="Immovable" width="50" height="15">
+ <layer name="Static" width="50" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2D4AFYgZsOC2QfSUaNgQAEsTdAqDSCnudF0hgo4aKyeHgBbmUIonkH+4KHAzoEMB0YgZkLDzCToB/kb5n5c/sBmBzKmBmDBgUlxBzaMHBa47IBhUs3GhgnZQQkm1h+DHY80fwAA+ikDTg==
+   eJztk8sKACEIRZv3LPr/751aCNIoJQkOjgfOsvReKqUg8MNRPAkvy6UcAL1Gj2/wm9Pq51a6xxLqL4704yF7zZAnz1uxFNfGTXC+5ob9uRzUDKwGO6NkD0rcBTcDlN5N2Zsx42iOr/u3HA8psANO
   </data>
  </layer>
+ <objectgroup name="Static_Shapes" width="50" height="15">
+  <properties>
+   <property name="CollisionLayer" value="1"/>
+  </properties>
+  <object x="0" y="768" width="1088" height="192"/>
+  <object x="448" y="512" width="384" height="64"/>
+  <object x="512" y="448" width="64" height="64"/>
+  <object x="1024" y="320" width="192" height="64"/>
+  <object x="1088" y="640" width="384" height="320"/>
+  <object x="1472" y="768" width="192" height="192"/>
+  <object x="1344" y="512" width="64" height="64"/>
+  <object x="1280" y="576" width="64" height="64"/>
+  <object x="1344" y="576" width="64" height="64"/>
+  <object x="1664" y="704" width="896" height="256"/>
+  <object x="2112" y="640" width="64" height="64"/>
+  <object x="2176" y="640" width="64" height="64"/>
+  <object x="2304" y="576" width="64" height="64"/>
+  <object x="2304" y="640" width="64" height="64"/>
+  <object x="1920" y="192" width="448" height="64"/>
+  <object x="2368" y="384" width="256" height="64"/>
+  <object x="2688" y="640" width="512" height="320"/>
+  <object x="896" y="768">
+   <polyline points="-128,0 192,-128"/>
+  </object>
+  <object x="1088" y="640">
+   <polyline points="0,0 192,-64"/>
+  </object>
+  <object x="1472" y="640">
+   <polyline points="0,0 64,64"/>
+  </object>
+  <object x="1536" y="704">
+   <polyline points="0,0 128,0"/>
+  </object>
+  <object x="1920" y="704">
+   <polyline points="0,0 192,-64"/>
+  </object>
+  <object x="2432" y="704">
+   <polyline points="0,0 192,-64"/>
+  </object>
+ </objectgroup>
 </map>

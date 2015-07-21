@@ -10,6 +10,15 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Components">
+      <UniqueIdentifier>{52b2ab14-bf59-44d0-8400-c3c18736aaae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameObjects">
+      <UniqueIdentifier>{4d46adee-40c8-47f8-a7be-2d583d8394bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Systems">
+      <UniqueIdentifier>{84a70659-4323-49c8-97cf-b55527d10a38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,11 +30,23 @@
     <ClCompile Include="..\Classes\GameScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameSprite.cpp">
+    <ClCompile Include="..\Classes\Level.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Sona.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\InputComponent.cpp">
+      <Filter>src\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\InputSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SpriteComponent.cpp">
+      <Filter>src\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MovementComponent.cpp">
+      <Filter>src\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -38,11 +59,29 @@
     <ClInclude Include="..\Classes\GameScene.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameSprite.h">
+    <ClInclude Include="..\Classes\Level.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Sona.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\InputComponent.h">
+      <Filter>src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\InputSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MovementComponent.h">
+      <Filter>src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MovementSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TranformComponent.h">
+      <Filter>src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpriteComponent.h">
+      <Filter>src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameEntity.h">
+      <Filter>src\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

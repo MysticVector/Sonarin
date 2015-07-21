@@ -2,7 +2,11 @@
 #define __GAMESCENE_H__
 
 #include "cocos2d.h"
-#include "Sona.h"
+#include "Level.h"
+
+class GameEntity;
+class InputSystem;
+class MovementSystem;
 
 class GameScene : public cocos2d::LayerColor
 {
@@ -10,44 +14,27 @@ private:
 	cocos2d::Size _visibleSize;
 	cocos2d::Point _origin;
 
-	CC_SYNTHESIZE(bool, _showDebug, ShowDebug);
-	cocos2d::DrawNode* _debugNode;
+	// Player
+	GameEntity *_sona;
 
-	Sona* _sona;
-	cocos2d::SpriteBatchNode * _gameBatchNode;
+	InputSystem* _inputSystem;
+	MovementSystem* _movementSystem;
 
-	cocos2d::TMXTiledMap *_map;
-	cocos2d::TMXLayer *_immovableLayer;
-
-	static std::map<cocos2d::EventKeyboard::KeyCode, std::chrono::high_resolution_clock::time_point> keys;
+	// Level 1
+	Level *_level;
 
 	void createGameScreen();
-
-	cocos2d::Point tileCoordFromPosition(cocos2d::Point pos);
-	cocos2d::Rect tileRectFromTileCoords(cocos2d::Point tileCoords);
-	cocos2d::Vector<cocos2d::Dictionary*>* getSurroundingTilesAtPosition(cocos2d::Point pos, cocos2d::TMXLayer* layer);
-	void GameScene::checkForAndResolveCollisions();
-
-	cocos2d::Rect RectIntersection(const cocos2d::Rect & r1, const cocos2d::Rect & r2) const;
-
-	void setViewportCenter(cocos2d::Point position);
-
-	void drawDebug(cocos2d::Vector<cocos2d::Dictionary*>* tiles);
-
 public:
+	~GameScene();
+
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();
 
-	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-	virtual bool init();
-
-	void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
-	void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
-	bool isKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode);
-	double keyPressedDuration(cocos2d::EventKeyboard::KeyCode keyCode);
-	
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);
+
+	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+	virtual bool init();
 
 	void update(float dt);
 };

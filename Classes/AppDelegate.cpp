@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "GameScene.h"
+#include "chipmunk.h"
 
 USING_NS_CC;
 
@@ -32,6 +33,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	}
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+	//Size screenSize = Size(1024, 576);
 	Size screenSize = Size(1366, 768);
 	glview->setFrameSize(screenSize.width, screenSize.height);
 #else
@@ -42,14 +44,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::EXACT_FIT);
 
 	// turn on display FPS
-	director->setDisplayStats(false);
+	director->setDisplayStats(true);
 
 	// set FPS. the default value is 1.0/60 if you don't call this
 	director->setAnimationInterval(1.0 / 60);
 
 	// create a scene. it's an autorelease object
 	auto scene = GameScene::createScene();
-
+	
 	// run
 	director->runWithScene(scene);
 
