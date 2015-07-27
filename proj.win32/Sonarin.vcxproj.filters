@@ -19,6 +19,12 @@
     <Filter Include="src\Systems">
       <UniqueIdentifier>{84a70659-4323-49c8-97cf-b55527d10a38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Components\Input">
+      <UniqueIdentifier>{c4d75bd3-697e-4874-8978-e5dc1a287492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Input\Actions">
+      <UniqueIdentifier>{a75ef129-8091-45aa-9e29-409f680fd27c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -33,20 +39,17 @@
     <ClCompile Include="..\Classes\Level.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\InputComponent.cpp">
-      <Filter>src\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\InputSystem.cpp">
-      <Filter>src\Systems</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\SpriteComponent.cpp">
       <Filter>src\Components</Filter>
     </ClCompile>
-    <ClCompile Include="MovementSystem.cpp">
+    <ClCompile Include="..\Classes\KeyboardInputSystem.cpp">
       <Filter>src\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\MovementComponent.cpp">
-      <Filter>src\Components</Filter>
+    <ClCompile Include="..\Classes\ActionSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\KeyboardInputComponent.cpp">
+      <Filter>src\Components\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,18 +65,6 @@
     <ClInclude Include="..\Classes\Level.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\InputComponent.h">
-      <Filter>src\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\InputSystem.h">
-      <Filter>src\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MovementComponent.h">
-      <Filter>src\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MovementSystem.h">
-      <Filter>src\Systems</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\TranformComponent.h">
       <Filter>src\Components</Filter>
     </ClInclude>
@@ -82,6 +73,33 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameEntity.h">
       <Filter>src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicsComponent.h">
+      <Filter>src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\KeyboardInputSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ActionSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VelocityComponent.h">
+      <Filter>src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JumpActionComponent.h">
+      <Filter>src\Components\Input\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MoveRightActionComponent.h">
+      <Filter>src\Components\Input\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MoveLeftActionComponent.h">
+      <Filter>src\Components\Input\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\KeyboardInputComponent.h">
+      <Filter>src\Components\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ActionComponent.h">
+      <Filter>src\Components\Input\Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

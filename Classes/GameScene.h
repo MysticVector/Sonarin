@@ -5,8 +5,8 @@
 #include "Level.h"
 
 class GameEntity;
-class InputSystem;
-class MovementSystem;
+class KeyboardInputSystem;
+class ActionSystem;
 
 class GameScene : public cocos2d::LayerColor
 {
@@ -17,8 +17,8 @@ private:
 	// Player
 	GameEntity *_sona;
 
-	InputSystem* _inputSystem;
-	MovementSystem* _movementSystem;
+	KeyboardInputSystem* _inputSystem;
+	ActionSystem* _actionSystem;
 
 	// Level 1
 	Level *_level;

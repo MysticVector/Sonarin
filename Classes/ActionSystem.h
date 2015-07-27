@@ -1,14 +1,14 @@
-#ifndef __MOVEMENT_SYSTEM_H__
-#define __MOVEMENT_SYSTEM_H__
+#ifndef __ACTION_SYSTEM_H__
+#define __ACTION_SYSTEM_H__
 
 #include "cocos2d.h"
 
 class GameEntity;
 
-class MovementSystem : public cocos2d::Ref
+class ActionSystem : public cocos2d::Ref
 {
 public:
-	virtual ~MovementSystem() {}
+	virtual ~ActionSystem() {}
 
 	// Methods to handle the observing components (Observer Pattern)
 	void registerEntity(GameEntity* e);
@@ -21,4 +21,4 @@ private:
 	cocos2d::Vector<GameEntity*> _entities;
 };
 
-#endif // __MOVEMENT_SYSTEM_H__
+#endif // __ACTION_SYSTEM_H__

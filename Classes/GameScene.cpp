@@ -2,10 +2,15 @@
 #include "GameEntity.h"
 #include "SpriteComponent.h"
 #include "TranformComponent.h"
-#include "MovementComponent.h"
-#include "InputComponent.h"
-#include "InputSystem.h"
-#include "MovementSystem.h"
+#include "VelocityComponent.h"
+#include "PhysicsComponent.h"
+#include "KeyboardInputComponent.h"
+#include "KeyboardInputSystem.h"
+#include "ActionSystem.h"
+#include "ActionComponent.h"
+#include "MoveLeftActionComponent.h"
+#include "MoveRightActionComponent.h"
+#include "JumpActionComponent.h"
 
 USING_NS_CC;
 
@@ -22,10 +27,8 @@ Scene* GameScene::createScene()
 	// 'layer' is an autorelease object
 	auto layer = GameScene::create();
 
-	// add layer as a child to scene
 	scene->addChild(layer);
 
-	// return the scene
 	return scene;
 }
 
@@ -42,12 +45,12 @@ bool GameScene::init()
 	_visibleSize = Director::getInstance()->getVisibleSize();
 	_origin = Director::getInstance()->getVisibleOrigin();
 	
-	_inputSystem = new InputSystem();
+	_inputSystem = new KeyboardInputSystem();
 	_inputSystem->init(this);
 	_inputSystem->retain();
 
-	_movementSystem = new MovementSystem();
-	_movementSystem->retain();
+	_actionSystem = new ActionSystem();
+	_actionSystem->retain();
 
 	createGameScreen();
 	
@@ -76,25 +79,52 @@ void GameScene::createGameScreen()
 	tc->autorelease();
 	_sona->addComponent(tc);
 
-	MovementComponent* mc = new MovementComponent();
-	mc->init(Vec2::ZERO, Vec2(400, 600), Vec2(800, 30), 800, 750);
-	mc->autorelease();
-	_sona->addComponent(mc);
+	VelocityComponent* vc = new VelocityComponent();
+	vc->autorelease();
+	_sona->addComponent(vc);
 
-	InputComponent* ic = new InputComponent();
-	ic->mapAction(MoveLeft, EventKeyboard::KeyCode::KEY_LEFT_ARROW);
-	ic->mapAction(MoveRight, EventKeyboard::KeyCode::KEY_RIGHT_ARROW);
-	ic->mapAction(Jump, EventKeyboard::KeyCode::KEY_SPACE);
+	PhysicsComponent* pc = new PhysicsComponent();
+	pc->init(Vec2(400, 600), 30, 800);
+	vc->autorelease();
+	_sona->addComponent(pc);
+
+	// Instanciating the Action Components
+	MoveLeftActionComponent* mlc = new MoveLeftActionComponent();
+	mlc->init(800);
+	mlc->autorelease();
+	_sona->addComponent(mlc);
+
+	MoveRightActionComponent* mrc = new MoveRightActionComponent();
+	mrc->init(800);
+	mrc->autorelease();
+	_sona->addComponent(mrc);
+
+	JumpActionComponent* jc = new JumpActionComponent();
+	jc->init(750);
+	jc->autorelease();
+	_sona->addComponent(jc);
+
+	// Instanciating the Input Components
+	KeyboardInputComponent* ic = new KeyboardInputComponent();
+	ic->mapActionToKey(ActionType::MoveLeft, EventKeyboard::KeyCode::KEY_LEFT_ARROW);
+	ic->registerAction(ActionType::MoveLeft, mlc);
+
+	ic->mapActionToKey(ActionType::MoveRight, EventKeyboard::KeyCode::KEY_RIGHT_ARROW);
+	ic->registerAction(ActionType::MoveRight, mrc);
+
+	ic->mapActionToKey(ActionType::Jump, EventKeyboard::KeyCode::KEY_SPACE);
+	ic->registerAction(ActionType::Jump, jc);
+
 	ic->autorelease();
 	_inputSystem->registerComponent(ic);
 	_sona->addComponent(ic);
 
-	_movementSystem->registerEntity(_sona);
+	_actionSystem->registerEntity(_sona);
 	addChild(_sona);
 }
 
 void GameScene::update(float dt)
 {
 	//system("cls");
-	_movementSystem->update(dt);
+	_actionSystem->update(dt);
 }
