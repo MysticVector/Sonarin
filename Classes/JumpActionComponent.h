@@ -6,32 +6,28 @@
 
 class JumpActionComponent : public ActionComponent
 {
-	friend class KeyboardInputSystem;
-
+	friend class ActionSystem;
 public:
-	JumpActionComponent()
+	CREATE_FUNC(JumpActionComponent);
+
+	virtual bool init()
 	{
 		_name = "JumpAction";
+		_jumpStartSpeedY = 0;
 		_jumping = false;
 		_jumpKeyDown = false;
-	}
-
-	virtual ~JumpActionComponent() {}
-
-	virtual bool init(float startSpeed)
-	{
-		_jumpStartSpeedY = startSpeed;
 		return true;
 	}
 
+	
 	// The amount of upward force to apply when on a jump
-	float _jumpStartSpeedY;
+	CC_SYNTHESIZE(float, _jumpStartSpeedY, JumpStartSpeedY);
 
 	// True is currently jumping, used to prevent jumping in mid-air
-	bool _jumping;
+	CC_SYNTHESIZE(bool, _jumping, Jumping);
 
 	// True if the jump key is currently held down (key must be released to allow a new jump)
-	bool _jumpKeyDown;
+	CC_SYNTHESIZE(bool, _jumpKeyDown, JumpKeyDown);
 };
 
 #endif // __JUMP_ACTION_COMPONENT_H__

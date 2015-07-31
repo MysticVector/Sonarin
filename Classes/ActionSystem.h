@@ -8,7 +8,12 @@ class GameEntity;
 class ActionSystem : public cocos2d::Ref
 {
 public:
-	virtual ~ActionSystem() {}
+	CREATE_FUNC(ActionSystem);
+
+	virtual bool init()
+	{
+		return true;
+	}
 
 	// Methods to handle the observing components (Observer Pattern)
 	void registerEntity(GameEntity* e);

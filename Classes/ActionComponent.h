@@ -5,16 +5,15 @@
 
 class ActionComponent : public cocos2d::Component
 {
-	friend class KeyboardInputSystem;
-
 public:
-	ActionComponent()
+	CREATE_FUNC(ActionComponent);
+
+	virtual bool init()
 	{
 		_name = "Action";
 		_enabled = false;
+		return true;
 	}
-
-	virtual ~ActionComponent() {}
 
 	bool _enabled;
 };

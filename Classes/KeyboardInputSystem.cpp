@@ -5,6 +5,20 @@ USING_NS_CC;
 
 std::unordered_map<cocos2d::EventKeyboard::KeyCode, ActionType> KeyboardInputComponent::_actionsByKey;
 
+KeyboardInputSystem* KeyboardInputSystem::create(cocos2d::Node* owner)
+{
+	KeyboardInputSystem * ret = new (std::nothrow) KeyboardInputSystem();
+	if (ret != nullptr && ret->init(owner))
+	{
+		ret->autorelease();
+	}
+	else
+	{
+		CC_SAFE_DELETE(ret);
+	}
+	return ret;
+}
+
 KeyboardInputSystem::~KeyboardInputSystem()
 {
 	// Stop listening to keyboard events

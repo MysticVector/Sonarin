@@ -2,27 +2,18 @@
 
 USING_NS_CC;
 
-Level::~Level()
+Level* Level::create(std::string levelName, std::string collisionObjectGroupName)
 {
-}
-
-Level::Level()
-{
-}
-
-Level* Level::create(std::string levelName, std::string collisionObjectGroupName){
-	Level *pRet = new Level();
-	if (pRet && pRet->init(levelName, collisionObjectGroupName))
+	Level * ret = new (std::nothrow) Level();
+	if (ret != nullptr && ret->init(levelName, collisionObjectGroupName))
 	{
-		pRet->autorelease();
-		return pRet;
+		ret->autorelease();
 	}
 	else
 	{
-		delete pRet;
-		pRet = NULL;
-		return NULL;
+		CC_SAFE_DELETE(ret);
 	}
+	return ret;
 }
 
 bool Level::init(std::string levelName, std::string collisionObjectGroupName)
@@ -61,7 +52,7 @@ void Level::createPhysicsBody()
 
 			Node* node = Node::create();
 			node->setPhysicsBody(body);
-			addChild(node);
+			//addChild(node);
 			_physicsNodes.pushBack(node);
 		}
 		else
@@ -89,13 +80,8 @@ void Level::createPhysicsBody()
 
 			Node* node = Node::create();
 			node->setPhysicsBody(body);
-			addChild(node);
+			//addChild(node);
 			_physicsNodes.pushBack(node);
 		}
 	}
-}
-
-void Level::update(float dt)
-{
-
 }

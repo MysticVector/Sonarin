@@ -71,7 +71,7 @@ void ActionSystem::update(float dt)
 					jumpAction->_jumpKeyDown = false;
 				}
 			}
-
+			
 			if (physics = static_cast<PhysicsComponent*>(entity->getComponent("Physics")))
 			{
 				// Apply deceleration
@@ -108,17 +108,17 @@ void ActionSystem::update(float dt)
 			}
 			
 			// Apply final velocity to the desired position
-			transform->pos += velocity->_speed * dt;
+			transform->_pos += velocity->_speed * dt;
 
 			// DEBUG - temporary ground level to stop the player from falling
-			if (transform->pos.y < 256)
+			if (transform->_pos.y < 256)
 			{
-				transform->pos.y = 256;
+				transform->_pos.y = 256;
 				jumpAction->_jumping = false;
 			}
 
 			// Assign the position of the entity's node from the transform component
-			entity->setPosition(transform->pos);
+			entity->setPosition(transform->_pos);
 		}
 	}
 }

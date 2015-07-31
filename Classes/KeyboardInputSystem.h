@@ -9,6 +9,8 @@ class KeyboardInputComponent;
 class KeyboardInputSystem : public cocos2d::Ref
 {
 public:
+	static KeyboardInputSystem* create(cocos2d::Node* owner);
+
 	virtual ~KeyboardInputSystem();
 
 	virtual bool init(cocos2d::Node* owner);

@@ -5,27 +5,27 @@
 
 class PhysicsComponent : public cocos2d::Component
 {
+	friend class ActionSystem;
 public:
-	PhysicsComponent() { _name = "Physics"; }
+	CREATE_FUNC(PhysicsComponent);
 
-	virtual ~PhysicsComponent() {}
-
-	virtual bool init(cocos2d::Vec2 ms, float g, float d)
+	virtual bool init()
 	{
-		_maxSpeed = ms;
-		_gravity = g;
-		_decX = d;
+		_name = "Physics";
+		_maxSpeed = cocos2d::Vec2::ZERO;
+		_gravity = 0;
+		_decX = 0;
 		return true;
 	}
 
 	// The max movement speed allowed
-	cocos2d::Vec2 _maxSpeed;
+	CC_SYNTHESIZE(cocos2d::Vec2, _maxSpeed, MaxSpeed);
 
 	// The amount of acceleration to apply
-	float _gravity;
+	CC_SYNTHESIZE(float, _gravity, Gravity);
 
 	// The amount of deceleration to apply when moving horizontally
-	float _decX;
+	CC_SYNTHESIZE(float, _decX, DecX);
 };
 
 #endif // __MOVEMENT_COMPONENT_H__

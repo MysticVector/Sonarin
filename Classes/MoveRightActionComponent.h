@@ -6,19 +6,19 @@
 
 class MoveRightActionComponent : public ActionComponent
 {
+	friend class ActionSystem;
 public:
-	MoveRightActionComponent() { _name = "MoveRightAction"; }
+	CREATE_FUNC(MoveRightActionComponent);
 
-	virtual ~MoveRightActionComponent() {}
-
-	virtual bool init(float a)
+	virtual bool init()
 	{
-		_acc = a;
+		_name = "MoveRightAction";
+		_acc = 0;
 		return true;
 	}
 
 	// The amount of acceleration to apply
-	float _acc;
+	CC_SYNTHESIZE(float, _acc, Acc);
 };
 
 #endif // __MOVE_RIGHT_ACTION_COMPONENT_H__

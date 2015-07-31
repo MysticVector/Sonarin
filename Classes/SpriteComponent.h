@@ -6,13 +6,15 @@
 class SpriteComponent : public cocos2d::Component
 {
 public:
-	SpriteComponent() { _name = "Sprite"; }
+	CREATE_FUNC(SpriteComponent);
+
 	virtual ~SpriteComponent();
 
-	virtual bool init(cocos2d::Node* owner);
-	virtual bool init(cocos2d::Node* owner, std::string file);
+	virtual bool init();
 
-	cocos2d::Sprite* _sprite;
+	virtual void setSpriteFile(std::string file);
+
+	CC_SYNTHESIZE(cocos2d::Sprite*, _sprite, Sprite);
 };
 
 #endif // __SPRITE_COMPONENT_H__

@@ -5,15 +5,23 @@
 
 class TransformComponent : public cocos2d::Component
 {
+	friend class ActionSystem;
 public:
-	TransformComponent() { _name = "Transform"; }
-	virtual ~TransformComponent() {}
+	CREATE_FUNC(TransformComponent);
+
+	virtual bool init()
+	{
+		_name = "Transform";
+		_pos = cocos2d::Vec2::ZERO;
+		_nextPos = cocos2d::Vec2::ZERO;
+		return true;
+	}
 
 	// The current position
-	cocos2d::Vec2 pos;
+	CC_SYNTHESIZE(cocos2d::Vec2, _pos, Pos);
 
 	// The position to be applied next frame
-	cocos2d::Vec2 nextPos;
+	CC_SYNTHESIZE(cocos2d::Vec2, _nextPos, NextPos);
 };
 
 #endif // __TRANSFORM_COMPONENT_H__

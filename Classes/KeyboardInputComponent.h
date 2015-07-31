@@ -4,7 +4,6 @@
 #include "cocos2d.h"
 #include "ActionComponent.h"
 
-
 enum ActionType
 {
 	MoveLeft,
@@ -15,10 +14,14 @@ enum ActionType
 class KeyboardInputComponent : public cocos2d::Component
 {
 	friend class KeyboardInputSystem;
-
 public:
-	KeyboardInputComponent() { _name = "Input"; }
-	virtual ~KeyboardInputComponent() {}
+	CREATE_FUNC(KeyboardInputComponent);
+
+	virtual bool init()
+	{
+		_name = "Input";
+		return true;
+	}
 
 	void registerAction(ActionType at, ActionComponent* action);
 	void unregisterAction(ActionType at);

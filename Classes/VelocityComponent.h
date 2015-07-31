@@ -5,17 +5,19 @@
 
 class VelocityComponent : public cocos2d::Component
 {
+	friend class ActionSystem;
 public:
-	VelocityComponent()
+	CREATE_FUNC(VelocityComponent);
+
+	virtual bool init()
 	{
 		_name = "Velocity";
-		_speed = cocos2d::Vec2::ZERO;
+		_speed = cocos2d::Vec2(0, 0);
+		return true;
 	}
 
-	virtual ~VelocityComponent() {}
-
 	// The X,Y movement to occur on the next frame
-	cocos2d::Vec2 _speed;
+	CC_SYNTHESIZE(cocos2d::Vec2, _speed, Speed);
 };
 
 #endif // __VELOCITY_COMPONENT_H__

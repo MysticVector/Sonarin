@@ -7,22 +7,16 @@ SpriteComponent::~SpriteComponent()
 	CC_SAFE_RELEASE(_sprite);
 }
 
-bool SpriteComponent::init(Node* owner)
+bool SpriteComponent::init()
 {
-	_sprite = Sprite::create();
-	_sprite->retain();
-
-	owner->addChild(_sprite);
-
+	_name = "Sprite";
+	_sprite = nullptr;
 	return true;
 }
 
-bool SpriteComponent::init(Node* owner, std::string file)
+void SpriteComponent::setSpriteFile(std::string file)
 {
 	_sprite = Sprite::create(file);
+	assert(_sprite);
 	_sprite->retain();
-
-	owner->addChild(_sprite);
-
-	return true;
 }

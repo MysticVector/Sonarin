@@ -33,8 +33,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	}
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-	//Size screenSize = Size(1024, 576);
-	Size screenSize = Size(1366, 768);
+	Size screenSize = Size(1024, 576);
+	//Size screenSize = Size(1366, 768);
 	glview->setFrameSize(screenSize.width, screenSize.height);
 #else
 	Size screenSize = glview->getFrameSize();

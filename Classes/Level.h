@@ -11,14 +11,11 @@ private:
 
 	void createPhysicsBody();
 public:
-	CC_SYNTHESIZE(cocos2d::TMXObjectGroup*, _collisionObjectGroup, CollisionObjectGroup);
-	
-	Level();
-	~Level();
-
 	static Level* create(std::string levelName, std::string collisionLayerName);
+
 	bool init(std::string levelName, std::string collisionLayerName);
-	virtual void update(float dt);
+
+	CC_SYNTHESIZE(cocos2d::TMXObjectGroup*, _collisionObjectGroup, CollisionObjectGroup);
 };
 
 #endif // __LEVEL_H__
