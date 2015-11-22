@@ -60,6 +60,12 @@
     <ClCompile Include="..\Classes\ScreenLog.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TransformSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CollisionResolutionSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -118,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ScreenLog.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TransformSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CollisionResolutionSystem.h">
+      <Filter>src\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

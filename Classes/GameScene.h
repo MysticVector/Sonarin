@@ -4,9 +4,11 @@
 #include "cocos2d.h"
 #include "Level.h"
 
-class GameEntity;
 class KeyboardInputSystem;
+class CollisionResolutionSystem;
+class TransformSystem;
 class ActionSystem;
+class PhysicsSystem;
 
 class GameScene : public cocos2d::LayerColor
 {
@@ -15,10 +17,13 @@ private:
 	cocos2d::Point _origin;
 	
 	KeyboardInputSystem* _inputSystem;
+	CollisionResolutionSystem* _collisionResolutionSystem;
+	TransformSystem* _transformSystem;
 	ActionSystem* _actionSystem;
+	PhysicsSystem* _physicsSystem;
 
 	// Level 1
-	Level *_level;
+	Level* _level;
 
 	void createDebugInfo();
 	void createGameScreen();

@@ -1,7 +1,5 @@
 #include "ActionSystem.h"
 
-#include "GameEntity.h"
-#include "KeyboardInputComponent.h"
 #include "TranformComponent.h"
 #include "VelocityComponent.h"
 #include "PhysicsComponent.h"
@@ -44,14 +42,11 @@ void ActionSystem::update(float dt)
 		if ((transform = static_cast<TransformComponent*>(entity->getComponent("Transform"))) &&
 			(velocity = static_cast<VelocityComponent*>(entity->getComponent("Velocity"))))
 		{
-			bool moveRequest = false;
-
 			if (moveLeftAction = static_cast<MoveLeftActionComponent*>(entity->getComponent("MoveLeftAction")))
 			{
 				if (moveLeftAction->isEnabled() && moveLeftAction->isActive())
 				{
-					velocity->_speed.x -= moveLeftAction->getAcc() * dt;
-					moveRequest = true;
+					velocity->getSpeed().x -= moveLeftAction->getAcc() * dt;
 				}
 			}
 
@@ -59,8 +54,7 @@ void ActionSystem::update(float dt)
 			{
 				if (moveRightAction->isEnabled() && moveRightAction->isActive())
 				{
-					velocity->_speed.x += moveRightAction->getAcc() * dt;
-					moveRequest = !moveRequest;
+					velocity->getSpeed().x += moveRightAction->getAcc() * dt;
 				}
 			}
 			
@@ -70,61 +64,13 @@ void ActionSystem::update(float dt)
 				{
 					jumpAction->setJumping(true);
 					jumpAction->setJumpKeyDown(true);
-					velocity->_speed.y = jumpAction->getJumpStartSpeedY();
+					velocity->getSpeed().y = jumpAction->getJumpStartSpeedY();
 				}
 				else if (!jumpAction->isActive())
 				{
 					jumpAction->setJumpKeyDown(false);
 				}
 			}
-			
-			if (physics = static_cast<PhysicsComponent*>(entity->getComponent("Physics")))
-			{
-				// Apply deceleration
-				if (!moveRequest)
-				{
-					if (velocity->_speed.x < 0)
-						velocity->_speed.x += physics->_decX * dt;
-
-					if (velocity->_speed.x > 0)
-						velocity->_speed.x -= physics->_decX * dt;
-
-					// Deceleration may produce a speed that is greater than zero but
-					// smaller than the smallest unit of deceleration. These lines ensure
-					// that the player does not keep travelling at slow speed forever after
-					// decelerating.
-					if (abs(velocity->_speed.x) > 0 && 
-						abs(velocity->_speed.x) < physics->_decX * dt)
-						velocity->_speed.x = 0;
-				}
-
-				// Apply the force of gravity
-				velocity->_speed.y -= physics->_gravity * dt;
-
-				// Apply min and max limits to the velocity
-				if (velocity->_speed.x < -physics->_maxSpeed.x)
-					velocity->_speed.x = -physics->_maxSpeed.x;
-
-				if (velocity->_speed.x > physics->_maxSpeed.x)
-					velocity->_speed.x = physics->_maxSpeed.x;
-
-				// Limit the force of gravity (terminal velocity)
-				if (velocity->_speed.y < -physics->_maxSpeed.y)
-					velocity->_speed.y = -physics->_maxSpeed.y;
-			}
-			
-			// Apply final velocity to the desired position
-			transform->_pos += velocity->_speed * dt;
-
-			// DEBUG - temporary ground level to stop the player from falling
-			if (transform->_pos.y < 256)
-			{
-				transform->_pos.y = 256;
-				jumpAction->setJumping(false);
-			}
-
-			// Assign the position of the entity's node from the transform component
-			entity->setPosition(transform->_pos);
 		}
 	}
 }

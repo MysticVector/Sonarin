@@ -5,7 +5,6 @@
 
 class PhysicsComponent : public cocos2d::Component
 {
-	friend class ActionSystem;
 public:
 	CREATE_FUNC(PhysicsComponent);
 
@@ -26,6 +25,9 @@ public:
 
 	// The amount of deceleration to apply when moving horizontally
 	CC_SYNTHESIZE(float, _decX, DecX);
+
+	// The maximum number of iterations for the contact solver to run per frame
+	static const int iterations = 3;
 };
 
 #endif // __PHYSICS_COMPONENT_H__

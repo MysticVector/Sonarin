@@ -6,11 +6,15 @@
 #include "PhysicsComponent.h"
 #include "KeyboardInputComponent.h"
 #include "KeyboardInputSystem.h"
+#include "CollisionResolutionSystem.h"
+#include "TransformSystem.h"
 #include "ActionSystem.h"
+#include "PhysicsSystem.h"
 #include "ActionComponent.h"
 #include "MoveLeftActionComponent.h"
 #include "MoveRightActionComponent.h"
 #include "JumpActionComponent.h"
+#include "PolygonBodyComponent.h"
 
 USING_NS_CC;
 
@@ -43,8 +47,17 @@ bool GameScene::init()
 	_inputSystem = KeyboardInputSystem::create(this);
 	_inputSystem->retain();
 
+	_collisionResolutionSystem = CollisionResolutionSystem::create(this);
+	_collisionResolutionSystem->retain();
+
+	_transformSystem = TransformSystem::create(this);
+	_transformSystem->retain();
+
 	_actionSystem = ActionSystem::create(this);
 	_actionSystem->retain();
+
+	_physicsSystem = PhysicsSystem::create(this);
+	_physicsSystem->retain();
 
 	createDebugInfo();
 	createGameScreen();
@@ -74,30 +87,53 @@ void GameScene::createGameScreen()
 	sona->addComponent(sc);
 
 	TransformComponent* tc = TransformComponent::create();
-	tc->setPos(Vec2(_level->getTileSize().width * 2, _level->getTileSize().height * 4));
+	tc->setNextPosition(Vec2(_level->getTileSize().width * 2, _level->getTileSize().height * 4));
 	sona->addComponent(tc);
 
 	VelocityComponent* vc = VelocityComponent::create();
 	sona->addComponent(vc);
 
+	float scale = 50;
+
 	PhysicsComponent* pc = PhysicsComponent::create();
-	pc->setMaxSpeed(Vec2(400, 600));
-	pc->setGravity(400);
-	pc->setDecX(600);
+	pc->setMaxSpeed(Vec2(scale * 8, scale * 12));
+	pc->setGravity(10 * scale);
+	pc->setDecX(14 * scale);
 	sona->addComponent(pc);
 
 	// Instanciating the Action Components
 	MoveLeftActionComponent* mlc = MoveLeftActionComponent::create();
-	mlc->setAcc(600);
+	mlc->setAcc(8 * scale);
 	sona->addComponent(mlc);
 
 	MoveRightActionComponent* mrc = MoveRightActionComponent::create();
-	mrc->setAcc(600);
+	mrc->setAcc(8 * scale);
 	sona->addComponent(mrc);
 
 	JumpActionComponent* jc = JumpActionComponent::create();
-	jc->setJumpStartSpeedY(400);
+	jc->setJumpStartSpeedY(9 * scale);
 	sona->addComponent(jc);
+
+	// Creating a polygon physics body
+	PolygonBodyComponent* polyBody = PolygonBodyComponent::create();
+
+	// Top of the head
+	polyBody->addPoint(Vec2(15, 0));
+	polyBody->addPoint(Vec2(40, 0));
+
+	// Bottom of the feet
+	polyBody->addPoint(Vec2(15, 128));
+	polyBody->addPoint(Vec2(40, 128));
+
+	// Left arm
+	polyBody->addPoint(Vec2(10, 32));
+	polyBody->addPoint(Vec2(10, 96));
+
+	// Right arm
+	polyBody->addPoint(Vec2(45, 32));
+	polyBody->addPoint(Vec2(45, 96));
+
+	sona->addComponent(polyBody);
 
 	addChild(sona);
 
@@ -113,5 +149,8 @@ void GameScene::createGameScreen()
 void GameScene::update(float dt)
 {
 	//system("cls");
+	_collisionResolutionSystem->update(dt);
+	_transformSystem->update(dt);
 	_actionSystem->update(dt);
+	_physicsSystem->update(dt);
 }
