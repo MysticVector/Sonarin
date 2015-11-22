@@ -13,16 +13,14 @@ class GameScene : public cocos2d::LayerColor
 private:
 	cocos2d::Size _visibleSize;
 	cocos2d::Point _origin;
-
-	// Player
-	GameEntity *_sona;
-
+	
 	KeyboardInputSystem* _inputSystem;
 	ActionSystem* _actionSystem;
 
 	// Level 1
 	Level *_level;
 
+	void createDebugInfo();
 	void createGameScreen();
 public:
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer

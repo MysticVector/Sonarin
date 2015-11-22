@@ -25,6 +25,9 @@
     <Filter Include="src\GameObjects">
       <UniqueIdentifier>{9113e7ef-a2c2-4d8e-9efc-8f4b4facf9d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Components\Physics">
+      <UniqueIdentifier>{0b096033-1685-4014-b087-dac9f9bfbe51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,6 +54,12 @@
     <ClCompile Include="..\Classes\Level.cpp">
       <Filter>src\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\PhysicsSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ScreenLog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -62,16 +71,7 @@
     <ClInclude Include="..\Classes\GameScene.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\VelocityComponent.h">
-      <Filter>src\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TranformComponent.h">
-      <Filter>src\Components</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\SpriteComponent.h">
-      <Filter>src\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PhysicsComponent.h">
       <Filter>src\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ActionComponent.h">
@@ -100,6 +100,24 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Level.h">
       <Filter>src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicsComponent.h">
+      <Filter>src\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TranformComponent.h">
+      <Filter>src\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VelocityComponent.h">
+      <Filter>src\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PolygonBodyComponent.h">
+      <Filter>src\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicsSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ScreenLog.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

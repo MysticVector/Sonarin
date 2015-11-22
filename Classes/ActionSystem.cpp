@@ -13,14 +13,18 @@
 
 USING_NS_CC;
 
-void ActionSystem::registerEntity(GameEntity* e)
+ActionSystem* ActionSystem::create(cocos2d::Node* owner)
 {
-	_entities.pushBack(e);
-}
-
-void ActionSystem::unregisterEntity(GameEntity* e)
-{
-	_entities.eraseObject(e, true);
+	ActionSystem * ret = new (std::nothrow) ActionSystem();
+	if (ret != nullptr && ret->init(owner))
+	{
+		ret->autorelease();
+	}
+	else
+	{
+		CC_SAFE_DELETE(ret);
+	}
+	return ret;
 }
 
 void ActionSystem::update(float dt)
@@ -33,7 +37,9 @@ void ActionSystem::update(float dt)
 	MoveRightActionComponent* moveRightAction = nullptr;
 	JumpActionComponent* jumpAction = nullptr;
 
-	for (GameEntity* entity : _entities)
+	Vector<Node*> entities = _owner->getChildren();
+	
+	for (Node* entity : entities)
 	{
 		if ((transform = static_cast<TransformComponent*>(entity->getComponent("Transform"))) &&
 			(velocity = static_cast<VelocityComponent*>(entity->getComponent("Velocity"))))
@@ -42,33 +48,33 @@ void ActionSystem::update(float dt)
 
 			if (moveLeftAction = static_cast<MoveLeftActionComponent*>(entity->getComponent("MoveLeftAction")))
 			{
-				if (moveLeftAction->_enabled)
+				if (moveLeftAction->isEnabled() && moveLeftAction->isActive())
 				{
-					velocity->_speed.x -= moveLeftAction->_acc * dt;
-					moveRequest = !moveRequest;
+					velocity->_speed.x -= moveLeftAction->getAcc() * dt;
+					moveRequest = true;
 				}
 			}
 
 			if (moveRightAction = static_cast<MoveRightActionComponent*>(entity->getComponent("MoveRightAction")))
 			{
-				if (moveRightAction->_enabled)
+				if (moveRightAction->isEnabled() && moveRightAction->isActive())
 				{
-					velocity->_speed.x += moveRightAction->_acc * dt;
+					velocity->_speed.x += moveRightAction->getAcc() * dt;
 					moveRequest = !moveRequest;
 				}
 			}
-
+			
 			if (jumpAction = static_cast<JumpActionComponent*>(entity->getComponent("JumpAction")))
 			{
-				if (jumpAction->_enabled && !jumpAction->_jumping && !jumpAction->_jumpKeyDown)
+				if (jumpAction->isEnabled() && jumpAction->isActive() && !jumpAction->isJumping() && !jumpAction->isJumpKeyDown())
 				{
-					jumpAction->_jumping = true;
-					jumpAction->_jumpKeyDown = true;
-					velocity->_speed.y = jumpAction->_jumpStartSpeedY;
+					jumpAction->setJumping(true);
+					jumpAction->setJumpKeyDown(true);
+					velocity->_speed.y = jumpAction->getJumpStartSpeedY();
 				}
-				else if (!jumpAction->_enabled)
+				else if (!jumpAction->isActive())
 				{
-					jumpAction->_jumpKeyDown = false;
+					jumpAction->setJumpKeyDown(false);
 				}
 			}
 			
@@ -93,7 +99,7 @@ void ActionSystem::update(float dt)
 				}
 
 				// Apply the force of gravity
-				velocity->_speed.y -= physics->_gravity;
+				velocity->_speed.y -= physics->_gravity * dt;
 
 				// Apply min and max limits to the velocity
 				if (velocity->_speed.x < -physics->_maxSpeed.x)
@@ -114,7 +120,7 @@ void ActionSystem::update(float dt)
 			if (transform->_pos.y < 256)
 			{
 				transform->_pos.y = 256;
-				jumpAction->_jumping = false;
+				jumpAction->setJumping(false);
 			}
 
 			// Assign the position of the entity's node from the transform component

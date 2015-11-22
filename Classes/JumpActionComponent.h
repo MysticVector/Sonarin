@@ -6,7 +6,6 @@
 
 class JumpActionComponent : public ActionComponent
 {
-	friend class ActionSystem;
 public:
 	CREATE_FUNC(JumpActionComponent);
 
@@ -23,11 +22,19 @@ public:
 	// The amount of upward force to apply when on a jump
 	CC_SYNTHESIZE(float, _jumpStartSpeedY, JumpStartSpeedY);
 
+
+	void setJumping(bool jumping) { _jumping = jumping; }
+	bool isJumping() const { return _jumping; }
+
+	void setJumpKeyDown(bool jumpKeyDown) { _jumpKeyDown = jumpKeyDown; }
+	bool isJumpKeyDown() const { return _jumpKeyDown; }
+protected:
+
 	// True is currently jumping, used to prevent jumping in mid-air
-	CC_SYNTHESIZE(bool, _jumping, Jumping);
+	bool _jumping;
 
 	// True if the jump key is currently held down (key must be released to allow a new jump)
-	CC_SYNTHESIZE(bool, _jumpKeyDown, JumpKeyDown);
+	bool _jumpKeyDown;
 };
 
 #endif // __JUMP_ACTION_COMPONENT_H__

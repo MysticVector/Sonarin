@@ -6,7 +6,6 @@
 
 class MoveRightActionComponent : public ActionComponent
 {
-	friend class ActionSystem;
 public:
 	CREATE_FUNC(MoveRightActionComponent);
 

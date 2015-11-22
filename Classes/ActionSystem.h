@@ -2,28 +2,27 @@
 #define __ACTION_SYSTEM_H__
 
 #include "cocos2d.h"
-
-class GameEntity;
+#include "ScreenLog.h"
 
 class ActionSystem : public cocos2d::Ref
 {
 public:
-	CREATE_FUNC(ActionSystem);
+	static ActionSystem* create(cocos2d::Node* owner);
 
-	virtual bool init()
+	virtual bool init(cocos2d::Node* owner)
 	{
+		logMsg = g_screenLog->log(LL_DEBUG, "");
+
+		_owner = owner;
 		return true;
 	}
-
-	// Methods to handle the observing components (Observer Pattern)
-	void registerEntity(GameEntity* e);
-	void unregisterEntity(GameEntity* e);
 
 	void update(float dt);
 
 private:
-	// List of observing entities
-	cocos2d::Vector<GameEntity*> _entities;
+	cocos2d::Node* _owner;
+
+	screenLogMessage* logMsg;
 };
 
 #endif // __ACTION_SYSTEM_H__

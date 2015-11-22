@@ -71,7 +71,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(EngineRoot)external\win32-specific\pthreads\include;$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -84,7 +84,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(EngineRoot)external\win32-specific\pthreads\prebuilt\x86\pthreadVC2.lib;$(EngineRoot)external\win32-specific\pthreads\prebuilt\x86\pthreadVCE2.lib;$(EngineRoot)external\win32-specific\pthreads\prebuilt\x86\pthreadVSE2.lib;$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -150,6 +150,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\KeyboardInputComponent.cpp" />
     <ClCompile Include="..\Classes\KeyboardInputSystem.cpp" />
     <ClCompile Include="..\Classes\Level.cpp" />
+    <ClCompile Include="..\Classes\PhysicsSystem.cpp" />
+    <ClCompile Include="..\Classes\ScreenLog.cpp" />
     <ClCompile Include="..\Classes\SpriteComponent.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -166,6 +168,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\MoveLeftActionComponent.h" />
     <ClInclude Include="..\Classes\MoveRightActionComponent.h" />
     <ClInclude Include="..\Classes\PhysicsComponent.h" />
+    <ClInclude Include="..\Classes\PhysicsSystem.h" />
+    <ClInclude Include="..\Classes\PolygonBodyComponent.h" />
+    <ClInclude Include="..\Classes\ScreenLog.h" />
     <ClInclude Include="..\Classes\SpriteComponent.h" />
     <ClInclude Include="..\Classes\TranformComponent.h" />
     <ClInclude Include="..\Classes\VelocityComponent.h" />

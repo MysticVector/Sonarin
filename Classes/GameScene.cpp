@@ -43,9 +43,10 @@ bool GameScene::init()
 	_inputSystem = KeyboardInputSystem::create(this);
 	_inputSystem->retain();
 
-	_actionSystem = ActionSystem::create();
+	_actionSystem = ActionSystem::create(this);
 	_actionSystem->retain();
 
+	createDebugInfo();
 	createGameScreen();
 	
 	//create main loop
@@ -54,61 +55,59 @@ bool GameScene::init()
 	return true;
 }
 
+void GameScene::createDebugInfo()
+{
+	Label* l = Label::create();
+	
+}
+
 void GameScene::createGameScreen()
 {
 	_level = Level::create("level1.tmx", "Static_Shapes");
 	addChild(_level);
 	
-	_sona = GameEntity::create();
-	_sona->setName("Sona");
-	_sona->retain();
+	GameEntity* sona = GameEntity::create();
+	sona->setName("Sona");
 
 	SpriteComponent* sc = SpriteComponent::create();
 	sc->setSpriteFile("sona.png");
-	_sona->addComponent(sc);
+	sona->addComponent(sc);
 
 	TransformComponent* tc = TransformComponent::create();
 	tc->setPos(Vec2(_level->getTileSize().width * 2, _level->getTileSize().height * 4));
-	_sona->addComponent(tc);
+	sona->addComponent(tc);
 
 	VelocityComponent* vc = VelocityComponent::create();
-	_sona->addComponent(vc);
+	sona->addComponent(vc);
 
 	PhysicsComponent* pc = PhysicsComponent::create();
 	pc->setMaxSpeed(Vec2(400, 600));
-	pc->setGravity(30);
-	pc->setDecX(800);
-	_sona->addComponent(pc);
+	pc->setGravity(400);
+	pc->setDecX(600);
+	sona->addComponent(pc);
 
 	// Instanciating the Action Components
 	MoveLeftActionComponent* mlc = MoveLeftActionComponent::create();
-	mlc->setAcc(800);
-	_sona->addComponent(mlc);
+	mlc->setAcc(600);
+	sona->addComponent(mlc);
 
 	MoveRightActionComponent* mrc = MoveRightActionComponent::create();
-	mrc->setAcc(800);
-	_sona->addComponent(mrc);
+	mrc->setAcc(600);
+	sona->addComponent(mrc);
 
 	JumpActionComponent* jc = JumpActionComponent::create();
-	jc->setJumpStartSpeedY(750);
-	_sona->addComponent(jc);
+	jc->setJumpStartSpeedY(400);
+	sona->addComponent(jc);
+
+	addChild(sona);
 
 	// Instanciating the Input Components
 	KeyboardInputComponent* ic = KeyboardInputComponent::create();
-	ic->mapActionToKey(ActionType::MoveLeft, EventKeyboard::KeyCode::KEY_LEFT_ARROW);
-	ic->registerAction(ActionType::MoveLeft, mlc);
+	ic->mapActionToKey("MoveLeftAction", EventKeyboard::KeyCode::KEY_LEFT_ARROW);
+	ic->mapActionToKey("MoveRightAction", EventKeyboard::KeyCode::KEY_RIGHT_ARROW);
+	ic->mapActionToKey("JumpAction", EventKeyboard::KeyCode::KEY_SPACE);
 
-	ic->mapActionToKey(ActionType::MoveRight, EventKeyboard::KeyCode::KEY_RIGHT_ARROW);
-	ic->registerAction(ActionType::MoveRight, mrc);
-
-	ic->mapActionToKey(ActionType::Jump, EventKeyboard::KeyCode::KEY_SPACE);
-	ic->registerAction(ActionType::Jump, jc);
-
-	_inputSystem->registerComponent(ic);
-	_sona->addComponent(ic);
-
-	_actionSystem->registerEntity(_sona);
-	addChild(_sona);
+	addComponent(ic);
 }
 
 void GameScene::update(float dt)

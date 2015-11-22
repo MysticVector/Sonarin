@@ -28,4 +28,4 @@ public:
 	CC_SYNTHESIZE(float, _decX, DecX);
 };
 
-#endif // __MOVEMENT_COMPONENT_H__
+#endif // __PHYSICS_COMPONENT_H__

@@ -3,22 +3,9 @@
 USING_NS_CC;
 
 
-void KeyboardInputComponent::registerAction(ActionType at, ActionComponent* action)
+void KeyboardInputComponent::mapActionToKey(std::string action, EventKeyboard::KeyCode key)
 {
-	_actions[at] = action;
-}
-
-void KeyboardInputComponent::unregisterAction(ActionType at)
-{
-	if (_actions.find(at) != _actions.end())
-	{
-		_actions.erase(at);
-	}
-}
-
-void KeyboardInputComponent::mapActionToKey(ActionType at, EventKeyboard::KeyCode key)
-{
-	_actionsByKey[key] = at;
+	_actionsByKey[key] = action;
 }
 
 void KeyboardInputComponent::unmapActionFromKey(EventKeyboard::KeyCode key)
