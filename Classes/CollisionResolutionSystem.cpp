@@ -2,6 +2,8 @@
 
 #include "TranformComponent.h"
 #include "VelocityComponent.h"
+#include "PolyLineBodyComponent.h"
+#include "PhysicsComponent.h"
 #include "JumpActionComponent.h"
 
 #include <iostream>
@@ -26,12 +28,44 @@ void CollisionResolutionSystem::update(float dt)
 {
 	TransformComponent* transform = nullptr;
 	VelocityComponent* velocity = nullptr;
+	PhysicsComponent* physics = nullptr;
+	PolyLineBodyComponent* polyLineBody = nullptr;
 	JumpActionComponent* jumpAction = nullptr;
-
+	
 	Vector<Node*> entities = _owner->getChildren();
 
 	for (Node* entity : entities)
 	{
+		if ((transform = static_cast<TransformComponent*>(entity->getComponent("Transform")))
+			&& (physics = static_cast<PhysicsComponent*>(entity->getComponent("Physics")))
+			&& (polyLineBody = static_cast<PolyLineBodyComponent*>(entity->getComponent("PolyLineBody"))))
+		{
+			// Flags to specify what kind of collision has occurred
+			bool contactX = true, contactYbottom = true, contactYtop = true;
 
+			// Keep iterating the contact solver until the maximum number of iterations is reached
+			// or no collisions are detected
+			for (int iteration = 0; iteration < PhysicsComponent::iterations && (contactX || contactYbottom || contactYtop); iteration++)
+			{
+				// Calculate the amount of X and Y movement expected by the player this frame
+				float nextMoveX = transform->getNextPosition().x * dt;
+				float nextMoveY = transform->getNextPosition().y * dt;
+
+				// No collisions found yet
+				contactX = contactYbottom = contactYtop = false;
+
+				float projectedMoveX, projectedMoveY, originalMoveX, originalMoveY;
+
+				// Store the original final expected movement of the player so we can
+				// see if it has been modified due to a collision or potential collision later
+				originalMoveX = nextMoveX;
+				originalMoveY = nextMoveY;
+
+				// Iterate over each object whose bounding box intersects with the player's bounding box
+				// until a collision is found
+				//for (int o = 0; o < worldObjectCount && !contactX && !contactYbottom && !contactYtop; o++)
+				//{
+			}
+		}
 	}
 }

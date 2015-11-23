@@ -9,6 +9,7 @@ class CollisionResolutionSystem;
 class TransformSystem;
 class ActionSystem;
 class PhysicsSystem;
+class DrawingSystem;
 
 class GameScene : public cocos2d::LayerColor
 {
@@ -21,11 +22,8 @@ private:
 	TransformSystem* _transformSystem;
 	ActionSystem* _actionSystem;
 	PhysicsSystem* _physicsSystem;
+	DrawingSystem* _drawingSystem;
 
-	// Level 1
-	Level* _level;
-
-	void createDebugInfo();
 	void createGameScreen();
 public:
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -37,7 +35,9 @@ public:
 	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 	virtual bool init();
 
-	void update(float dt);
+	virtual void update(float dt);
+
+	virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags);
 };
 
 #endif // __GAMESCENE_H__

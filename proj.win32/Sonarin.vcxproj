@@ -147,6 +147,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ActionSystem.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\CollisionResolutionSystem.cpp" />
+    <ClCompile Include="..\Classes\DebugNodeComponent.cpp" />
+    <ClCompile Include="..\Classes\DrawingSystem.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\KeyboardInputComponent.cpp" />
     <ClCompile Include="..\Classes\KeyboardInputSystem.cpp" />
@@ -154,6 +156,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\PhysicsSystem.cpp" />
     <ClCompile Include="..\Classes\ScreenLog.cpp" />
     <ClCompile Include="..\Classes\SpriteComponent.cpp" />
+    <ClCompile Include="..\Classes\TiledMapComponent.cpp" />
     <ClCompile Include="..\Classes\TransformSystem.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -162,6 +165,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ActionSystem.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\CollisionResolutionSystem.h" />
+    <ClInclude Include="..\Classes\DebugNodeComponent.h" />
+    <ClInclude Include="..\Classes\DrawingSystem.h" />
     <ClInclude Include="..\Classes\GameEntity.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\JumpActionComponent.h" />
@@ -172,9 +177,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\MoveRightActionComponent.h" />
     <ClInclude Include="..\Classes\PhysicsComponent.h" />
     <ClInclude Include="..\Classes\PhysicsSystem.h" />
-    <ClInclude Include="..\Classes\PolygonBodyComponent.h" />
+    <ClInclude Include="..\Classes\PolyLineBodyComponent.h" />
     <ClInclude Include="..\Classes\ScreenLog.h" />
     <ClInclude Include="..\Classes\SpriteComponent.h" />
+    <ClInclude Include="..\Classes\TiledMapComponent.h" />
     <ClInclude Include="..\Classes\TranformComponent.h" />
     <ClInclude Include="..\Classes\TransformSystem.h" />
     <ClInclude Include="..\Classes\VelocityComponent.h" />

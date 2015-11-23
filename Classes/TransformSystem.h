@@ -17,6 +17,7 @@ public:
 	void update(float dt);
 
 private:
+	// The parent scene where all entities can be accessed
 	cocos2d::Node* _owner;
 };
 

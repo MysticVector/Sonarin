@@ -14,7 +14,8 @@
 #include "MoveLeftActionComponent.h"
 #include "MoveRightActionComponent.h"
 #include "JumpActionComponent.h"
-#include "PolygonBodyComponent.h"
+#include "PolyLineBodyComponent.h"
+#include "DrawingSystem.h"
 
 USING_NS_CC;
 
@@ -59,7 +60,9 @@ bool GameScene::init()
 	_physicsSystem = PhysicsSystem::create(this);
 	_physicsSystem->retain();
 
-	createDebugInfo();
+	_drawingSystem = DrawingSystem::create(this);
+	_drawingSystem->retain();
+
 	createGameScreen();
 	
 	//create main loop
@@ -68,16 +71,21 @@ bool GameScene::init()
 	return true;
 }
 
-void GameScene::createDebugInfo()
-{
-	Label* l = Label::create();
-	
-}
-
 void GameScene::createGameScreen()
 {
-	_level = Level::create("level1.tmx", "Static_Shapes");
-	addChild(_level);
+	GameEntity* level1 = GameEntity::create();
+	level1->setName("Level1");
+
+	TiledMapComponent* tmc = TiledMapComponent::create();
+	tmc->setTMXFile("level1.tmx");
+	level1->addComponent(tmc);
+
+	TransformComponent* t1 = TransformComponent::create();
+	level1->addComponent(t1);
+
+	//_level = Level::create("level1.tmx", "Static_Shapes");
+
+	addChild(level1);
 	
 	GameEntity* sona = GameEntity::create();
 	sona->setName("Sona");
@@ -86,9 +94,9 @@ void GameScene::createGameScreen()
 	sc->setSpriteFile("sona.png");
 	sona->addComponent(sc);
 
-	TransformComponent* tc = TransformComponent::create();
-	tc->setNextPosition(Vec2(_level->getTileSize().width * 2, _level->getTileSize().height * 4));
-	sona->addComponent(tc);
+	TransformComponent* t2 = TransformComponent::create();
+	t2->setNextPosition(Vec2(tmc->getTMXTiledMap()->getTileSize().width * 2, tmc->getTMXTiledMap()->getTileSize().height * 4));
+	sona->addComponent(t2);
 
 	VelocityComponent* vc = VelocityComponent::create();
 	sona->addComponent(vc);
@@ -115,25 +123,28 @@ void GameScene::createGameScreen()
 	sona->addComponent(jc);
 
 	// Creating a polygon physics body
-	PolygonBodyComponent* polyBody = PolygonBodyComponent::create();
+	PolyLineBodyComponent* polyLineBody = PolyLineBodyComponent::create();
 
 	// Top of the head
-	polyBody->addPoint(Vec2(15, 0));
-	polyBody->addPoint(Vec2(40, 0));
+	polyLineBody->addPoint(Vec2(15, 128));
+	polyLineBody->addPoint(Vec2(40, 128));
 
 	// Bottom of the feet
-	polyBody->addPoint(Vec2(15, 128));
-	polyBody->addPoint(Vec2(40, 128));
+	polyLineBody->addPoint(Vec2(15, 0));
+	polyLineBody->addPoint(Vec2(40, 0));
 
 	// Left arm
-	polyBody->addPoint(Vec2(10, 32));
-	polyBody->addPoint(Vec2(10, 96));
+	polyLineBody->addPoint(Vec2(10, 32));
+	polyLineBody->addPoint(Vec2(10, 96));
 
 	// Right arm
-	polyBody->addPoint(Vec2(45, 32));
-	polyBody->addPoint(Vec2(45, 96));
+	polyLineBody->addPoint(Vec2(45, 32));
+	polyLineBody->addPoint(Vec2(45, 96));
 
-	sona->addComponent(polyBody);
+	sona->addComponent(polyLineBody);
+
+	DebugNodeComponent* debugNode = DebugNodeComponent::create();
+	sona->addComponent(debugNode);
 
 	addChild(sona);
 
@@ -153,4 +164,10 @@ void GameScene::update(float dt)
 	_transformSystem->update(dt);
 	_actionSystem->update(dt);
 	_physicsSystem->update(dt);
+}
+
+void GameScene::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
+{
+	LayerColor::draw(renderer, transform, flags);
+	_drawingSystem->draw();
 }

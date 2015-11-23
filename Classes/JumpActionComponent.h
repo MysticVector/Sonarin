@@ -22,7 +22,6 @@ public:
 	// The amount of upward force to apply when on a jump
 	CC_SYNTHESIZE(float, _jumpStartSpeedY, JumpStartSpeedY);
 
-
 	void setJumping(bool jumping) { _jumping = jumping; }
 	bool isJumping() const { return _jumping; }
 

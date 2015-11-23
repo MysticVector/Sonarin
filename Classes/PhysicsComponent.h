@@ -20,7 +20,7 @@ public:
 	// The max movement speed allowed
 	CC_SYNTHESIZE(cocos2d::Vec2, _maxSpeed, MaxSpeed);
 
-	// The amount of acceleration to apply
+	// The amount of downward acceleration to apply
 	CC_SYNTHESIZE(float, _gravity, Gravity);
 
 	// The amount of deceleration to apply when moving horizontally

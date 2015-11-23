@@ -20,6 +20,7 @@ private:
 	// Cocos2D-X's keyboard listener
 	cocos2d::EventListenerKeyboard* _keyboardListener;
 
+	// The parent scene where all entities can be accessed
 	cocos2d::Node* _owner;
 };
 

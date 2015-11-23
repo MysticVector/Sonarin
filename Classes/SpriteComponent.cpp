@@ -17,6 +17,7 @@ bool SpriteComponent::init()
 void SpriteComponent::setSpriteFile(std::string file)
 {
 	_sprite = Sprite::create(file);
+	_sprite->setAnchorPoint(Vec2(0, 0));
 	assert(_sprite);
 	_sprite->retain();
 }

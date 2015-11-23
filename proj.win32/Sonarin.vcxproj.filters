@@ -28,6 +28,9 @@
     <Filter Include="src\Components\Physics">
       <UniqueIdentifier>{0b096033-1685-4014-b087-dac9f9bfbe51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Components\Graphics">
+      <UniqueIdentifier>{d30c0919-42c4-4c55-b9bf-6867bd310586}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,9 +41,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\GameScene.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SpriteComponent.cpp">
-      <Filter>src\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\KeyboardInputComponent.cpp">
       <Filter>src\Components\Input</Filter>
@@ -66,6 +66,18 @@
     <ClCompile Include="..\Classes\CollisionResolutionSystem.cpp">
       <Filter>src\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SpriteComponent.cpp">
+      <Filter>src\Components\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DrawingSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DebugNodeComponent.cpp">
+      <Filter>src\Components\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TiledMapComponent.cpp">
+      <Filter>src\Components\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -76,9 +88,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameScene.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SpriteComponent.h">
-      <Filter>src\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ActionComponent.h">
       <Filter>src\Components\Input\Actions</Filter>
@@ -116,9 +125,6 @@
     <ClInclude Include="..\Classes\VelocityComponent.h">
       <Filter>src\Components\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\PolygonBodyComponent.h">
-      <Filter>src\Components\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\PhysicsSystem.h">
       <Filter>src\Systems</Filter>
     </ClInclude>
@@ -130,6 +136,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CollisionResolutionSystem.h">
       <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpriteComponent.h">
+      <Filter>src\Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DrawingSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DebugNodeComponent.h">
+      <Filter>src\Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TiledMapComponent.h">
+      <Filter>src\Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PolyLineBodyComponent.h">
+      <Filter>src\Components\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
