@@ -6,15 +6,6 @@
 class ActionComponent : public cocos2d::Component
 {
 public:
-	CREATE_FUNC(ActionComponent);
-
-	virtual bool init()
-	{
-		_name = "Action";
-		_enabled = false;
-		return true;
-	}
-
 	void setActive(bool active) { _active = active; }
 	bool isActive() const { return _active; }
 protected:

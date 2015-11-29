@@ -17,6 +17,7 @@ public:
 	void drawRect(cocos2d::Rect r);
 	void drawPoint(cocos2d::Vec2 p);
 	void drawLines(std::vector<cocos2d::Vec2> points, cocos2d::Vec2 origin = cocos2d::Vec2::ZERO);
+	void drawPoly(cocos2d::Vec2* points, int nbPoints);
 };
 
 #endif // __DEBUG_NODE_COMPONENT_H__

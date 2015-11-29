@@ -16,6 +16,8 @@
 #include "JumpActionComponent.h"
 #include "PolyLineBodyComponent.h"
 #include "DrawingSystem.h"
+#include "BoxBodyComponent.h"
+#include "PolygonBodyComponent.h"
 
 USING_NS_CC;
 
@@ -71,6 +73,72 @@ bool GameScene::init()
 	return true;
 }
 
+void GameScene::createCollisionObjectsFromMap(TMXTiledMap* map)
+{
+	TMXObjectGroup* collisionObjectGroup = nullptr;
+	if (collisionObjectGroup = map->getObjectGroup("CollisionObjects"))
+	{
+		GameEntity* levelCollisionEntity = nullptr;
+		int entityIndex = 0;
+
+		for (auto& object : collisionObjectGroup->getObjects())
+		{
+			// Creating the dummy collision entity
+			levelCollisionEntity = GameEntity::create();
+			levelCollisionEntity->setName("levelCollisionEntity" + entityIndex);
+			entityIndex++;
+
+			// Debug component to show its bounds
+			DebugNodeComponent* dnc = DebugNodeComponent::create();
+			levelCollisionEntity->addComponent(dnc);
+
+			// Read current collision object infos from the map and create physics body components
+			float objectX = object.asValueMap().at("x").asFloat();
+			float objectY = object.asValueMap().at("y").asFloat();
+
+			TransformComponent* tc = TransformComponent::create();
+			tc->setNextPosition(Vec2(objectX, objectY));
+			levelCollisionEntity->addComponent(tc);
+
+			if (object.asValueMap().find("points") == object.asValueMap().end())
+			{
+				// The object is a rectangle
+				// Creating the box body component
+				BoxBodyComponent* rbc = BoxBodyComponent::create();
+				rbc->setSize(Size(object.asValueMap().at("width").asFloat(),
+										object.asValueMap().at("height").asFloat()));
+				levelCollisionEntity->addComponent(rbc);
+			}
+			else
+			{
+				// The object is a polygon
+				// Creating the polygon body component
+
+				// Array to store polygon points
+				int nbPoints = object.asValueMap().at("points").asValueVector().size();
+				Vec2* listPoints = new Vec2[nbPoints];
+				int i = 0;
+				for (auto& point : object.asValueMap().at("points").asValueVector())
+				{
+					// convert the points' local coordinates to the world coordinates
+					// by doing a translation using the object's position vector
+
+					// We invert the local y because it's based on the top-left space in Tiled
+					listPoints[i].x = point.asValueMap().at("x").asInt();
+					listPoints[i].y = -point.asValueMap().at("y").asInt();
+					i++;
+				}
+
+				PolygonBodyComponent* pbc = PolygonBodyComponent::create();
+				pbc->setPoints(listPoints, nbPoints);
+				levelCollisionEntity->addComponent(pbc);
+			}
+
+			addChild(levelCollisionEntity);
+		}
+	}
+}
+
 void GameScene::createGameScreen()
 {
 	GameEntity* level1 = GameEntity::create();
@@ -83,9 +151,10 @@ void GameScene::createGameScreen()
 	TransformComponent* t1 = TransformComponent::create();
 	level1->addComponent(t1);
 
-	//_level = Level::create("level1.tmx", "Static_Shapes");
-
 	addChild(level1);
+
+	// Creating collision objects to be used by the collision resolution system
+	createCollisionObjectsFromMap(tmc->getTMXTiledMap());
 	
 	GameEntity* sona = GameEntity::create();
 	sona->setName("Sona");
@@ -126,20 +195,16 @@ void GameScene::createGameScreen()
 	PolyLineBodyComponent* polyLineBody = PolyLineBodyComponent::create();
 
 	// Top of the head
-	polyLineBody->addPoint(Vec2(15, 128));
-	polyLineBody->addPoint(Vec2(40, 128));
+	polyLineBody->addLine(Vec2(15, 128), Vec2(40, 128));
 
 	// Bottom of the feet
-	polyLineBody->addPoint(Vec2(15, 0));
-	polyLineBody->addPoint(Vec2(40, 0));
+	polyLineBody->addLine(Vec2(15, 0), Vec2(40, 0));
 
 	// Left arm
-	polyLineBody->addPoint(Vec2(10, 32));
-	polyLineBody->addPoint(Vec2(10, 96));
+	polyLineBody->addLine(Vec2(10, 32), Vec2(10, 96));
 
 	// Right arm
-	polyLineBody->addPoint(Vec2(45, 32));
-	polyLineBody->addPoint(Vec2(45, 96));
+	polyLineBody->addLine(Vec2(45, 32), Vec2(45, 96));
 
 	sona->addComponent(polyLineBody);
 

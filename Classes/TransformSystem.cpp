@@ -32,20 +32,22 @@ void TransformSystem::update(float dt)
 
 	for (Node* entity : entities)
 	{
-		if ((transform = static_cast<TransformComponent*>(entity->getComponent("Transform"))) &&
-			(velocity = static_cast<VelocityComponent*>(entity->getComponent("Velocity"))))
+		if (transform = static_cast<TransformComponent*>(entity->getComponent("Transform")))
 		{
-			// Apply final velocity to the desired position
-			transform->setNextPosition(transform->getNextPosition() + velocity->getSpeed() * dt);
-
-			// DEBUG - temporary ground level to stop the player from falling
-			if (transform->getNextPosition().y < 192)
+			if (velocity = static_cast<VelocityComponent*>(entity->getComponent("Velocity")))
 			{
-				transform->getNextPosition().y = 192;
+				// Apply final velocity to the desired position
+				transform->setNextPosition(transform->getNextPosition() + velocity->getSpeed() * dt);
 
-				if (jumpAction = static_cast<JumpActionComponent*>(entity->getComponent("JumpAction")))
+				// DEBUG - temporary ground level to stop the player from falling
+				if (transform->getNextPosition().y < 192)
 				{
-					jumpAction->setJumping(false);
+					transform->getNextPosition().y = 192;
+
+					if (jumpAction = static_cast<JumpActionComponent*>(entity->getComponent("JumpAction")))
+					{
+						jumpAction->setJumping(false);
+					}
 				}
 			}
 

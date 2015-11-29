@@ -63,8 +63,29 @@ void CollisionResolutionSystem::update(float dt)
 
 				// Iterate over each object whose bounding box intersects with the player's bounding box
 				// until a collision is found
-				//for (int o = 0; o < worldObjectCount && !contactX && !contactYbottom && !contactYtop; o++)
+				BodyComponent* objectBody = nullptr;
+				Vector<Node*> entities = _owner->getChildren();
+
+				//for (int i = 0; i < entities.size() && !contactX && !contactYbottom && !contactYtop; i++)
 				//{
+				//	// Select only physics body objects
+				//	if ((objectBody = static_cast<BodyComponent*>(entities.at(i)->getComponent("BoxBody"))) ||
+				//		(objectBody = static_cast<BodyComponent*>(entities.at(i)->getComponent("PolygonBody"))))
+				//	{
+				//		while ((objectBody->containsPoint(Vec2(static_cast(polyLineBody->getPoints().at(dir * 2).x + playerX + projectedMoveX),
+				//			static_cast(collisionPoint[dir * 2].y + playerY + projectedMoveY))
+				//			|| worldObjects[o].ContainsPoint(static_cast(collisionPoint[dir * 2 + 1].x + playerX + projectedMoveX),
+				//				static_cast(collisionPoint[dir * 2 + 1].y + playerY + projectedMoveY))))
+				//		{
+				//			if (dir == 0) projectedMoveY++;
+				//			if (dir == 1) projectedMoveY--;
+				//			if (dir == 2) projectedMoveX++;
+				//			if (dir == 3) projectedMoveX--;
+				//		}
+
+				//	}
+				//}
+
 			}
 		}
 	}

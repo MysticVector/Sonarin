@@ -25,6 +25,7 @@ private:
 	DrawingSystem* _drawingSystem;
 
 	void createGameScreen();
+	void createCollisionObjectsFromMap(cocos2d::TMXTiledMap* map);
 public:
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();

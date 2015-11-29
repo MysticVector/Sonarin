@@ -23,7 +23,7 @@ void DebugNodeComponent::drawRect(Rect r)
 void DebugNodeComponent::drawPoint(Vec2 p)
 {
 	_debugNode->clear();
-	_debugNode->drawPoint(p, 1, Color4F::WHITE);
+	_debugNode->drawPoint(p, 5, Color4F::WHITE);
 }
 
 void DebugNodeComponent::drawLines(std::vector<Vec2> points, Vec2 origin)
@@ -35,4 +35,11 @@ void DebugNodeComponent::drawLines(std::vector<Vec2> points, Vec2 origin)
 	{
 		_debugNode->drawLine(origin + points[i], origin + points[i + 1], Color4F::WHITE);
 	}
+}
+
+void DebugNodeComponent::drawPoly(Vec2* points, int nbPoints)
+{
+	_debugNode->clear();
+
+	_debugNode->drawPoly(points, nbPoints, true, Color4F::WHITE);
 }

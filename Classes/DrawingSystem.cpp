@@ -6,6 +6,8 @@
 #include "SpriteComponent.h"
 #include "DebugNodeComponent.h"
 #include "PolyLineBodyComponent.h"
+#include "PolygonBodyComponent.h"
+#include "BoxBodyComponent.h"
 
 #include <iostream>
 
@@ -29,11 +31,12 @@ void DrawingSystem::draw()
 {
 	DebugNodeComponent* debugNode = nullptr;
 	PolyLineBodyComponent* polyLineBody = nullptr;
+	PolygonBodyComponent* polygonBody = nullptr;
+	BoxBodyComponent* boxBody = nullptr;
 	SpriteComponent* sprite = nullptr;
 	TransformComponent* transform = nullptr;
 
 	Vector<Node*> entities = _owner->getChildren();
-
 	for (Node* entity : entities)
 	{
 
@@ -47,9 +50,17 @@ void DrawingSystem::draw()
 				{
 					debugNode->drawLines(polyLineBody->getPoints());
 				}
+				else if (polygonBody = static_cast<PolygonBodyComponent*>(entity->getComponent("PolygonBody")))
+				{
+					debugNode->drawPoly(polygonBody->getPoints(), polygonBody->getPointsCount());
+				}
+				else if (boxBody = static_cast<BoxBodyComponent*>(entity->getComponent("BoxBody")))
+				{
+					debugNode->drawRect(Rect(Vec2::ZERO, boxBody->getSize()));
+				}
 				else if (sprite = static_cast<SpriteComponent*>(entity->getComponent("Sprite")))
 				{
-					debugNode->drawRect(Rect(transform->getNextPosition(), sprite->getSprite()->getContentSize()));
+					debugNode->drawRect(Rect(Vec2::ZERO, sprite->getSprite()->getContentSize()));
 				}
 				else
 				{

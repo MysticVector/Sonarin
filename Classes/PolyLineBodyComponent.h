@@ -2,8 +2,9 @@
 #define __POLY_LINE_BODY_COMPONENT_H__
 
 #include "cocos2d.h"
+#include "BodyComponent.h"
 
-class PolyLineBodyComponent : public cocos2d::Component
+class PolyLineBodyComponent : public BodyComponent
 {
 public:
 	CREATE_FUNC(PolyLineBodyComponent);
@@ -14,13 +15,27 @@ public:
 		return true;
 	}
 
-	void addPoint(cocos2d::Vec2 p) { _points.push_back(p); }
-	void removePoint(int i) { _points.erase(_points.begin() + i); }
+	void addLine(cocos2d::Vec2 p1, cocos2d::Vec2 p2)
+	{
+		_points.push_back(p1);
+		_points.push_back(p2);
+	}
+
+	void removeLine(int i)
+	{
+		// Remove the 2 points starting from the i position
+		_points.erase(_points.begin() + i);
+		_points.erase(_points.begin() + i);
+	}
+
 	cocos2d::Vec2 getPoint(int i) const { return _points.at(i); }
 
 	const std::vector<cocos2d::Vec2>& getPoints() const { return _points; }
 
-private:
+	// TODO
+	virtual bool containsPoint(cocos2d::Vec2 p) { return true; };
+
+protected:
 	std::vector<cocos2d::Vec2> _points;
 };
 

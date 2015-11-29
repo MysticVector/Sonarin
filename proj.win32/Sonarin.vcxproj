@@ -108,6 +108,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
       <Outputs>$(TargetName).cab</Outputs>
       <Inputs>$(TargetFileName)</Inputs>
     </CustomBuildStep>
+    <PreBuildEvent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(OutDir)Standard\" mkdir "$(OutDir)standard\"
+del "$(OutDir)Standard\*.*" /s /q</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -150,13 +154,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\DebugNodeComponent.cpp" />
     <ClCompile Include="..\Classes\DrawingSystem.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
-    <ClCompile Include="..\Classes\KeyboardInputComponent.cpp" />
     <ClCompile Include="..\Classes\KeyboardInputSystem.cpp" />
     <ClCompile Include="..\Classes\Level.cpp" />
     <ClCompile Include="..\Classes\PhysicsSystem.cpp" />
     <ClCompile Include="..\Classes\ScreenLog.cpp" />
-    <ClCompile Include="..\Classes\SpriteComponent.cpp" />
-    <ClCompile Include="..\Classes\TiledMapComponent.cpp" />
     <ClCompile Include="..\Classes\TransformSystem.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -164,6 +165,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ActionComponent.h" />
     <ClInclude Include="..\Classes\ActionSystem.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\AppMacros.h" />
+    <ClInclude Include="..\Classes\BodyComponent.h" />
+    <ClInclude Include="..\Classes\BoxBodyComponent.h" />
     <ClInclude Include="..\Classes\CollisionResolutionSystem.h" />
     <ClInclude Include="..\Classes\DebugNodeComponent.h" />
     <ClInclude Include="..\Classes\DrawingSystem.h" />
@@ -177,6 +181,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\MoveRightActionComponent.h" />
     <ClInclude Include="..\Classes\PhysicsComponent.h" />
     <ClInclude Include="..\Classes\PhysicsSystem.h" />
+    <ClInclude Include="..\Classes\PolygonBodyComponent.h" />
     <ClInclude Include="..\Classes\PolyLineBodyComponent.h" />
     <ClInclude Include="..\Classes\ScreenLog.h" />
     <ClInclude Include="..\Classes\SpriteComponent.h" />

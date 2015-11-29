@@ -17,10 +17,20 @@ public:
 	}
 
 	// Maps new actions to a key (ex: MoveLeft => KEY_LEFT)
-	static void mapActionToKey(std::string action, cocos2d::EventKeyboard::KeyCode key);
-	static void unmapActionFromKey(cocos2d::EventKeyboard::KeyCode key);
+	static void mapActionToKey(std::string action, cocos2d::EventKeyboard::KeyCode key)
+	{
+		_actionsByKey[key] = action;
+	}
+
+	static void unmapActionFromKey(cocos2d::EventKeyboard::KeyCode key)
+	{
+		if (_actionsByKey.find(key) != _actionsByKey.end())
+		{
+			_actionsByKey.erase(key);
+		}
+	}
 	
-private:
+protected:
 	// A map that links a key to an ActionType in game
 	static std::unordered_map<cocos2d::EventKeyboard::KeyCode, std::string> _actionsByKey;
 };

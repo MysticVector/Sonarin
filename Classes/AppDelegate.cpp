@@ -1,13 +1,10 @@
 #include "AppDelegate.h"
 #include "GameScene.h"
 #include "ScreenLog.h"
+#include "AppMacros.h"
 
 USING_NS_CC;
-
-static cocos2d::Size designResolutionSize = cocos2d::Size(1280, 720);
-static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 270);
-static cocos2d::Size mediumResolutionSize = cocos2d::Size(1280, 720);
-static cocos2d::Size largeResolutionSize = cocos2d::Size(1920, 1080);
+using namespace std;
 
 AppDelegate::AppDelegate() {
 	g_screenLog = new ScreenLog();
@@ -52,35 +49,45 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		director->setOpenGLView(glview);
 	}
 
+	// Set the design resolution
+	glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
+
+	Size frameSize = glview->getFrameSize();
+
+	vector<string> searchPath;
+
+	// if the frame's height is larger than the height of medium size.
+	if (frameSize.height > mediumResource.size.height)
+	{
+		searchPath.push_back(largeResource.directory);
+
+		director->setContentScaleFactor(MIN(largeResource.size.height / designResolutionSize.height, largeResource.size.width / designResolutionSize.width));
+	}
+	// if the frame's height is larger than the height of small size.
+	else if (frameSize.height > smallResource.size.height)
+	{
+		searchPath.push_back(mediumResource.directory);
+
+		director->setContentScaleFactor(MIN(mediumResource.size.height / designResolutionSize.height, mediumResource.size.width / designResolutionSize.width));
+	}
+	// if the frame's height is smaller than the height of medium size.
+	else
+	{
+		searchPath.push_back(smallResource.directory);
+
+		director->setContentScaleFactor(MIN(smallResource.size.height / designResolutionSize.height, smallResource.size.width / designResolutionSize.width));
+	}
+
+	// set searching path
+	FileUtils::getInstance()->setSearchPaths(searchPath);
+
+	register_all_packages();
+
 	// turn on display FPS
 	director->setDisplayStats(true);
 
 	// set FPS. the default value is 1.0/60 if you don't call this
 	director->setAnimationInterval(1.0 / 144);
-
-	// Set the design resolution
-	glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
-	Size frameSize = glview->getFrameSize();
-	// if the frame's height is larger than the height of medium size.
-	if (frameSize.height > mediumResolutionSize.height)
-	{
-		director->setContentScaleFactor(MIN(largeResolutionSize.height / designResolutionSize.height, largeResolutionSize.width / designResolutionSize.width));
-	}
-	// if the frame's height is larger than the height of small size.
-	else if (frameSize.height > smallResolutionSize.height)
-	{
-		director->setContentScaleFactor(MIN(mediumResolutionSize.height / designResolutionSize.height, mediumResolutionSize.width / designResolutionSize.width));
-	}
-	// if the frame's height is smaller than the height of medium size.
-	else
-	{
-		director->setContentScaleFactor(MIN(smallResolutionSize.height / designResolutionSize.height, smallResolutionSize.width / designResolutionSize.width));
-	}
-
-	register_all_packages();
-
-	//Size designSize = Size(1366, 768);
-	//glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::EXACT_FIT);
 
 	// create a scene. it's an autorelease object
 	auto scene = GameScene::createScene();
