@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="15" tilewidth="64" tileheight="64" nextobjectid="32">
+ <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="64" tilecount="12" columns="4">
+  <image source="tiles.png" width="256" height="192"/>
+ </tileset>
+ <layer name="Background" width="50" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF1ACcA+0AKgCQH7gG2hFQMBzCEwQGS3iOgsEH6JnGqWEXLjPomcapYRcuM6hhNrHhDLOLknjhwqF/IOKDFnaOlp2jABsYLumCEn8AAIfgAN4=
+  </data>
+ </layer>
+ <layer name="Static" width="50" height="15">
+  <data encoding="base64" compression="zlib">
+   eJztk8sKACEIRZv3LPr/751aCNIoJQkOjgfOsvReKqUg8MNRPAkvy6UcAL1Gj2/wm9Pq51a6xxLqL4704yF7zZAnz1uxFNfGTXC+5ob9uRzUDKwGO6NkD0rcBTcDlN5N2Zsx42iOr/u3HA8psANO
+  </data>
+ </layer>
+ <objectgroup name="CollisionObjects">
+  <object id="1" x="0" y="768" width="1088" height="192"/>
+  <object id="2" x="448" y="512" width="384" height="64"/>
+  <object id="3" x="512" y="448" width="64" height="64"/>
+  <object id="4" x="1024" y="320" width="192" height="64"/>
+  <object id="5" x="1088" y="640" width="384" height="320"/>
+  <object id="6" x="1472" y="768" width="192" height="192"/>
+  <object id="7" x="1344" y="512" width="64" height="64"/>
+  <object id="9" x="1344" y="576" width="64" height="64"/>
+  <object id="10" x="1664" y="704" width="896" height="256"/>
+  <object id="11" x="2112" y="640" width="64" height="64"/>
+  <object id="12" x="2176" y="640" width="64" height="64"/>
+  <object id="13" x="2304" y="576" width="64" height="64"/>
+  <object id="14" x="2304" y="640" width="64" height="64"/>
+  <object id="15" x="1920" y="192" width="448" height="64"/>
+  <object id="16" x="2368" y="384" width="256" height="64"/>
+  <object id="17" x="2688" y="640" width="512" height="320"/>
+  <object id="26" x="1088" y="640">
+   <polygon points="0,0 192,0 192,-64"/>
+  </object>
+  <object id="31" x="1280" y="576" width="64" height="64"/>
+ </objectgroup>
+</map>

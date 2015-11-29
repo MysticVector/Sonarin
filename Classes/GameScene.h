@@ -2,54 +2,43 @@
 #define __GAMESCENE_H__
 
 #include "cocos2d.h"
-#include "Sona.h"
+#include "Level.h"
+
+class KeyboardInputSystem;
+class CollisionResolutionSystem;
+class TransformSystem;
+class ActionSystem;
+class PhysicsSystem;
+class DrawingSystem;
 
 class GameScene : public cocos2d::LayerColor
 {
 private:
 	cocos2d::Size _visibleSize;
 	cocos2d::Point _origin;
-
-	CC_SYNTHESIZE(bool, _showDebug, ShowDebug);
-	cocos2d::DrawNode* _debugNode;
-
-	Sona* _sona;
-	cocos2d::SpriteBatchNode * _gameBatchNode;
-
-	cocos2d::TMXTiledMap *_map;
-	cocos2d::TMXLayer *_immovableLayer;
-
-	static std::map<cocos2d::EventKeyboard::KeyCode, std::chrono::high_resolution_clock::time_point> keys;
+	
+	KeyboardInputSystem* _inputSystem;
+	CollisionResolutionSystem* _collisionResolutionSystem;
+	TransformSystem* _transformSystem;
+	ActionSystem* _actionSystem;
+	PhysicsSystem* _physicsSystem;
+	DrawingSystem* _drawingSystem;
 
 	void createGameScreen();
-
-	cocos2d::Point tileCoordFromPosition(cocos2d::Point pos);
-	cocos2d::Rect tileRectFromTileCoords(cocos2d::Point tileCoords);
-	cocos2d::Vector<cocos2d::Dictionary*>* getSurroundingTilesAtPosition(cocos2d::Point pos, cocos2d::TMXLayer* layer);
-	void GameScene::checkForAndResolveCollisions();
-
-	cocos2d::Rect RectIntersection(const cocos2d::Rect & r1, const cocos2d::Rect & r2) const;
-
-	void setViewportCenter(cocos2d::Point position);
-
-	void drawDebug(cocos2d::Vector<cocos2d::Dictionary*>* tiles);
-
+	void createCollisionObjectsFromMap(cocos2d::TMXTiledMap* map);
 public:
 	// there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static cocos2d::Scene* createScene();
 
-	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-	virtual bool init();
-
-	void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
-	void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
-	bool isKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode);
-	double keyPressedDuration(cocos2d::EventKeyboard::KeyCode keyCode);
-	
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);
 
-	void update(float dt);
+	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+	virtual bool init();
+
+	virtual void update(float dt);
+
+	virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags);
 };
 
 #endif // __GAMESCENE_H__

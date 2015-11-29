@@ -10,6 +10,30 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Components">
+      <UniqueIdentifier>{d2255626-1fbb-4149-ace0-5bb0dc39f695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Input">
+      <UniqueIdentifier>{5c095322-8dc3-41f3-aaed-173740912926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Input\Actions">
+      <UniqueIdentifier>{61487467-1b99-44c1-8bb0-4c4d3c8af213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Systems">
+      <UniqueIdentifier>{909a2d5f-2f41-4c2c-bc06-4d22a2370980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameObjects">
+      <UniqueIdentifier>{9113e7ef-a2c2-4d8e-9efc-8f4b4facf9d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Physics">
+      <UniqueIdentifier>{0b096033-1685-4014-b087-dac9f9bfbe51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Graphics">
+      <UniqueIdentifier>{d30c0919-42c4-4c55-b9bf-6867bd310586}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components\Physics\Bodies">
+      <UniqueIdentifier>{f183b02d-a027-491c-a7d7-0fcba816d7e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,11 +45,32 @@
     <ClCompile Include="..\Classes\GameScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameSprite.cpp">
+    <ClCompile Include="..\Classes\ActionSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\KeyboardInputSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Level.cpp">
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PhysicsSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ScreenLog.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Sona.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\TransformSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CollisionResolutionSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DrawingSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DebugNodeComponent.cpp">
+      <Filter>src\Components\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -38,11 +83,80 @@
     <ClInclude Include="..\Classes\GameScene.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameSprite.h">
+    <ClInclude Include="..\Classes\ActionComponent.h">
+      <Filter>src\Components\Input\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JumpActionComponent.h">
+      <Filter>src\Components\Input\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MoveLeftActionComponent.h">
+      <Filter>src\Components\Input\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MoveRightActionComponent.h">
+      <Filter>src\Components\Input\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\KeyboardInputComponent.h">
+      <Filter>src\Components\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ActionSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\KeyboardInputSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameEntity.h">
+      <Filter>src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Level.h">
+      <Filter>src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicsComponent.h">
+      <Filter>src\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TranformComponent.h">
+      <Filter>src\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VelocityComponent.h">
+      <Filter>src\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PhysicsSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ScreenLog.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Sona.h">
+    <ClInclude Include="..\Classes\TransformSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CollisionResolutionSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpriteComponent.h">
+      <Filter>src\Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DrawingSystem.h">
+      <Filter>src\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DebugNodeComponent.h">
+      <Filter>src\Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TiledMapComponent.h">
+      <Filter>src\Components\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PolyLineBodyComponent.h">
+      <Filter>src\Components\Physics\Bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PolygonBodyComponent.h">
+      <Filter>src\Components\Physics\Bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BoxBodyComponent.h">
+      <Filter>src\Components\Physics\Bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BodyComponent.h">
+      <Filter>src\Components\Physics\Bodies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

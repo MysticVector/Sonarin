@@ -1,9 +1,25 @@
 #include "GameScene.h"
+#include "GameEntity.h"
+#include "SpriteComponent.h"
+#include "TranformComponent.h"
+#include "VelocityComponent.h"
+#include "PhysicsComponent.h"
+#include "KeyboardInputComponent.h"
+#include "KeyboardInputSystem.h"
+#include "CollisionResolutionSystem.h"
+#include "TransformSystem.h"
+#include "ActionSystem.h"
+#include "PhysicsSystem.h"
+#include "ActionComponent.h"
+#include "MoveLeftActionComponent.h"
+#include "MoveRightActionComponent.h"
+#include "JumpActionComponent.h"
+#include "PolyLineBodyComponent.h"
+#include "DrawingSystem.h"
+#include "BoxBodyComponent.h"
+#include "PolygonBodyComponent.h"
 
 USING_NS_CC;
-
-// Because cocos2d-x requres createScene to be static, we need to make other non-pointer members static
-std::map<cocos2d::EventKeyboard::KeyCode, std::chrono::high_resolution_clock::time_point> GameScene::keys;
 
 Scene* GameScene::createScene()
 {
@@ -13,10 +29,8 @@ Scene* GameScene::createScene()
 	// 'layer' is an autorelease object
 	auto layer = GameScene::create();
 
-	// add layer as a child to scene
 	scene->addChild(layer);
 
-	// return the scene
 	return scene;
 }
 
@@ -33,399 +47,192 @@ bool GameScene::init()
 	_visibleSize = Director::getInstance()->getVisibleSize();
 	_origin = Director::getInstance()->getVisibleOrigin();
 	
-	_showDebug = false;
-	_debugNode = DrawNode::create();
+	_inputSystem = KeyboardInputSystem::create(this);
+	_inputSystem->retain();
+
+	_collisionResolutionSystem = CollisionResolutionSystem::create(this);
+	_collisionResolutionSystem->retain();
+
+	_transformSystem = TransformSystem::create(this);
+	_transformSystem->retain();
+
+	_actionSystem = ActionSystem::create(this);
+	_actionSystem->retain();
+
+	_physicsSystem = PhysicsSystem::create(this);
+	_physicsSystem->retain();
+
+	_drawingSystem = DrawingSystem::create(this);
+	_drawingSystem->retain();
 
 	createGameScreen();
-
-	auto eventListener = EventListenerKeyboard::create();
 	
-	eventListener->onKeyPressed = CC_CALLBACK_2(GameScene::onKeyPressed, this);
-	eventListener->onKeyReleased = CC_CALLBACK_2(GameScene::onKeyReleased, this);
-
-	_eventDispatcher->addEventListenerWithSceneGraphPriority(eventListener, this);
-
 	//create main loop
 	this->schedule(CC_SCHEDULE_SELECTOR(GameScene::update));
 
 	return true;
 }
 
+void GameScene::createCollisionObjectsFromMap(TMXTiledMap* map)
+{
+	TMXObjectGroup* collisionObjectGroup = nullptr;
+	if (collisionObjectGroup = map->getObjectGroup("CollisionObjects"))
+	{
+		GameEntity* levelCollisionEntity = nullptr;
+		int entityIndex = 0;
+
+		for (auto& object : collisionObjectGroup->getObjects())
+		{
+			// Creating the dummy collision entity
+			levelCollisionEntity = GameEntity::create();
+			levelCollisionEntity->setName("levelCollisionEntity" + entityIndex);
+			entityIndex++;
+
+			// Debug component to show its bounds
+			DebugNodeComponent* dnc = DebugNodeComponent::create();
+			levelCollisionEntity->addComponent(dnc);
+
+			// Read current collision object infos from the map and create physics body components
+			float objectX = object.asValueMap().at("x").asFloat();
+			float objectY = object.asValueMap().at("y").asFloat();
+
+			TransformComponent* tc = TransformComponent::create();
+			tc->setNextPosition(Vec2(objectX, objectY));
+			levelCollisionEntity->addComponent(tc);
+
+			if (object.asValueMap().find("points") == object.asValueMap().end())
+			{
+				// The object is a rectangle
+				// Creating the box body component
+				BoxBodyComponent* rbc = BoxBodyComponent::create();
+				rbc->setSize(Size(object.asValueMap().at("width").asFloat(),
+										object.asValueMap().at("height").asFloat()));
+				levelCollisionEntity->addComponent(rbc);
+			}
+			else
+			{
+				// The object is a polygon
+				// Creating the polygon body component
+
+				// Array to store polygon points
+				int nbPoints = object.asValueMap().at("points").asValueVector().size();
+				Vec2* listPoints = new Vec2[nbPoints];
+				int i = 0;
+				for (auto& point : object.asValueMap().at("points").asValueVector())
+				{
+					// convert the points' local coordinates to the world coordinates
+					// by doing a translation using the object's position vector
+
+					// We invert the local y because it's based on the top-left space in Tiled
+					listPoints[i].x = point.asValueMap().at("x").asInt();
+					listPoints[i].y = -point.asValueMap().at("y").asInt();
+					i++;
+				}
+
+				PolygonBodyComponent* pbc = PolygonBodyComponent::create();
+				pbc->setPoints(listPoints, nbPoints);
+				levelCollisionEntity->addComponent(pbc);
+			}
+
+			addChild(levelCollisionEntity);
+		}
+	}
+}
+
 void GameScene::createGameScreen()
 {
-	//// add background image
-	//auto sprite = Sprite::create("background.png");
-	//// position the sprite on the center of the screen
-	//sprite->setPosition(Point(_visibleSize.width * 0.5f + _origin.x, _visibleSize.height * 0.5f + _origin.y));
-	//// add the sprite as a child to this layer
-	//this->addChild(sprite, kBackground);
+	GameEntity* level1 = GameEntity::create();
+	level1->setName("Level1");
 
-	_map = TMXTiledMap::create("level1.tmx");
-	addChild(_map);
+	TiledMapComponent* tmc = TiledMapComponent::create();
+	tmc->setTMXFile("level1.tmx");
+	level1->addComponent(tmc);
 
-	_immovableLayer = _map->layerNamed("Immovable");
+	TransformComponent* t1 = TransformComponent::create();
+	level1->addComponent(t1);
 
-	// Load the player sprite definition file
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sona_idle.plist", "sona_idle.png");
+	addChild(level1);
 
-	// Create the player object
-	_sona = Sona::create();
-	_sona->setScale(0.60f);
-	_sona->setPosition(Point(_map->getTileSize().width * 4, _map->getTileSize().height * 4));
-	_map->addChild(_sona, 15);
+	// Creating collision objects to be used by the collision resolution system
+	createCollisionObjectsFromMap(tmc->getTMXTiledMap());
+	
+	GameEntity* sona = GameEntity::create();
+	sona->setName("Sona");
 
-	setShowDebug(true);
-	_map->addChild(_debugNode, 20);
+	SpriteComponent* sc = SpriteComponent::create();
+	sc->setSpriteFile("sona.png");
+	sona->addComponent(sc);
 
-	_sona->setShowDebug(true);
-	_map->addChild(_sona->getDebugNode(), 21);
-}
+	TransformComponent* t2 = TransformComponent::create();
+	t2->setNextPosition(Vec2(tmc->getTMXTiledMap()->getTileSize().width * 2, tmc->getTMXTiledMap()->getTileSize().height * 4));
+	sona->addComponent(t2);
 
-void GameScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
-{
-	// If a key already exists, do nothing as it will already have a time stamp
-	// Otherwise, set's the timestamp to now
-	if (keys.find(keyCode) == keys.end()){
-		keys[keyCode] = std::chrono::high_resolution_clock::now();
-	}
+	VelocityComponent* vc = VelocityComponent::create();
+	sona->addComponent(vc);
 
-	switch (keyCode)
-	{
-	case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
-		if (_sona->getState() == kSonaRunning)
-		{
-			_sona->stopMoveLeft();
-			_sona->setDirection(_sona->getDirection() | kSonaRight);
-		}
-		else
-		{
-			_sona->startMoveRight();
-			_sona->setDirection(kSonaRight);
-		}
-		break;
-	case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
-		if (_sona->getState() == kSonaRunning)
-		{
-			_sona->stopMoveRight();
-			_sona->setDirection(_sona->getDirection() | kSonaLeft);
-		}
-		else
-		{
-			_sona->startMoveLeft();
-			_sona->setDirection(kSonaLeft);
-		}
-		break;
-	case EventKeyboard::KeyCode::KEY_SPACE:		
-		_sona->startJump();
-		break;
-	default:
-		break;
-	}
-}
+	float scale = 50;
 
-void GameScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
-{
-	// remove the key.  std::map.erase() doesn't care if the key doesnt exist
-	keys.erase(keyCode);
+	PhysicsComponent* pc = PhysicsComponent::create();
+	pc->setMaxSpeed(Vec2(scale * 8, scale * 12));
+	pc->setGravity(10 * scale);
+	pc->setDecX(14 * scale);
+	sona->addComponent(pc);
 
-	switch (keyCode)
-	{
-	case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
-		if (_sona->getState() == kSonaIdle && _sona->getDirection() == (kSonaLeft | kSonaRight))
-		{
-			_sona->startMoveLeft();
-			_sona->setDirection(kSonaLeft);
-		}
-		else
-		{
-			_sona->stopMoveRight();
-		}
-		break;
-	case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
-		if (_sona->getState() == kSonaIdle && _sona->getDirection() == (kSonaLeft | kSonaRight))
-		{
-			_sona->startMoveRight();
-			_sona->setDirection(kSonaRight);
-		}
-		else
-		{
-			_sona->stopMoveLeft();
-		}
-		break;
-	case EventKeyboard::KeyCode::KEY_SPACE:
-		_sona->stopJump();
-		break;
-	default:
-		break;
-	}
-}
+	// Instanciating the Action Components
+	MoveLeftActionComponent* mlc = MoveLeftActionComponent::create();
+	mlc->setAcc(8 * scale);
+	sona->addComponent(mlc);
 
-bool GameScene::isKeyPressed(EventKeyboard::KeyCode code) {
-	// Check if the key is currently pressed by seeing it it's in the std::map keys
-	// In retrospect, keys is a terrible name for a key/value paried datatype isnt it?
-	if (keys.find(code) != keys.end())
-		return true;
-	return false;
-}
+	MoveRightActionComponent* mrc = MoveRightActionComponent::create();
+	mrc->setAcc(8 * scale);
+	sona->addComponent(mrc);
 
-double GameScene::keyPressedDuration(EventKeyboard::KeyCode code) {
-	if (!isKeyPressed(EventKeyboard::KeyCode::KEY_CTRL))
-		return 0;  // Not pressed, so no duration obviously
+	JumpActionComponent* jc = JumpActionComponent::create();
+	jc->setJumpStartSpeedY(9 * scale);
+	sona->addComponent(jc);
 
-	// Return the amount of time that has elapsed between now and when the user
-	// first started holding down the key in milliseconds
-	// Obviously the start time is the value we hold in our std::map keys
-	return std::chrono::duration_cast<std::chrono::milliseconds>
-		(std::chrono::high_resolution_clock::now() - keys[code]).count();
+	// Creating a polygon physics body
+	PolyLineBodyComponent* polyLineBody = PolyLineBodyComponent::create();
+
+	// Top of the head
+	polyLineBody->addLine(Vec2(15, 128), Vec2(40, 128));
+
+	// Bottom of the feet
+	polyLineBody->addLine(Vec2(15, 0), Vec2(40, 0));
+
+	// Left arm
+	polyLineBody->addLine(Vec2(10, 32), Vec2(10, 96));
+
+	// Right arm
+	polyLineBody->addLine(Vec2(45, 32), Vec2(45, 96));
+
+	sona->addComponent(polyLineBody);
+
+	DebugNodeComponent* debugNode = DebugNodeComponent::create();
+	sona->addComponent(debugNode);
+
+	addChild(sona);
+
+	// Instanciating the Input Components
+	KeyboardInputComponent* ic = KeyboardInputComponent::create();
+	ic->mapActionToKey("MoveLeftAction", EventKeyboard::KeyCode::KEY_LEFT_ARROW);
+	ic->mapActionToKey("MoveRightAction", EventKeyboard::KeyCode::KEY_RIGHT_ARROW);
+	ic->mapActionToKey("JumpAction", EventKeyboard::KeyCode::KEY_SPACE);
+
+	addComponent(ic);
 }
 
 void GameScene::update(float dt)
 {
-	_sona->update(dt);
-
-	checkForAndResolveCollisions();
-	
-	_sona->setPosition(_sona->getNextPosition());
-
-	setViewportCenter(_sona->getPosition());
+	//system("cls");
+	_collisionResolutionSystem->update(dt);
+	_transformSystem->update(dt);
+	_actionSystem->update(dt);
+	_physicsSystem->update(dt);
 }
 
-Point GameScene::tileCoordFromPosition(Point pos)
+void GameScene::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
 {
-	float x = floor(pos.x / _map->getTileSize().width);
-	float levelHeightinPixels = _map->getMapSize().height * _map->getTileSize().height;
-	float y = floor((levelHeightinPixels - pos.y) / _map->getTileSize().height);
-	return Point(x, y);
+	LayerColor::draw(renderer, transform, flags);
+	_drawingSystem->draw();
 }
-
-Rect GameScene::tileRectFromTileCoords(Point tileCoords)
-{
-	float levelHeightInPixels = _map->getMapSize().height * _map->getTileSize().height;
-	Point origin = Point(tileCoords.x * _map->getTileSize().width, 
-					   levelHeightInPixels - ((tileCoords.y + 1) * _map->getTileSize().height));
-	return Rect(origin.x, origin.y, _map->getTileSize().width, _map->getTileSize().height);
-}
-
-Vector<Dictionary*>* GameScene::getSurroundingTilesAtPosition(Point pos, TMXLayer* layer)
-{
-	Point plPos = tileCoordFromPosition(pos);
-
-	Vector<Dictionary*>* gids = new cocos2d::Vector<Dictionary*>();
-
-	for (int i = 0; i < 9; i++)
-	{
-		int c = i % 3;
-		int r = (int)(i / 3);
-		Point tilePos = Point(plPos.x + (c - 1), plPos.y + (r - 1));
-
-		int tgid = 0;
-
-		if (tilePos.x >= 0 && tilePos.x < _map->getMapSize().width &&
-			tilePos.y >= 0 && tilePos.y < _map->getMapSize().height)
-		{
-			tgid = layer->tileGIDAt(tilePos);
-		}
-
-		Rect tileRect = tileRectFromTileCoords(tilePos);
-
-		Dictionary* tileDict = Dictionary::create();
-		tileDict->setObject(Integer::create(tgid), "gid");
-		tileDict->setObject(Float::create(tileRect.origin.x), "tileRectX");
-		tileDict->setObject(Float::create(tileRect.origin.y), "tileRectY");
-		tileDict->setObject(Float::create(tilePos.x), "tilePosX");
-		tileDict->setObject(Float::create(tilePos.y), "tilePosY");
-
-		gids->pushBack(tileDict);
-	}
-
-	gids->erase(4);
-	gids->insert(6, gids->at(2));
-	gids->erase(2);
-	gids->swap(4, 6);
-	gids->swap(0, 4);
-
-	/*float x, y;
-
-	for (Dictionary* d : *gids)
-	{
-		log("++++++++++");
-
-		log("gid: %d", ((Integer*)d->objectForKey("gid"))->getValue());
-
-		x = ((Float*)d->objectForKey("tileRectX"))->getValue();
-		y = ((Float*)d->objectForKey("tileRectY"))->getValue();
-		log("tileRect: (%.2f,%.2f)", x, y);
-
-		x = ((Float*)d->objectForKey("tilePosX"))->getValue();
-		y = ((Float*)d->objectForKey("tilePosY"))->getValue();
-		log("tilePos: (%.2f,%.2f)", x, y);
-
-		log("----------");
-	}*/
-
-	return gids;
-}
-
-void GameScene::checkForAndResolveCollisions()
-{
-	Vector<Dictionary*>* tiles = getSurroundingTilesAtPosition(_sona->getPosition(), _immovableLayer);
-
-	if (_showDebug)
-		drawDebug(tiles);
-
-	_sona->setOnGround(false);
-
-	Rect sonaBB = _sona->getCollisionBoundingBox();
-	
-	// Limit movement beyond the borders of the level
-	if (_sona->getNextPosition().x < sonaBB.size.width * 0.5f)
-	{
-		_sona->setNextPosition(Point(sonaBB.size.width * 0.5f, _sona->getNextPosition().y));
-	}
-	else if (_sona->getNextPosition().x > (_map->getTileSize().width * _map->getMapSize().width) 
-		- (_sona->getCollisionBoundingBox().size.width * 0.5f))
-	{
-		_sona->setNextPosition(Point((_map->getTileSize().width * _map->getMapSize().width) 
-			- (_sona->getCollisionBoundingBox().size.width * 0.5f),
-									_sona->getNextPosition().y));
-	}
-
-	for (Dictionary* d : *tiles)
-	{
-		sonaBB = _sona->getCollisionBoundingBox();
-
-		int gid = ((Integer*)d->objectForKey("gid"))->getValue();
-
-		if (gid)
-		{
-			Rect tileRect = Rect(((Float*)d->objectForKey("tileRectX"))->getValue(),
-								 ((Float*)d->objectForKey("tileRectY"))->getValue(),
-								 _map->getTileSize().width,
-								 _map->getTileSize().height);
-
-			if (sonaBB.intersectsRect(tileRect))
-			{
-				Rect intersection = RectIntersection(sonaBB, tileRect);
-
-				int tileIndx = tiles->getIndex(d);
-
-				switch (tileIndx)
-				{
-				case 0:
-					// tile is directly below Sona
-					_sona->setNextPosition(Point(_sona->getNextPosition().x,
-						_sona->getNextPosition().y + intersection.size.height));
-					_sona->setVelocity(Point(_sona->getVelocity().x, 0));
-					_sona->setOnGround(true);
-					break;
-				case 1:
-					// tile is directly above Sona
-					_sona->setNextPosition(Point(_sona->getNextPosition().x,
-						_sona->getNextPosition().y - intersection.size.height));
-					_sona->setVelocity(Point(_sona->getVelocity().x, 0));
-					break;
-				case 2:
-					// tile is left of Sona
-					_sona->setNextPosition(Point(_sona->getNextPosition().x + intersection.size.width,
-						_sona->getNextPosition().y));
-					break;
-				case 3:
-					// tile is right of Sona
-					_sona->setNextPosition(Point(_sona->getNextPosition().x - intersection.size.width,
-						_sona->getNextPosition().y));
-					break;
-				default:
-					if (intersection.size.width > intersection.size.height)
-					{
-						// tile is diagonal but resolving collision vertically
-						//_sona->setVelocity(Point(_sona->getVelocity().x, 0));
-						
-						float intersectionHeight;
-						if (tileIndx > 5)
-						{
-							intersectionHeight = intersection.size.height;
-							_sona->setOnGround(true);
-						}
-						else
-						{
-							intersectionHeight = -intersection.size.height;
-							_sona->setVelocity(Point(_sona->getVelocity().x, 0));
-						}
-						_sona->setNextPosition(Point(_sona->getNextPosition().x,
-							_sona->getNextPosition().y + intersectionHeight));
-					}
-					else
-					{
-						//tile is diagonal, but resolving horizontally
-						float resolutionWidth;
-						if (tileIndx == 6 || tileIndx == 4)
-						{
-							resolutionWidth = intersection.size.width;
-						}
-						else
-						{
-							resolutionWidth = -intersection.size.width;
-						}
-						_sona->setNextPosition(Point(_sona->getNextPosition().x + resolutionWidth,
-							_sona->getNextPosition().y));
-					}
-					break;
-				}
-			}
-		}
-	}
-}
-
-Rect GameScene::RectIntersection(const Rect & r1, const Rect & r2) const
-{
-	Rect r = Rect(std::max(r1.getMinX(), r2.getMinX()),
-		std::max(r1.getMinY(), r2.getMinY()), 0, 0);
-	r.size.width = std::min(r1.getMaxX(), r2.getMaxX()) - r.getMinX();
-	r.size.height = std::min(r1.getMaxY(), r2.getMaxY()) - r.getMinY();
-	return r;
-}
-
-void GameScene::setViewportCenter(Point position)
-{
-	int x = MAX(position.x, _visibleSize.width / 2);
-	int y = MAX(position.y, _visibleSize.height / 2);
-
-	x = MIN(x, (_map->getMapSize().width * _map->getTileSize().width) - _visibleSize.width / 2);
-	y = MIN(y, (_map->getMapSize().height * _map->getTileSize().height) - _visibleSize.height / 2);
-
-	Point actualPosition = Point(x, y);
-	Point centerOfView = Point(_visibleSize.width / 2, _visibleSize.height / 2);
-	Point viewPoint = centerOfView - actualPosition;
-
-	_map->setPosition(viewPoint);
-}
-
-
-void GameScene::drawDebug(Vector<Dictionary*>* tiles)
-{
-	_debugNode->clear();
-
-	for (Dictionary* d : *tiles)
-	{
-		Rect tileRect = Rect(((Float*)d->objectForKey("tileRectX"))->getValue(),
-				((Float*)d->objectForKey("tileRectY"))->getValue(),
-				_map->getTileSize().width,
-				_map->getTileSize().height);
-
-		_debugNode->drawRect(tileRect.origin, tileRect.origin + tileRect.size, Color4F::BLUE);
-	}
-}
-
-//void GameScene::menuCloseCallback(Ref* pSender)
-//{
-//#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
-//	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
-//	return;
-//#endif
-//
-//	Director::getInstance()->end();
-//
-//#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-//	exit(0);
-//#endif
-//}
