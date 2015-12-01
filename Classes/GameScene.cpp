@@ -19,6 +19,8 @@
 #include "BoxBodyComponent.h"
 #include "PolygonBodyComponent.h"
 
+#include <sstream>
+
 USING_NS_CC;
 
 Scene* GameScene::createScene()
@@ -85,7 +87,9 @@ void GameScene::createCollisionObjectsFromMap(TMXTiledMap* map)
 		{
 			// Creating the dummy collision entity
 			levelCollisionEntity = GameEntity::create();
-			levelCollisionEntity->setName("levelCollisionEntity" + entityIndex);
+			std::ostringstream oss;
+			oss << "levelCollisionEntity" << entityIndex;
+			levelCollisionEntity->setName(oss.str());
 			entityIndex++;
 
 			// Debug component to show its bounds
@@ -105,34 +109,34 @@ void GameScene::createCollisionObjectsFromMap(TMXTiledMap* map)
 				// The object is a rectangle
 				// Creating the box body component
 				BoxBodyComponent* rbc = BoxBodyComponent::create();
-				rbc->setSize(Size(object.asValueMap().at("width").asFloat(),
+				rbc->setRect(Rect(0, 0, object.asValueMap().at("width").asFloat(),
 										object.asValueMap().at("height").asFloat()));
 				levelCollisionEntity->addComponent(rbc);
 			}
-			else
-			{
-				// The object is a polygon
-				// Creating the polygon body component
+			//else
+			//{
+			//	// The object is a polygon
+			//	// Creating the polygon body component
 
-				// Array to store polygon points
-				int nbPoints = object.asValueMap().at("points").asValueVector().size();
-				Vec2* listPoints = new Vec2[nbPoints];
-				int i = 0;
-				for (auto& point : object.asValueMap().at("points").asValueVector())
-				{
-					// convert the points' local coordinates to the world coordinates
-					// by doing a translation using the object's position vector
+			//	// Array to store polygon points
+			//	int nbPoints = object.asValueMap().at("points").asValueVector().size();
+			//	Vec2* listPoints = new Vec2[nbPoints];
+			//	int i = 0;
+			//	for (auto& point : object.asValueMap().at("points").asValueVector())
+			//	{
+			//		// convert the points' local coordinates to the world coordinates
+			//		// by doing a translation using the object's position vector
 
-					// We invert the local y because it's based on the top-left space in Tiled
-					listPoints[i].x = point.asValueMap().at("x").asInt();
-					listPoints[i].y = -point.asValueMap().at("y").asInt();
-					i++;
-				}
+			//		// We invert the local y because it's based on the top-left space in Tiled
+			//		listPoints[i].x = point.asValueMap().at("x").asInt();
+			//		listPoints[i].y = -point.asValueMap().at("y").asInt();
+			//		i++;
+			//	}
 
-				PolygonBodyComponent* pbc = PolygonBodyComponent::create();
-				pbc->setPoints(listPoints, nbPoints);
-				levelCollisionEntity->addComponent(pbc);
-			}
+			//	PolygonBodyComponent* pbc = PolygonBodyComponent::create();
+			//	pbc->setPoints(listPoints, nbPoints);
+			//	levelCollisionEntity->addComponent(pbc);
+			//}
 
 			addChild(levelCollisionEntity);
 		}

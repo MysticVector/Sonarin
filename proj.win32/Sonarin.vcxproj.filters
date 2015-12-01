@@ -155,9 +155,6 @@
     <ClInclude Include="..\Classes\BoxBodyComponent.h">
       <Filter>src\Components\Physics\Bodies</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\BodyComponent.h">
-      <Filter>src\Components\Physics\Bodies</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

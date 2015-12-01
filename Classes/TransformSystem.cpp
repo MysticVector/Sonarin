@@ -38,17 +38,6 @@ void TransformSystem::update(float dt)
 			{
 				// Apply final velocity to the desired position
 				transform->setNextPosition(transform->getNextPosition() + velocity->getSpeed() * dt);
-
-				// DEBUG - temporary ground level to stop the player from falling
-				if (transform->getNextPosition().y < 192)
-				{
-					transform->getNextPosition().y = 192;
-
-					if (jumpAction = static_cast<JumpActionComponent*>(entity->getComponent("JumpAction")))
-					{
-						jumpAction->setJumping(false);
-					}
-				}
 			}
 
 			// Assign the position of the entity's node from the transform component

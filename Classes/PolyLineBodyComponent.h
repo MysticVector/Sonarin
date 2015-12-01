@@ -2,9 +2,8 @@
 #define __POLY_LINE_BODY_COMPONENT_H__
 
 #include "cocos2d.h"
-#include "BodyComponent.h"
 
-class PolyLineBodyComponent : public BodyComponent
+class PolyLineBodyComponent : public cocos2d::Component
 {
 public:
 	CREATE_FUNC(PolyLineBodyComponent);

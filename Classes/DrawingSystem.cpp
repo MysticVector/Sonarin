@@ -56,7 +56,7 @@ void DrawingSystem::draw()
 				}
 				else if (boxBody = static_cast<BoxBodyComponent*>(entity->getComponent("BoxBody")))
 				{
-					debugNode->drawRect(Rect(Vec2::ZERO, boxBody->getSize()));
+					debugNode->drawRect(Rect(boxBody->getRect()));
 				}
 				else if (sprite = static_cast<SpriteComponent*>(entity->getComponent("Sprite")))
 				{

@@ -109,8 +109,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
       <Inputs>$(TargetFileName)</Inputs>
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(OutDir)Standard\" mkdir "$(OutDir)standard\"
-del "$(OutDir)Standard\*.*" /s /q</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(OutDir)standard\" mkdir "$(OutDir)standard\"
+del "$(OutDir)standard\*.*" /s /q</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -166,7 +166,6 @@ del "$(OutDir)Standard\*.*" /s /q</Command>
     <ClInclude Include="..\Classes\ActionSystem.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AppMacros.h" />
-    <ClInclude Include="..\Classes\BodyComponent.h" />
     <ClInclude Include="..\Classes\BoxBodyComponent.h" />
     <ClInclude Include="..\Classes\CollisionResolutionSystem.h" />
     <ClInclude Include="..\Classes\DebugNodeComponent.h" />

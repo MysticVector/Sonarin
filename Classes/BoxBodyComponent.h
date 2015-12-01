@@ -2,38 +2,24 @@
 #define __BOX_BODY_COMPONENT_H__
 
 #include "cocos2d.h"
-#include "BodyComponent.h"
 
-class BoxBodyComponent : public BodyComponent
+class BoxBodyComponent : public cocos2d::Component
 {
 public:
 	CREATE_FUNC(BoxBodyComponent);
-
-	virtual ~BoxBodyComponent()	{	CC_SAFE_RELEASE(_boxShape);	}
-
 	virtual bool init()
 	{
 		_name = "BoxBody";
-		_boxShape = nullptr;
 		return true;
 	}
 
-	void setSize(cocos2d::Size size)
-	{
-		_size = size;
+	void setRect(cocos2d::Rect rect) {	_rect = rect;	}
+	cocos2d::Rect& getRect() { return _rect; }
 
-		CC_SAFE_RELEASE(_boxShape);
-		_boxShape = cocos2d::PhysicsShapeBox::create(_size);
-		CC_SAFE_RETAIN(_boxShape);
-	}
-
-	cocos2d::Size getSize() const { return _size; }
-
-	virtual bool containsPoint(cocos2d::Vec2 p)	{	return _boxShape?(_boxShape->containsPoint(p)):false;	}
+	static bool containsPoint(cocos2d::Rect r, cocos2d::Vec2 p) {	return r.containsPoint(p);	}
 
 protected:
-	cocos2d::Size _size;
-	cocos2d::PhysicsShapeBox* _boxShape;
+	cocos2d::Rect _rect;
 };
 
 #endif // __BOX_BODY_COMPONENT_H__

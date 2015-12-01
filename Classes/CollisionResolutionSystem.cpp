@@ -5,6 +5,7 @@
 #include "PolyLineBodyComponent.h"
 #include "PhysicsComponent.h"
 #include "JumpActionComponent.h"
+#include "BoxBodyComponent.h"
 
 #include <iostream>
 
@@ -37,6 +38,7 @@ void CollisionResolutionSystem::update(float dt)
 	for (Node* entity : entities)
 	{
 		if ((transform = static_cast<TransformComponent*>(entity->getComponent("Transform")))
+			&& (velocity = static_cast<VelocityComponent*>(entity->getComponent("Velocity")))
 			&& (physics = static_cast<PhysicsComponent*>(entity->getComponent("Physics")))
 			&& (polyLineBody = static_cast<PolyLineBodyComponent*>(entity->getComponent("PolyLineBody"))))
 		{
@@ -48,8 +50,8 @@ void CollisionResolutionSystem::update(float dt)
 			for (int iteration = 0; iteration < PhysicsComponent::iterations && (contactX || contactYbottom || contactYtop); iteration++)
 			{
 				// Calculate the amount of X and Y movement expected by the player this frame
-				float nextMoveX = transform->getNextPosition().x * dt;
-				float nextMoveY = transform->getNextPosition().y * dt;
+				float nextMoveX = velocity->getSpeed().x * dt;
+				float nextMoveY = velocity->getSpeed().y * dt;
 
 				// No collisions found yet
 				contactX = contactYbottom = contactYtop = false;
@@ -63,29 +65,96 @@ void CollisionResolutionSystem::update(float dt)
 
 				// Iterate over each object whose bounding box intersects with the player's bounding box
 				// until a collision is found
-				BodyComponent* objectBody = nullptr;
+				BoxBodyComponent* objectBody = nullptr;
 				Vector<Node*> entities = _owner->getChildren();
 
-				//for (int i = 0; i < entities.size() && !contactX && !contactYbottom && !contactYtop; i++)
-				//{
-				//	// Select only physics body objects
-				//	if ((objectBody = static_cast<BodyComponent*>(entities.at(i)->getComponent("BoxBody"))) ||
-				//		(objectBody = static_cast<BodyComponent*>(entities.at(i)->getComponent("PolygonBody"))))
-				//	{
-				//		while ((objectBody->containsPoint(Vec2(static_cast(polyLineBody->getPoints().at(dir * 2).x + playerX + projectedMoveX),
-				//			static_cast(collisionPoint[dir * 2].y + playerY + projectedMoveY))
-				//			|| worldObjects[o].ContainsPoint(static_cast(collisionPoint[dir * 2 + 1].x + playerX + projectedMoveX),
-				//				static_cast(collisionPoint[dir * 2 + 1].y + playerY + projectedMoveY))))
-				//		{
-				//			if (dir == 0) projectedMoveY++;
-				//			if (dir == 1) projectedMoveY--;
-				//			if (dir == 2) projectedMoveX++;
-				//			if (dir == 3) projectedMoveX--;
-				//		}
+				for (int i = 0; i < entities.size() && !contactX && !contactYbottom && !contactYtop; i++)
+				{
+					// Select only physics body objects
+					if (objectBody = static_cast<BoxBodyComponent*>(entities.at(i)->getComponent("BoxBody")))
+					{
+						// We will test the four possible directions of player movement individually
+						// dir: 0 = top, 1 = bottom, 2 = left, 3 = right
+						for (int dir = 0; dir < 4; dir++)
+						{
+							// Skip the test if the expected direction of movement makes the test irrelevant
+							// For example, we only want to test the top of the player's head when movement is
+							// upwards, not downwards. This is really important! If we don't do this, we can
+							// make corrections in the wrong direction, causing the player to magically jump
+							// up to platforms or stick to ceilings.     
+							if (dir == 0 && nextMoveY < 0) continue;
+							if (dir == 1 && nextMoveY > 0) continue;
+							if (dir == 2 && nextMoveX > 0) continue;
+							if (dir == 3 && nextMoveX < 0) continue;
+							projectedMoveX = (dir >= 2 ? nextMoveX : 0);
+							projectedMoveY = (dir <  2 ? nextMoveY : 0);
 
-				//	}
-				//}
+							TransformComponent* t = static_cast<TransformComponent*>(entities.at(i)->getComponent("Transform"));
+							Rect worldSpaceRect = Rect(t->getNextPosition() + objectBody->getRect().origin, objectBody->getRect().size);
 
+							while (BoxBodyComponent::containsPoint(worldSpaceRect, Vec2(polyLineBody->getPoints().at(dir * 2).x + transform->getNextPosition().x + projectedMoveX,
+								polyLineBody->getPoints().at(dir * 2).y + transform->getNextPosition().y + projectedMoveY))
+								|| BoxBodyComponent::containsPoint(worldSpaceRect, Vec2(polyLineBody->getPoints().at(dir * 2 + 1).x + transform->getNextPosition().x + projectedMoveX,
+									polyLineBody->getPoints().at(dir * 2 + 1).y + transform->getNextPosition().y + projectedMoveY)))
+							{
+								if (dir == 0) projectedMoveY -= dt;
+								if (dir == 1) projectedMoveY += dt;
+								if (dir == 2) projectedMoveX += dt;
+								if (dir == 3) projectedMoveX -= dt;
+							}
+
+							if (dir >= 2 && dir <= 3) nextMoveX = projectedMoveX;
+							if (dir >= 0 && dir <= 1) nextMoveY = projectedMoveY;
+
+							// Close the for loop (repeat for all four directions)
+						}
+
+						// Detect what type of contact has occurred based on a comparison of
+						// the original expected movement vector and the new one
+
+						if (nextMoveY < originalMoveY  && originalMoveY > 0)
+						{
+							contactYtop = true;
+						}
+
+						if (nextMoveY > originalMoveY && originalMoveY < 0)
+						{
+							contactYbottom = true;
+						}
+
+						if (abs(nextMoveX - originalMoveX) > 0.01f)
+						{
+							contactX = true;
+						}
+
+						// The player can't continue jumping if we hit the side of something, must fall instead
+						// Without this, a player hitting a wall during a jump will continue trying to travel
+						// upwards
+						// CHARNET3D: Feels unnatural, to be retested later
+						/*if (contactX && velocity->getSpeed().y > 0)
+							velocity->getSpeed().y = nextMoveY = 0;*/
+					}
+				}
+
+				// If a contact has been detected, apply the re-calculated movement vector
+				// and disable any further movement this frame (in either X or Y as appropriate)
+				if (contactYbottom || contactYtop)
+				{
+					transform->getNextPosition().y += nextMoveY;
+					velocity->getSpeed().y = 0;
+
+					if (contactYbottom
+						&& (jumpAction = static_cast<JumpActionComponent*>(entity->getComponent("JumpAction"))))
+					{
+						jumpAction->setJumping(false);
+					}
+				}
+
+				if (contactX)
+				{
+					transform->getNextPosition().x += nextMoveX;
+					velocity->getSpeed().x = 0;
+				}
 			}
 		}
 	}

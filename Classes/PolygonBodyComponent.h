@@ -2,9 +2,8 @@
 #define __POLYGON_BODY_COMPONENT_H__
 
 #include "cocos2d.h"
-#include "BodyComponent.h"
 
-class PolygonBodyComponent : public BodyComponent
+class PolygonBodyComponent : public cocos2d::Component
 {
 public:
 	CREATE_FUNC(PolygonBodyComponent);
@@ -28,16 +27,12 @@ public:
 		_pointsCount = pointsCount;
 
 
-		cocos2d::log("initialised: (%f,%f) (%f,%f) (%f,%f)", _points[0].x, _points[0].y, _points[1].x, _points[1].y, _points[2].x, _points[2].y);
 		CC_SAFE_RELEASE(_polygonShape);
-		//cocos2d::PhysicsBody* b = cocos2d::PhysicsBody::createPolygon(_points, _pointsCount);
-		//_polygonShape = cocos2d::PhysicsShapePolygon::create(_points, _pointsCount);
+		_polygonShape = cocos2d::PhysicsShapePolygon::create(_points, _pointsCount);
 		CC_SAFE_RETAIN(_polygonShape);
 	}
 
 	cocos2d::Vec2* getPoints() { return _points; }
-
-	virtual bool containsPoint(cocos2d::Vec2 p) { return _polygonShape?(_polygonShape->containsPoint(p)):false; }
 
 	CC_SYNTHESIZE(int, _pointsCount, PointsCount);
 
