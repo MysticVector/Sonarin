@@ -11,6 +11,8 @@ bool DebugNodeComponent::init()
 {
 	_name = "DebugNode";
 	_debugNode = DrawNode::create();
+	_debugNode->setAnchorPoint(cocos2d::Vec2(0, 0));
+	CC_SAFE_RETAIN(_debugNode);
 	return true;
 }
 
