@@ -81,7 +81,7 @@ void CollisionResolutionSystem::update(float dt)
 							// For example, we only want to test the top of the player's head when movement is
 							// upwards, not downwards. This is really important! If we don't do this, we can
 							// make corrections in the wrong direction, causing the player to magically jump
-							// up to platforms or stick to ceilings.     
+							// up to platforms or stick to ceilings.
 							if (dir == 0 && nextMoveY < 0) continue;
 							if (dir == 1 && nextMoveY > 0) continue;
 							if (dir == 2 && nextMoveX > 0) continue;
@@ -92,10 +92,14 @@ void CollisionResolutionSystem::update(float dt)
 							TransformComponent* t = static_cast<TransformComponent*>(entities.at(i)->getComponent("Transform"));
 							Rect worldSpaceRect = Rect(t->getNextPosition() + objectBody->getRect().origin, objectBody->getRect().size);
 
-							while (BoxBodyComponent::containsPoint(worldSpaceRect, Vec2(polyLineBody->getPoints().at(dir * 2).x + transform->getNextPosition().x + projectedMoveX,
-								polyLineBody->getPoints().at(dir * 2).y + transform->getNextPosition().y + projectedMoveY))
-								|| BoxBodyComponent::containsPoint(worldSpaceRect, Vec2(polyLineBody->getPoints().at(dir * 2 + 1).x + transform->getNextPosition().x + projectedMoveX,
-									polyLineBody->getPoints().at(dir * 2 + 1).y + transform->getNextPosition().y + projectedMoveY)))
+							// Collision points before the projected movement vector is added
+							Vec2 oldP1 = Vec2(polyLineBody->getPoints().at(dir * 2).x + transform->getNextPosition().x,
+										polyLineBody->getPoints().at(dir * 2).y + transform->getNextPosition().y);
+							Vec2 oldP2 = Vec2(polyLineBody->getPoints().at(dir * 2 + 1).x + transform->getNextPosition().x,
+										polyLineBody->getPoints().at(dir * 2 + 1).y + transform->getNextPosition().y);
+
+							while (BoxBodyComponent::containsPoint(worldSpaceRect, oldP1 + Vec2(projectedMoveX, projectedMoveY), objectBody->getRotation())
+								|| BoxBodyComponent::containsPoint(worldSpaceRect, oldP2 + Vec2(projectedMoveX, projectedMoveY), objectBody->getRotation()))
 							{
 								if (dir == 0) projectedMoveY -= dt;
 								if (dir == 1) projectedMoveY += dt;
@@ -112,12 +116,12 @@ void CollisionResolutionSystem::update(float dt)
 						// Detect what type of contact has occurred based on a comparison of
 						// the original expected movement vector and the new one
 
-						if (nextMoveY < originalMoveY  && originalMoveY > 0)
+						if (nextMoveY < originalMoveY  && originalMoveY >= 0)
 						{
 							contactYtop = true;
 						}
 
-						if (nextMoveY > originalMoveY && originalMoveY < 0)
+						if (nextMoveY > originalMoveY && originalMoveY <= 0)
 						{
 							contactYbottom = true;
 						}

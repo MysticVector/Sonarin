@@ -111,6 +111,13 @@ void GameScene::createCollisionObjectsFromMap(TMXTiledMap* map)
 				BoxBodyComponent* rbc = BoxBodyComponent::create();
 				rbc->setRect(Rect(0, 0, object.asValueMap().at("width").asFloat(),
 										object.asValueMap().at("height").asFloat()));
+				
+				// Read the rotation if it exists
+				if (object.asValueMap().find("Rotation") != object.asValueMap().end())
+				{
+					rbc->setRotation(object.asValueMap().at("Rotation").asFloat());
+				}
+
 				levelCollisionEntity->addComponent(rbc);
 			}
 			//else

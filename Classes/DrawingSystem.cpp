@@ -56,7 +56,7 @@ void DrawingSystem::draw()
 				}
 				else if (boxBody = static_cast<BoxBodyComponent*>(entity->getComponent("BoxBody")))
 				{
-					debugNode->drawRect(Rect(boxBody->getRect()));
+					debugNode->drawRect(Rect(boxBody->getRect()), boxBody->getRotation());
 				}
 				else if (sprite = static_cast<SpriteComponent*>(entity->getComponent("Sprite")))
 				{
