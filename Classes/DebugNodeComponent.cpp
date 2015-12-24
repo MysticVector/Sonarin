@@ -39,6 +39,12 @@ void DebugNodeComponent::drawRect(Rect r, float rotation)
 
 		_debugNode->drawRect(r.origin, r.origin + r.size, Color4F::WHITE);
 		_debugNode->setRotation(rotation);
+
+		auto n = DrawNode::create();
+		n->drawRect(_debugNode->getBoundingBox().origin,
+			_debugNode->getBoundingBox().origin + _debugNode->getBoundingBox().size, Color4F::RED);
+
+		_debugNode->getParent()->addChild(n);
 	}
 	else
 	{
