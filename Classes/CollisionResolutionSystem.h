@@ -2,6 +2,7 @@
 #define __COLLISION_RESOLUTION_SYSTEM_H__
 
 #include "cocos2d.h"
+#include "BoxBodyComponent.h"
 
 class CollisionResolutionSystem : public cocos2d::Ref
 {
@@ -13,6 +14,8 @@ public:
 		_owner = owner;
 		return true;
 	}
+
+	void initAABBs();
 
 	void update(float dt);
 

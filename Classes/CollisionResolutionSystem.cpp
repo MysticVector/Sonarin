@@ -25,6 +25,39 @@ CollisionResolutionSystem* CollisionResolutionSystem::create(cocos2d::Node* owne
 	return ret;
 }
 
+void CollisionResolutionSystem::initAABBs()
+{
+	BoxBodyComponent* objectBody = nullptr;
+	DrawNode* drawNode = DrawNode::create();
+
+	Vector<Node*> entities = _owner->getChildren();
+	for (Node* entity : entities)
+	{
+		// Select only physics body objects
+		if ((objectBody = static_cast<BoxBodyComponent*>(entity->getComponent("BoxBody"))) && objectBody->getRotation() != 0)
+		{
+			drawNode->clear();
+
+			// Changing the content size to take the anchor into consideration
+			drawNode->setContentSize(objectBody->getRect().size);
+
+			// Anchor at the top left of the rectangle, in order to do a rotation the same way it was done in Tiled Map Editor
+			drawNode->setAnchorPoint(cocos2d::Vec2(0, 1));
+
+			// Return the rectangle the same position it had in the Tiled Map Editor
+			// (the positions get converted to cocos2d's inverted axis upon loading the TMX file)
+			drawNode->setPositionY(objectBody->getRect().origin.y + objectBody->getRect().size.height);
+
+			drawNode->drawRect(objectBody->getRect().origin, objectBody->getRect().origin + objectBody->getRect().size, Color4F::WHITE);
+			drawNode->setRotation(objectBody->getRotation());
+
+			objectBody->setAABB(Rect(drawNode->getBoundingBox().origin, drawNode->getBoundingBox().size));
+		}
+	}
+
+	CC_SAFE_DELETE(drawNode);
+}
+
 void CollisionResolutionSystem::update(float dt)
 {
 	TransformComponent* transform = nullptr;

@@ -13,9 +13,9 @@ public:
 	virtual bool init();
 
 	CC_SYNTHESIZE(cocos2d::DrawNode*, _debugNode, DebugNode);
+	CC_SYNTHESIZE(cocos2d::DrawNode*, _AABBDebugNode, AABBDebugNode);
 
-	void drawRect(cocos2d::Rect r);
-	void drawRect(cocos2d::Rect r, float rotation);
+	void drawRect(cocos2d::Rect r, cocos2d::Rect aabb = cocos2d::Rect::ZERO, float rotation = 0);
 	void drawPoint(cocos2d::Vec2 p);
 	void drawLine(cocos2d::Vec2 p1, cocos2d::Vec2 p2);
 	void drawLines(std::vector<cocos2d::Vec2> points, cocos2d::Vec2 origin = cocos2d::Vec2::ZERO);

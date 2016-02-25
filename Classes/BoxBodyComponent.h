@@ -11,11 +11,16 @@ public:
 	{
 		_name = "BoxBody";
 		_rotation = 0;
+		_rect = cocos2d::Rect::ZERO;
+		_AABB = cocos2d::Rect::ZERO;
 		return true;
 	}
 
-	void setRect(cocos2d::Rect rect) {	_rect = rect;	}
+	void setRect(const cocos2d::Rect& rect) {	_rect = rect;	}
 	cocos2d::Rect& getRect() { return _rect; }
+
+	void setAABB(const cocos2d::Rect& aabb) { _AABB = aabb; }
+	cocos2d::Rect& getAABB() { return _AABB; }
 
 	static bool containsPoint(cocos2d::Rect r, cocos2d::Vec2 p, float rectAngle = 0)
 	{
@@ -44,6 +49,7 @@ public:
 	CC_SYNTHESIZE(float, _rotation, Rotation);
 protected:
 	cocos2d::Rect _rect;
+	cocos2d::Rect _AABB;
 };
 
 #endif // __BOX_BODY_COMPONENT_H__
