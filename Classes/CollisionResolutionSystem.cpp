@@ -28,6 +28,7 @@ CollisionResolutionSystem* CollisionResolutionSystem::create(cocos2d::Node* owne
 void CollisionResolutionSystem::initAABBs()
 {
 	BoxBodyComponent* objectBody = nullptr;
+	PolyLineBodyComponent* polyLineBody = nullptr;
 	DrawNode* drawNode = DrawNode::create();
 
 	Vector<Node*> entities = _owner->getChildren();
@@ -52,6 +53,26 @@ void CollisionResolutionSystem::initAABBs()
 			drawNode->setRotation(objectBody->getRotation());
 
 			objectBody->setAABB(Rect(drawNode->getBoundingBox().origin, drawNode->getBoundingBox().size));
+		}
+
+		if ((polyLineBody = static_cast<PolyLineBodyComponent*>(entity->getComponent("PolyLineBody"))))
+		{
+			Rect r;
+			r.origin = polyLineBody->getPoints().at(0);
+			for (unsigned int i = 0; i < polyLineBody->getPoints().size(); i++)
+			{
+				if (polyLineBody->getPoints().at(i).x < r.origin.x)			// Finding minX
+					r.origin.x = polyLineBody->getPoints().at(i).x;
+				else if (polyLineBody->getPoints().at(i).x > r.size.width)	// Finding maxX
+					r.size.width = polyLineBody->getPoints().at(i).x;
+
+				if (polyLineBody->getPoints().at(i).y < r.origin.y)			// Finding minY
+					r.origin.y = polyLineBody->getPoints().at(i).y;
+				else if (polyLineBody->getPoints().at(i).x > r.size.height)	// Finding maxY
+					r.size.height = polyLineBody->getPoints().at(i).y;
+			}
+
+			polyLineBody->setAABB(r);
 		}
 	}
 

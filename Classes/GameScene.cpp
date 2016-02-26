@@ -166,9 +166,6 @@ void GameScene::createGameScreen()
 
 	// Creating collision objects to be used by the collision resolution system
 	createCollisionObjectsFromMap(tmc->getTMXTiledMap());
-	
-	// Generate AABBs for all BoxBodies in the scene for more optimized collision detection
-	_collisionResolutionSystem->initAABBs();
 
 	GameEntity* sona = GameEntity::create();
 	sona->setName("Sona");
@@ -226,6 +223,9 @@ void GameScene::createGameScreen()
 	sona->addComponent(debugNode);
 
 	addChild(sona);
+
+	// Generate AABBs for all BoxBodies in the scene for more optimized collision detection
+	_collisionResolutionSystem->initAABBs();
 
 	// Instanciating the Input Components
 	KeyboardInputComponent* ic = KeyboardInputComponent::create();

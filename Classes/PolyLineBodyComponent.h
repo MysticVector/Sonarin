@@ -28,14 +28,17 @@ public:
 	}
 
 	cocos2d::Vec2 getPoint(int i) const { return _points.at(i); }
-
 	const std::vector<cocos2d::Vec2>& getPoints() const { return _points; }
+
+	void setAABB(const cocos2d::Rect& aabb) { _AABB = aabb; }
+	cocos2d::Rect& getAABB() { return _AABB; }
 
 	// TODO
 	virtual bool containsPoint(cocos2d::Vec2 p) { return true; };
 
 protected:
 	std::vector<cocos2d::Vec2> _points;
+	cocos2d::Rect _AABB;
 };
 
 #endif // __POLY_LINE_BODY_COMPONENT_H__

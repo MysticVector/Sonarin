@@ -23,9 +23,14 @@ bool DebugNodeComponent::init()
 
 void DebugNodeComponent::drawRect(Rect r, Rect aabb, float rotation)
 {
+	_AABBDebugNode->clear();
 	_debugNode->clear();
+
 	if (rotation != 0)
 	{
+		// Drawing the AABB
+		_AABBDebugNode->drawRect(aabb.origin, aabb.origin + aabb.size, Color4F::WHITE);
+
 		// Changing the content size to take the anchor into consideration
 		// Anchor at the top left of the rectangle, in order to do a rotation the same way it was done in Tiled Map Editor
 		// And return the rectangle the same position it had in the Tiled Map Editor
@@ -36,38 +41,39 @@ void DebugNodeComponent::drawRect(Rect r, Rect aabb, float rotation)
 		_debugNode->setRotation(rotation);
 
 		// Drawing the actual rotated rectangle
-		_debugNode->drawRect(r.origin, r.origin + r.size, Color4F::RED);
-
-		// Drawing the AABB
-		_AABBDebugNode->drawRect(aabb.origin, aabb.origin + aabb.size, Color4F::WHITE);
+		_debugNode->drawRect(r.origin, r.origin + r.size, Color4F::GRAY);
 	}
 	else
 	{
-		_debugNode->drawRect(r.origin, r.origin + r.size, Color4F::WHITE);
+		_debugNode->drawRect(r.origin, r.origin + r.size, Color4F::GRAY);
 	}
 }
 
 void DebugNodeComponent::drawPoint(Vec2 p)
 {
 	_debugNode->clear();
-	_debugNode->drawPoint(p, 5, Color4F::WHITE);
+	_debugNode->drawPoint(p, 5, Color4F::GRAY);
 }
 
 void DebugNodeComponent::drawLine(Vec2 p1, Vec2 p2)
 {
 	_debugNode->clear();
 
-	_debugNode->drawLine(p1, p2, Color4F::WHITE);
+	_debugNode->drawLine(p1, p2, Color4F::GRAY);
 }
 
-void DebugNodeComponent::drawLines(std::vector<Vec2> points, Vec2 origin)
+void DebugNodeComponent::drawLines(std::vector<Vec2> points, Rect aabb, Vec2 origin)
 {
+	_AABBDebugNode->clear();
 	_debugNode->clear();
+
+	// Drawing the AABB
+	_AABBDebugNode->drawRect(aabb.origin, aabb.size, Color4F::WHITE);
 
 	// Loop through points 2 by 2
 	for (unsigned int i = 0; i < points.size() - 1; i += 2)
 	{
-		_debugNode->drawLine(origin + points[i], origin + points[i + 1], Color4F::WHITE);
+		_debugNode->drawLine(origin + points[i], origin + points[i + 1], Color4F::GRAY);
 	}
 }
 
@@ -75,5 +81,5 @@ void DebugNodeComponent::drawPoly(Vec2* points, int nbPoints)
 {
 	_debugNode->clear();
 
-	_debugNode->drawPoly(points, nbPoints, true, Color4F::WHITE);
+	_debugNode->drawPoly(points, nbPoints, true, Color4F::GRAY);
 }

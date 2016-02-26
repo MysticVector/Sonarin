@@ -48,7 +48,7 @@ void DrawingSystem::draw()
 				// Depending on what type of entity we have make the right calls
 				if (polyLineBody = static_cast<PolyLineBodyComponent*>(entity->getComponent("PolyLineBody")))
 				{
-					debugNode->drawLines(polyLineBody->getPoints());
+					debugNode->drawLines(polyLineBody->getPoints(), polyLineBody->getAABB());
 				}
 				else if (polygonBody = static_cast<PolygonBodyComponent*>(entity->getComponent("PolygonBody")))
 				{

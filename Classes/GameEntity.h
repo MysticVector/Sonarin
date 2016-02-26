@@ -36,8 +36,8 @@ public:
 		{
 			DebugNodeComponent* debugNode = static_cast<DebugNodeComponent*>(component);
 			// High Z Order = to be drawn on the highest layer
-			addChild(debugNode->getDebugNode(), 100);
 			addChild(debugNode->getAABBDebugNode(), 100);
+			addChild(debugNode->getDebugNode(), 100);
 		}
 
 		return Node::addComponent(component);

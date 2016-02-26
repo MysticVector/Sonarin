@@ -18,7 +18,7 @@ public:
 	void drawRect(cocos2d::Rect r, cocos2d::Rect aabb = cocos2d::Rect::ZERO, float rotation = 0);
 	void drawPoint(cocos2d::Vec2 p);
 	void drawLine(cocos2d::Vec2 p1, cocos2d::Vec2 p2);
-	void drawLines(std::vector<cocos2d::Vec2> points, cocos2d::Vec2 origin = cocos2d::Vec2::ZERO);
+	void drawLines(std::vector<cocos2d::Vec2> points, cocos2d::Rect aabb = cocos2d::Rect::ZERO, cocos2d::Vec2 origin = cocos2d::Vec2::ZERO);
 	void drawPoly(cocos2d::Vec2* points, int nbPoints);
 };
 
